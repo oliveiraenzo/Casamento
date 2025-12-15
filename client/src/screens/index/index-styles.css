@@ -1,0 +1,199 @@
+/* --- Configurações Globais --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif; /* Fonte serifada principal */
+    background-color: #fbfaf5; /* Um tom de bege/creme claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Fontes Especiais --- */
+.script-title {
+    font-family: 'Great Vibes', cursive; /* Fonte de caligrafia */
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* --- Estrutura Principal --- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Imagens --- */
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* --- Header (Ana e Everson) --- */
+header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 2.5rem;
+    letter-spacing: 15px; /* Bem espaçado */
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* --- Navegação --- */
+nav {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 3px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* --- Seções de Conteúdo --- */
+section {
+    margin-bottom: 60px;
+}
+
+/* Layout de Duas Colunas */
+.two-column {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.column {
+    flex: 1; /* Cada coluna ocupa metade do espaço */
+}
+
+/* --- Seção: Sobre Nós --- */
+.about-us .column:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-us .script-title {
+    text-align: center;
+}
+.about-us p {
+    font-size: 1.1rem;
+}
+
+/* --- Seção: Onde & Quando --- */
+.where-when {
+    text-align: center;
+}
+
+.event-details {
+    margin-top: 30px;
+}
+
+.event-details h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.event-details p {
+    font-size: 1.1rem;
+}
+
+/* --- Seção: Padrinhos --- */
+.groomsmen .script-title {
+}
+.groomsmen h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 15px;
+}
+.groomsmen p {
+    font-size: 1.1rem;
+}
+
+/* --- Seção: Lista de Presentes --- */
+.gifts .script-title {
+}
+.gifts p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+.gifts h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.pix-button {
+    display: inline-block;
+    background-color: #333;
+    color: #fbfaf5;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.other-gifts {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #333;
+}
+
+/* --- Responsividade (Mobile) --- */
+@media (max-width: 768px) {
+    .two-column {
+        flex-direction: column; /* Empilha as colunas */
+    }
+
+    .about-us .script-title,
+    .groomsmen .script-title,
+    .gifts .script-title {
+        text-align: center; /* Centraliza títulos no mobile */
+    }
+
+    /* Inverte a ordem visual em Padrinhos e Presentes */
+    .groomsmen .column:first-child {
+        order: 2;
+    }
+    .groomsmen .column:last-child {
+        order: 1;
+    }
+    
+    .gifts .column:first-child {
+        order: 2;
+    }
+    .gifts .column:last-child {
+        order: 1;
+    }
+}

@@ -19,8 +19,12 @@ mongoose.connect(process.env.MONGO_URI)
 // Rotas da API (devem vir ANTES das rotas estáticas)
 app.use('/api', require('./routes/api'));
 
-// Servir arquivos estáticos do frontend
-app.use(express.static(path.join(__dirname, '../client')));
+// Adicione estas novas configurações
+app.use(express.static(path.join(__dirname, '../client/src/screens/index')));
+app.use('/assets', express.static(path.join(__dirname, '../client/src/assets')));
+app.use('/padrinhos', express.static(path.join(__dirname, '../client/src/screens/padrinhos')));
+app.use('/lista-presentes', express.static(path.join(__dirname, '../client/src/screens/lista-presentes')));
+
 
 // Configurar rota específica para as imagens
 const assetsPath = path.join(__dirname, '../client/src/assets');
@@ -38,7 +42,7 @@ app.use((req, res, next) => {
 
 // Rota catch-all para o frontend (deve ser a última)
 app.use((req, res) => {
-  res.sendFile(path.join(__dirname, '../client/index.html'));
+  res.sendFile(path.join(__dirname, '../client/src/screens/index/index.html'));
 });
 
 app.listen(PORT, () => {
