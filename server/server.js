@@ -19,30 +19,28 @@ mongoose.connect(process.env.MONGO_URI)
 // Rotas da API (devem vir ANTES das rotas estáticas)
 app.use('/api', require('./routes/api'));
 
-// Adicione estas novas configurações
-app.use(express.static(path.join(__dirname, '../client/src/screens/index')));
-app.use('/assets', express.static(path.join(__dirname, '../client/src/assets')));
-app.use('/padrinhos', express.static(path.join(__dirname, '../client/src/screens/padrinhos')));
-app.use('/lista-presentes', express.static(path.join(__dirname, '../client/src/screens/lista-presentes')));
+// --- CONFIGURAÇÃO CORRIGIDA DOS ARQUIVOS ---
 
+// 1. Define a pasta 'screens' como a raiz do site
+// Isso faz com que 'index.html', 'dresscode.html', etc. fiquem acessíveis
+app.use(express.static(path.join(__dirname, '../client/src/screens')));
 
-// Configurar rota específica para as imagens
+// 2. Configura a rota para as imagens (Assets)
 const assetsPath = path.join(__dirname, '../client/src/assets');
-console.log('Pasta de assets:', assetsPath);
 app.use('/assets', express.static(assetsPath));
 
-// Middleware para logar requisições de imagens
+// Middleware para logar requisições de imagens (útil para ver se está carregando)
 app.use((req, res, next) => {
     if (req.url.includes('/assets/images')) {
-        console.log('Requisição de imagem:', req.url);
-        console.log('Caminho completo:', path.join(assetsPath, req.url.replace('/assets', '')));
+        console.log('Tentando carregar imagem:', req.url);
     }
     next();
 });
 
-// Rota catch-all para o frontend (deve ser a última)
+// 3. Rota catch-all (Onde estava o erro ENOENT)
+// Se o usuário entrar e não especificar arquivo, manda o index.html que agora está na raiz de screens
 app.use((req, res) => {
-  res.sendFile(path.join(__dirname, '../client/src/screens/index/index.html'));
+  res.sendFile(path.join(__dirname, '../client/src/screens/index.html'));
 });
 
 app.listen(PORT, () => {

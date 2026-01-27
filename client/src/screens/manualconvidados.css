@@ -1,0 +1,357 @@
+/* --- Configurações Globais --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #fbfaf5;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-user-select: none; /* Para Safari e Chrome */
+    -moz-user-select: none;    /* Para Firefox */
+    -ms-user-select: none;     /* Para IE/Edge antigo */
+    user-select: none;         /* Padrão moderno */
+    cursor: default;           /* Força a seta padrão do mouse */
+}
+
+/* --- Fontes Especiais --- */
+.script-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* --- Estrutura Principal --- */
+.container {
+    width: 1100px; /* Largura fixa em 1100px em todos os dispositivos */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* --- Header --- */
+header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+header img {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    filter: grayscale(100%);
+}
+
+header h1 {
+    font-weight: 300;
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* --- Navegação --- */
+nav {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+/* --- Imagens Full Width --- */
+.main-image.full-width, .full-width-image {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-bottom: 60px;
+}
+
+.main-image.full-width img, .full-width-image img {
+    filter: grayscale(100%);
+}
+
+/* --- Estilos do Manual do Convidado (Melhorado) --- */
+
+.manual {
+    background-color: #fbfaf5; /* Mantém a harmonia com o body */
+    padding: 100px 20px;
+    position: relative;
+}
+
+.manual h2 {
+    font-family: 'Great Vibes', cursive; /* Usando a fonte script já importada */
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 80px;
+    color: #1a1a1a;
+}
+
+/* Configuração do Contador */
+.manual-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas para visual mais elegante */
+    gap: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    counter-reset: manual-steps; /* Inicia o contador */
+}
+
+.manual-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Linha mais sutil */
+    padding-top: 25px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+/* Efeito de Hover elegante */
+.manual-item:hover {
+    border-top-color: #666;
+    transform: translateY(-5px);
+}
+
+/* Numeração Automática (01, 02, 03...) via CSS */
+.manual-item::before {
+    counter-increment: manual-steps;
+    content: counter(manual-steps, decimal-leading-zero);
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: #e0dcd5; /* Cor clara para o número ficar ao fundo/discreto */
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 10px;
+    opacity: 0.6;
+}
+
+.manual-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #111;
+}
+
+.manual-item p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    font-style: italic; /* Dá um toque mais pessoal/convite */
+}
+
+/* --- Responsividade --- */
+/* DESATIVADO: Layout fixo em todos os dispositivos */
+/*
+@media (max-width: 1024px) {
+    .manual-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .manual-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .manual-item {
+        text-align: center;
+    }
+    
+    .manual-item p {
+        text-align: center;
+    }
+}
+*/
+
+
+/* Link de voltar - Estilo igual ao menu de navegação (nav a) */
+.back-link {
+    position: absolute;
+    /* Tira do fluxo e permite posicionar livremente */
+    top: 10px;
+    /* Cola no topo do header */
+    left: 10px;
+    /* Cola na esquerda do header */
+
+    text-decoration: none;
+    color: #999;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #333;
+}
+
+/* Remove o espaço branco abaixo da última imagem */
+.footer-image {
+    margin-bottom: 0 !important;
+    display: block; /* Garante que não haja espaço de linha */
+    line-height: 0; /* Reforço extra para remover gaps */
+}
+
+/* --- Estilos do Manual do Convidado --- */
+
+/* Nota: Os estilos globais vêm do index.css, aqui focamos no específico */
+
+/* Animação Reveal (Igual ao Dress Code) */
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Área do Manual */
+.manual {
+    background-color: #fbfaf5;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.manual h2 {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 80px;
+    color: #1a1a1a;
+}
+
+/* Grid do Manual */
+.manual-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    counter-reset: manual-steps;
+}
+
+.manual-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 25px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.manual-item:hover {
+    border-top-color: #666;
+    transform: translateY(-5px); /* Leve pulinho ao passar o mouse */
+}
+
+/* Numeração Automática (01, 02, 03...) */
+.manual-item::before {
+    counter-increment: manual-steps;
+    content: counter(manual-steps, decimal-leading-zero);
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: #e0dcd5;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 10px;
+    opacity: 0.6;
+}
+
+.manual-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #111;
+}
+
+.manual-item p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    font-style: italic;
+    text-align: justify; /* Fica mais elegante nos blocos de texto */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 1024px) {
+    .manual-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .manual-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .manual-item {
+        text-align: center;
+    }
+    
+    .manual-item p {
+        text-align: center;
+    }
+}
+
+/* --- REFORÇO: Efeito de Cor nas Imagens (Pedido da Noiva) --- */
+/* Garante que as imagens dessa página tenham o efeito mesmo se o index.css falhar */
+header img,
+.main-image.full-width img,
+.full-width-image img {
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);
+}
+
+header img:hover,
+.main-image.full-width img:hover,
+.full-width-image img:hover {
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+/* Correção Footer */
+.footer-image {
+    margin-bottom: 0 !important;
+    display: block;
+    line-height: 0;
+}
+

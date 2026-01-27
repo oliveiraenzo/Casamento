@@ -300,3 +300,53 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 });
+
+// --- CRONÔMETRO (COUNTDOWN) ---
+
+function updateCountdown() {
+    const weddingDate = new Date("May 1, 2026 16:00:00"); // Ajuste o horário se necessário
+    const now = new Date();
+
+    const diff = weddingDate - now;
+
+    // Se a data já passou
+    if (diff < 0) {
+        document.getElementById("countdown").innerHTML = "<h2>O Grande Dia Chegou!</h2>";
+        return;
+    }
+
+    // Cálculos de Tempo
+    // 1. Cálculo preciso de Meses (considerando calendário)
+    let months = (weddingDate.getFullYear() - now.getFullYear()) * 12;
+    months -= now.getMonth();
+    months += weddingDate.getMonth();
+    
+    // Se o dia atual for maior que o dia do casamento, ainda não fechou o mês
+    if (now.getDate() > weddingDate.getDate()) {
+        months--;
+    }
+
+    // 2. Cálculo dos dias restantes após descontar os meses cheios
+    // Criamos uma data temporária somando os meses cheios à data atual
+    const tempDate = new Date(now);
+    tempDate.setMonth(tempDate.getMonth() + months);
+    
+    // A diferença em ms entre a data "temp" e o casamento são os dias/horas restantes
+    const diffRestante = weddingDate - tempDate;
+
+    const days = Math.floor(diffRestante / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diffRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diffRestante % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diffRestante % (1000 * 60)) / 1000);
+
+    // Atualiza o HTML
+    document.getElementById("c-months").innerText = months;
+    document.getElementById("c-days").innerText = days;
+    document.getElementById("c-hours").innerText = hours;
+    document.getElementById("c-minutes").innerText = minutes;
+    document.getElementById("c-seconds").innerText = seconds;
+}
+
+// Inicia o contador e atualiza a cada 1 segundo
+setInterval(updateCountdown, 1000);
+updateCountdown(); // Chama imediatamente para não esperar 1 seg pra aparecer

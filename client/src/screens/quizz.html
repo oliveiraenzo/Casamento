@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz do Casal | Ana e Everson</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="quizz.css">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="quiz-header">
+            <a href="index.html" class="back-link">← Voltar para o Início</a>
+            <h1>Quiz do Casal</h1>
+            <p class="subtitle">Quanto você conhece Ana & Everson?</p>
+        </header>
+
+        <main class="quiz-container">
+            <div id="quiz-box">
+                <div class="progress-indicator">
+                    Pergunta <span id="current-q">1</span> de <span id="total-q">10</span>
+                </div>
+
+                <h2 id="question-text" class="question-title">Carregando pergunta...</h2>
+
+                <div id="options-container" class="options-grid">
+                </div>
+
+                <div id="feedback-area" class="hidden">
+                    <p id="feedback-msg"></p>
+                    <button id="next-btn" onclick="nextQuestion()">Próxima Pergunta →</button>
+                </div>
+            </div>
+
+            <div id="result-box" class="hidden">
+                <h2 class="script-title result-title">Resultado Final</h2>
+                <div class="score-display">
+                    Você acertou <span id="score-count">0</span> de 10
+                </div>
+                <p id="final-message" class="final-msg-text">Mensagem de resultado</p>
+
+                <button class="restart-btn" onclick="restartQuiz()">Jogar Novamente</button>
+                <a href="index.html" class="home-btn">Voltar ao Site</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="quizz.js"></script>
+</body>
+
+</html>

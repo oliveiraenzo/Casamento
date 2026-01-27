@@ -1,0 +1,333 @@
+/* --- Configurações Globais --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #fbfaf5;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/* --- Fontes Especiais --- */
+.script-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* --- Estrutura Principal --- */
+.container {
+    width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover; /* ALTERADO: De 'contain' para 'cover' igual ao Index */
+}
+
+/* --- Header --- */
+header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+header img {
+    width: 100%;
+    height: 350px; /* ALTERADO: Altura fixa igual ao Index */
+    border-radius: 8px;
+    filter: grayscale(100%);
+    object-fit: cover; /* Garante que a imagem não distorça */
+}
+
+header h1 {
+    font-weight: 300;
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* --- Navegação --- */
+nav {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+/* --- Imagens Full Width --- */
+.main-image.full-width, .full-width-image {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-bottom: 60px;
+}
+
+.main-image.full-width img, .full-width-image img {
+    filter: grayscale(100%);
+}
+
+/* --- Programação (Visual Renovado) --- */
+.schedule {
+    background: #fbfaf5;
+    padding: 100px 20px;
+    text-align: center;
+    color: #2f2f2f;
+    overflow: hidden;
+}
+
+/* Título Principal */
+.schedule h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+.schedule-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto 80px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* --- TIMELINE --- */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* A Linha Central */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+/* Itens Ímpares (Esquerda) */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: 60px;
+}
+
+/* Itens Pares (Direita) */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+    padding-left: 60px;
+}
+
+/* A Bolinha (Marcador) */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    width: 12px;
+    height: 12px;
+    background: #fbfaf5;
+    border: 1px solid #d4af37;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -6px;
+    left: auto;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -6px;
+}
+
+/* --- ÍCONES --- */
+.icon-schedule {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: #d4af37;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.timeline-item:hover .icon-schedule {
+    transform: scale(1.1) rotate(-5deg);
+    color: #bfa15f;
+}
+
+.timeline-item:hover::before {
+    background-color: #d4af37;
+    transition: background-color 0.3s ease;
+}
+
+/* Tipografia */
+.time {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.timeline-item p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- Thank You Section --- */
+.thank-section {
+    background: #fbfaf5;
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.thank-section::before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #d4af37;
+    margin: 0 auto 40px;
+}
+
+.thank-section h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.thank-section p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #444;
+}
+
+.thank-section span {
+    display: block;
+    margin-top: 25px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-style: normal;
+    color: #d4af37;
+}
+
+/* Link de voltar */
+.back-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    color: #999;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #333;
+}
+
+/* Animação Reveal */
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* --- Correção Footer e Hover (Pedido da Noiva) --- */
+header img,
+.main-image.full-width img,
+.full-width-image img {
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);
+}
+
+header img:hover,
+.main-image.full-width img:hover,
+.full-width-image img:hover {
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.footer-image {
+    margin-bottom: 0 !important;
+    display: block;
+    line-height: 0;
+}
+/* OBS: Removido o override de height: auto que estava aqui */
