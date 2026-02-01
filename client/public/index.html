@@ -9,8 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Great+Vibes&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
         rel="stylesheet">
+
+    <style>
+        /* Aplica Montserrat como fonte principal da página */
+        html, body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
 
     <link rel="stylesheet" href="index.css">
 </head>
@@ -40,7 +47,7 @@
         <section id="about-us" class="about-us about-grid">
 
             <div class="about-column">
-                <h2 class="script-title">Nossa História</h2>
+                <h2 class="script-title" id="historia-title">Nossa História</h2>
                 <p>Depois de anos frequentando a mesma igreja — pequena, onde todo mundo se conhecia — a gente nunca se
                     cruzou.
                     Nunca.
@@ -82,17 +89,17 @@
             <div class="timeline-wrapper">
                 <div class="event-item">
                     <p class="event-date">01 JANEIRO 2017</p>
-                    <h2 class="script-title">O Início</h2>
+                    <h2 class="script-title" id="inicio-title">O início</h2>
                 </div>
 
                 <div class="event-item">
                     <p class="event-date">01 MAIO 2025</p>
-                    <h2 class="script-title">O pedido</h2>
+                    <h2 class="script-title" id="pedido-title">O pedido</h2>
                 </div>
 
                 <div class="event-item">
                     <p class="event-date">01 MAIO 2026</p>
-                    <h2 class="script-title">O grande dia</h2>
+                    <h2 class="script-title" id="grande-dia-title">O grande dia</h2>
                 </div>
             </div>
         </section>
@@ -137,7 +144,7 @@
                             <img src="./assets/images/couple/6.jpg">
                             <a href="dresscode.html" class="gallery-btn">Confira o Dresscode</a>
                         </div>
-                        <p class="gallery-caption">Código de Vestimenta*</p>
+                        <p class="gallery-caption">Código de Vestimenta</p>
                     </div>
 
                     <div class="gallery-item">
@@ -153,15 +160,15 @@
                             <img src="./assets/images/couple/6.jpg">
                             <a href="rsvp.html" class="gallery-btn">Confirme sua Presença</a>
                         </div>
-                        <p class="gallery-caption">RSVP</p>
+                        <p class="gallery-caption">Responda Por Favor</p>
                     </div>
 
                     <div class="gallery-item">
                         <div class="gallery-image-wrapper">
                             <img src="./assets/images/couple/6.jpg">
-                            <a href="#about-us" class="gallery-btn">Sobre Nós</a>
+                            <a href="lista-presentes.html" class="gallery-btn">Presentes</a>
                         </div>
-                        <p class="gallery-caption">Nossa História*</p>
+                        <p class="gallery-caption">Lista de Presentes</p>
                     </div>
 
                     <div class="gallery-item">
@@ -169,7 +176,7 @@
                             <img src="./assets/images/couple/6.jpg">
                             <a href="quizz.html" class="gallery-btn">Você nos conhece?</a>
                         </div>
-                        <p class="gallery-caption">Quiz Casal</p>
+                        <p class="gallery-caption">Quiz do Casal</p>
                     </div>
 
                     <div class="gallery-item">

@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #fbfaf5;
     color: #333;
     line-height: 1.6;
@@ -18,7 +18,7 @@ body {
 
 /* --- Fontes Especiais --- */
 .script-title {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
     font-weight: 400;
     color: #222;
@@ -87,7 +87,6 @@ nav a {
     text-decoration: none;
     color: #333;
     letter-spacing: 2px;
-    font-weight: 600;
     text-transform: uppercase;
     font-size: 0.85rem;
     white-space: nowrap;
@@ -146,12 +145,17 @@ nav a {
 }
 
 .manual h2 {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 7rem;
     font-weight: 400;
     margin-bottom: 80px;
     color: #1a1a1a;
+}
+
+/* Autumn Melody para Manual do Convidado */
+#manual-title {
+    font-family: 'Autumn Melody', cursive !important;
 }
 
 /* Grid do Manual */
@@ -181,7 +185,7 @@ nav a {
     counter-increment: manual-steps;
     content: counter(manual-steps, decimal-leading-zero);
     display: block;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
     color: #e0dcd5;
     font-weight: 600;
@@ -191,7 +195,7 @@ nav a {
 }
 
 .manual-item h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -201,7 +205,7 @@ nav a {
 }
 
 .manual-item p {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.05rem;
     line-height: 1.7;
     color: #555;

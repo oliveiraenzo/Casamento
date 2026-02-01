@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #fbfaf5;
     color: #333;
     line-height: 1.6;
@@ -18,7 +18,7 @@ body {
 
 /* --- Fontes Especiais --- */
 .script-title {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
     font-weight: 400;
     color: #222;
@@ -86,7 +86,6 @@ nav a {
     text-decoration: none;
     color: #333;
     letter-spacing: 2px;
-    font-weight: 600;
     text-transform: uppercase;
     font-size: 0.85rem;
     white-space: nowrap;
@@ -116,7 +115,7 @@ nav a {
 }
 
 .schedule h1 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
     font-weight: 300;
     text-transform: uppercase;
@@ -127,7 +126,7 @@ nav a {
 }
 
 .schedule-desc {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     font-style: italic;
     max-width: 600px;
@@ -186,7 +185,7 @@ nav a {
     width: 12px;
     height: 12px;
     background: #fbfaf5;
-    border: 1px solid #d4af37;
+    border: 1px solid #ffc3a7;
     border-radius: 50%;
     z-index: 1;
 }
@@ -204,7 +203,7 @@ nav a {
 .icon-schedule {
     display: inline-block;
     font-size: 1.8rem;
-    color: #d4af37;
+    color: #ffc3a7;
     margin-bottom: 10px;
     opacity: 0.9;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -216,13 +215,13 @@ nav a {
 }
 
 .timeline-item:hover::before {
-    background-color: #d4af37;
+    background-color: #ffc3a7;
     transition: background-color 0.3s ease;
 }
 
 .time {
     display: block;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
     color: #111;
@@ -231,7 +230,7 @@ nav a {
 }
 
 .timeline-item p {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
     color: #666;
     text-transform: uppercase;
@@ -250,20 +249,25 @@ nav a {
     display: block;
     width: 50px;
     height: 1px;
-    background: #d4af37;
+    background: #ffc3a7;
     margin: 0 auto 40px;
 }
 
 .thank-section h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 4rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7rem;
     font-weight: 400;
     margin-bottom: 30px;
     color: #1a1a1a;
 }
 
+/* Autumn Melody para Thank You */
+#thank-you-title {
+    font-family: 'Autumn Melody', cursive !important;
+}
+
 .thank-section p {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     font-style: italic;
     max-width: 700px;
@@ -274,13 +278,19 @@ nav a {
 .thank-section span {
     display: block;
     margin-top: 25px;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
     letter-spacing: 3px;
     text-transform: uppercase;
     font-weight: 600;
-    color: #d4af37;
+    color: #ffc3a7;
 }
+
+.thank-section .senhor {
+    display: inline;
+    margin-top: 0;
+}
+
 
 /* Link de voltar */
 .back-link {

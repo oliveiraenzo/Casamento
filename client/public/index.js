@@ -1,23 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- LÓGICA DO COUNTDOWN ---
-    const weddingDate = new Date("2026-10-10T18:00:00").getTime();
-    const countdownFunction = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
-        
-        if (distance < 0) {
-            clearInterval(countdownFunction);
-            document.getElementById("countdown-wrapper").innerHTML = `<h2 style="font-family: 'Great Vibes', cursive; font-size: 3.5em; color: var(--gold-color);">É hoje o grande dia!</h2>`;
-            return;
-        }
-
-        const formatTime = (time) => (time < 10 ? `0${time}` : time);
-        document.getElementById("dias").innerText = formatTime(Math.floor(distance / (1000 * 60 * 60 * 24)));
-        document.getElementById("horas").innerText = formatTime(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-        document.getElementById("minutos").innerText = formatTime(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
-        document.getElementById("segundos").innerText = formatTime(Math.floor((distance % (1000 * 60)) / 1000));
-    }, 1000);
+    // (Removed older conflicting countdown implementation)
 
     // --- LÓGICA DO JOGO DOS NOIVOS (QUIZ) ---
     const quizQuestions = [
@@ -304,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- CRONÔMETRO (COUNTDOWN) ---
 
 function updateCountdown() {
-    const weddingDate = new Date("May 1, 2026 16:00:00"); // Ajuste o horário se necessário
+    const weddingDate = new Date("2026-05-01T15:00:00"); // Ajuste o horário para 01/05/2026 15:00
     const now = new Date();
 
     const diff = weddingDate - now;
@@ -315,29 +298,18 @@ function updateCountdown() {
         return;
     }
 
-    // Cálculos de Tempo
-    // 1. Cálculo preciso de Meses (considerando calendário)
-    let months = (weddingDate.getFullYear() - now.getFullYear()) * 12;
-    months -= now.getMonth();
-    months += weddingDate.getMonth();
-    
-    // Se o dia atual for maior que o dia do casamento, ainda não fechou o mês
-    if (now.getDate() > weddingDate.getDate()) {
-        months--;
-    }
+    // Cálculos de Tempo (usar total em ms para evitar dia negativo)
+    const msTotal = diff;
+    const totalSeconds = Math.floor(msTotal / 1000);
+    const totalDays = Math.floor(totalSeconds / (60 * 60 * 24));
 
-    // 2. Cálculo dos dias restantes após descontar os meses cheios
-    // Criamos uma data temporária somando os meses cheios à data atual
-    const tempDate = new Date(now);
-    tempDate.setMonth(tempDate.getMonth() + months);
-    
-    // A diferença em ms entre a data "temp" e o casamento são os dias/horas restantes
-    const diffRestante = weddingDate - tempDate;
+    // Aproximação de meses como blocos de 30 dias (evita resultados negativos e quirks de mês)
+    const months = Math.floor(totalDays / 30);
+    const days = totalDays - months * 30;
 
-    const days = Math.floor(diffRestante / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diffRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diffRestante % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diffRestante % (1000 * 60)) / 1000);
+    const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+    const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+    const seconds = totalSeconds % 60;
 
     // Atualiza o HTML
     document.getElementById("c-months").innerText = months;

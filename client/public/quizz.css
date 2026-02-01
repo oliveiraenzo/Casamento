@@ -45,7 +45,7 @@ html, body {
 }
 
 .subtitle {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     color: #666;
     margin-top: -10px;
@@ -67,7 +67,7 @@ html, body {
 /* Indicador de Progresso (1 de 10) */
 .progress-indicator {
     text-align: center;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
     letter-spacing: 3px;
     font-weight: 600;
@@ -78,7 +78,7 @@ html, body {
 
 /* Pergunta */
 .question-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 40px;
@@ -99,7 +99,7 @@ html, body {
     padding: 15px 30px;
 
     /* Tipografia */
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
     color: #444;
     text-align: left;
@@ -165,7 +165,7 @@ html, body {
     padding: 12px 35px;
     border-radius: 50px;
 
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
     letter-spacing: 2px;
     text-transform: uppercase;

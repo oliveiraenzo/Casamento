@@ -4,27 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Presentes - Ana & João</title>
-    <link rel="stylesheet" href="style-lista-presentes.css">
+    <title>Lista de Presentes - Ana & Everson</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="style-lista-presentes.css">
 </head>
 
 <body>
     <header>
         <div class="container">
-            <div class="logo">Ana & João <br><span>Lista de Presentes</span></div>
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="./assets/images/logo/Monograma Ana Scagnolato V2_Prancheta 1.png" alt="Logo Ana e Everson">
+            </div>
             <nav class="header-actions">
-                <a href="#" class="nav-link" id="viewChosenGifts" style="margin-right:0.7em;">Ver presentes
-                    escolhidos</a>
-                <a href="#" class="button primary-button" id="finishGiftsBtn">Finalizar Presentes</a>
+                <a href="#" class="nav-link" id="viewChosenGifts">Presentes Escolhidos</a>
+                <a href="#" class="button primary-button" id="finishGiftsBtn">Finalizar</a>
             </nav>
         </div>
     </header>
 
     <main class="container">
         <section class="intro">
-            <h1>Lista de Presentes</h1>
-            <p>Escolha um presente especial para Ana & João e ajude a construir o lar dos seus sonhos.</p>
+            <h1 id="lista-title">Lista de Presentes</h1>
+            <p>Escolha um presente especial para Ana & Everson e ajude a construir o lar dos sonhos.</p>
         </section>
 
         <section class="filters">
@@ -32,6 +38,7 @@
                 <i class="fas fa-search"></i>
                 <input id="searchInput" type="text" placeholder="Buscar presente...">
             </div>
+
             <div class="filter-buttons">
                 <button class="filter-btn active">Todos</button>
                 <button class="filter-btn">Cozinha</button>
@@ -42,18 +49,20 @@
                 <button class="filter-btn">Móveis</button>
                 <button class="filter-btn">Outros</button>
             </div>
+
             <div class="sort-wrapper">
-                <label for="sortPrice" style="font-size:0.98em;color:#888;margin-right:6px;">Ordenar por:</label>
+                <label for="sortPrice"
+                    style="font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Ordenar:</label>
                 <select id="sortPrice">
                     <option value="default">Padrão</option>
-                    <option value="asc">Preço: menor para maior</option>
-                    <option value="desc">Preço: maior para menor</option>
+                    <option value="asc">Menor Preço</option>
+                    <option value="desc">Maior Preço</option>
                 </select>
             </div>
         </section>
 
         <div class="results-info">
-            <p>9 presentes encontrados</p>
+            <p>81 presentes encontrados</p>
             <div class="view-toggle" id="viewToggle" title="Alternar visualização">
                 <i class="fas fa-th-large" id="iconGrid"></i>
                 <i class="fas fa-list" id="iconList" style="display:none;"></i>
@@ -62,7 +71,7 @@
 
         <section class="gift-list">
             <div class="product-card">
-                <img src="./assets/images/gifts/jogopanela.jpg" alt="Jogo de Panelas Antiaderente" loading="lazy">
+                <img src="./assets/images/gifts/jogopanela.jpg" alt="Jogo de Panelas" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Jogo de Panelas Antiaderente</h3>
@@ -72,39 +81,27 @@
             </div>
 
             <div class="product-card">
-                <img src="./assets/images/gifts/tacacristal.jpg" alt="Conjunto de Taças de Cristal" loading="lazy">
+                <img src="./assets/images/gifts/edredom.jpeg" alt="Edredom" loading="lazy">
                 <div class="product-info">
-                    <span class="category">Mesa e Bar</span>
-                    <h3>Conjunto de Taças de Cristal</h3>
-                    <p class="price">R$ 189,90</p>
+                    <span class="category">Quarto</span>
+                    <h3>Edredom King Size Premium</h3>
+                    <p class="price">R$ 449,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
 
             <div class="product-card">
-                <img src="./assets/images/gifts/edredom.jpeg" alt="Edredom King Size Premium" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Quarto</span>
-                    <h3>Edredom King Size Premium</h3>
-                    <p class="price">R$ 449,90</p>
-                    <button class="button disabled-button" disabled><i class="fas fa-gift"></i>Presente
-                        Escolhido!</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/images/gifts/cafeteira.jpeg" alt="Cafeteira Elétrica Gourmet" loading="lazy">
+                <img src="./assets/images/gifts/cafeteira.jpeg" alt="Cafeteira" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Cafeteira Elétrica Gourmet</h3>
                     <p class="price">R$ 349,90</p>
-                    <button class="button disabled-button" disabled><i class="fas fa-gift"></i>Presente
-                        Escolhido!</button>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
 
             <div class="product-card">
-                <img src="./assets/images/gifts/aspirador.jpeg" alt="Aspirador de Pó Vertical" loading="lazy">
+                <img src="./assets/images/gifts/aspirador.jpeg" alt="Aspirador" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Aspirador de Pó Vertical</h3>
@@ -112,8 +109,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/pratos.jpeg" alt="Jogo de Pratos Porcelana" loading="lazy">
+                <img src="./assets/images/gifts/pratos.jpeg" alt="Pratos" loading="lazy">
                 <div class="product-info">
                     <span class="category">Mesa e Bar</span>
                     <h3>Jogo de Pratos Porcelana</h3>
@@ -121,63 +119,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/toalhas.jpeg" alt="Jogo de Toalhas Premium" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Banho</span>
-                    <h3>Jogo de Toalhas Premium</h3>
-                    <p class="price">R$ 139,90</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="./assets/images/gifts/ferro.jpeg" alt="Ferro de Passar Roupa a Vapor" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Limpeza</span>
-                    <h3>Ferro de Passar Roupa a Vapor</h3>
-                    <p class="price">R$ 119,90</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="./assets/images/gifts/sanduicheria.jpeg" alt="Sanduicheira Elétrica" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Cozinha</span>
-                    <h3>Sanduicheira Elétrica</h3>
-                    <p class="price">R$ 99,90</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="./assets/images/gifts/copo.jpeg" alt="Jogo de Copos de Vidro" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Mesa e Bar</span>
-                    <h3>Jogo de Copos de Vidro</h3>
-                    <p class="price">R$ 69,90</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="./assets/images/gifts/liquidificador.jpeg" alt="Liquidificador Turbo Power" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Cozinha</span>
-                    <h3>Liquidificador Turbo Power</h3>
-                    <p class="price">R$ 159,90</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="./assets/images/gifts/Jogo de Lençol.jpeg" alt="Jogo de Lençol Casal 4 peças"
-                    loading="lazy">
-                <div class="product-info">
-                    <span class="category">Quarto</span>
-                    <h3>Jogo de Lençol Casal 4 peças</h3>
-                    <p class="price">R$ 129,90</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="./assets/images/gifts/tapete 2x1.jpeg" alt="Tapete para Sala 2x1,5m" loading="lazy">
+                <img src="./assets/images/gifts/tapete 2x1.jpeg" alt="Tapete" loading="lazy">
                 <div class="product-info">
                     <span class="category">Móveis</span>
                     <h3>Tapete para Sala 2x1,5m</h3>
@@ -185,9 +129,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/organizadorgaveta.jpeg" alt="Kit Organizadores de Gaveta"
-                    loading="lazy">
+                <img src="./assets/images/gifts/organizadorgaveta.jpeg" alt="Organizadores" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Kit Organizadores de Gaveta</h3>
@@ -195,8 +139,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/facas.jpeg" alt="Jogo de Facas Profissional" loading="lazy">
+                <img src="./assets/images/gifts/facas.jpeg" alt="Facas" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Jogo de Facas Profissional</h3>
@@ -204,8 +149,10 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/cesta-de-piquenique-completa.jpeg" alt="Cesta de Piquenique Completa">
+                <img src="./assets/images/gifts/Cesta de Piquenique Completa.jpg" alt="Cesta de Piquenique"
+                    loading="lazy">
                 <div class="product-info">
                     <span class="category">Mesa e Bar</span>
                     <h3>Cesta de Piquenique Completa</h3>
@@ -213,8 +160,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/portatempero.jpeg" alt="Porta-Temperos Giratório" loading="lazy">
+                <img src="./assets/images/gifts/portatempero.jpeg" alt="Porta-Temperos" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Porta-Temperos Giratório</h3>
@@ -222,8 +170,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/kit banheiro luxo.jpeg" alt="Kit Banho Luxo 5 peças" loading="lazy">
+                <img src="./assets/images/gifts/kit banheiro luxo.jpeg" alt="Kit Banho" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Kit Banho Luxo 5 peças</h3>
@@ -231,8 +180,10 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/Panela de Pressão Fechamento Externo 5 Litros….jpeg" alt="Panela de Pressão Antiaderente" loading="lazy">
+                <img src="./assets/images/gifts/Panela de Pressão Fechamento Externo 5 Litros….jpeg"
+                    alt="Panela de Pressão" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Panela de Pressão Antiaderente</h3>
@@ -240,8 +191,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/livros.jpeg" alt="Separador de Livros Decorativo" loading="lazy">
+                <img src="./assets/images/gifts/livros.jpeg" alt="Aparador de Livros" loading="lazy">
                 <div class="product-info">
                     <span class="category">Móveis</span>
                     <h3>Aparador de Livros Decorativo</h3>
@@ -249,9 +201,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/tapetebanheiro.jpeg" alt="Jogo de Tapetes para Banheiro"
-                    loading="lazy">
+                <img src="./assets/images/gifts/tapetebanheiro.jpeg" alt="Tapete de Banheiro" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Jogo de Tapetes para Banheiro</h3>
@@ -259,8 +211,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/relogio.jpeg" alt="Relógio de Parede Moderno" loading="lazy">
+                <img src="./assets/images/gifts/relogio.jpeg" alt="Relógio de Parede" loading="lazy">
                 <div class="product-info">
                     <span class="category">Móveis</span>
                     <h3>Relógio de Parede Moderno</h3>
@@ -268,9 +221,10 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
                 <img src="./assets/images/gifts/Frigideira Antiaderente Tramontina Turim R$ 39,90….jpeg"
-                    alt="Kit Frigideiras Antiaderente" loading="lazy">
+                    alt="Frigideiras" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Kit Frigideiras Antiaderente</h3>
@@ -278,8 +232,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/bowls.jpeg" alt="Jogo de Bowls Coloridos" loading="lazy">
+                <img src="./assets/images/gifts/bowls.jpeg" alt="Bowls" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Jogo de Bowls Coloridos</h3>
@@ -287,8 +242,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/cortina.jpeg" alt="Cortina Blackout para Sala" loading="lazy">
+                <img src="./assets/images/gifts/cortina.jpeg" alt="Cortina Blackout" loading="lazy">
                 <div class="product-info">
                     <span class="category">Móveis</span>
                     <h3>Cortina Blackout para Sala</h3>
@@ -296,8 +252,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/organizadormulti.jpeg" alt="Kit Organizadores Multiuso" loading="lazy">
+                <img src="./assets/images/gifts/organizadormulti.jpeg" alt="Organizadores Multiuso" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Kit Organizadores Multiuso</h3>
@@ -305,8 +262,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/kitpanelainoxo.jpeg" alt="Jogo de Panelas Inox 5 peças" loading="lazy">
+                <img src="./assets/images/gifts/kitpanelainoxo.jpeg" alt="Panelas Inox" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Jogo de Panelas Inox 5 peças</h3>
@@ -314,8 +272,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/aparadorsofa.jpeg" alt="Aparador de Sofá com Porta Copos" loading="lazy">
+                <img src="./assets/images/gifts/aparadorsofa.jpeg" alt="Aparador Sofá" loading="lazy">
                 <div class="product-info">
                     <span class="category">Móveis</span>
                     <h3>Aparador de Sofá com Porta Copos</h3>
@@ -323,8 +282,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/hermeticos.jpeg" alt="Kit Potes Herméticos 10 peças" loading="lazy">
+                <img src="./assets/images/gifts/hermeticos.jpeg" alt="Potes Herméticos" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Kit Potes Herméticos 10 peças</h3>
@@ -332,8 +292,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/kingsize.jpg" alt="Jogo de Cama Queen 4 peças" loading="lazy">
+                <img src="./assets/images/gifts/kingsize.jpg" alt="Jogo de Cama Queen" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Jogo de Cama Queen 4 peças</h3>
@@ -341,8 +302,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/kitbanheiroacess.jpeg" alt="Kit Banheiro Acessórios 6 peças" loading="lazy">
+                <img src="./assets/images/gifts/kitbanheiroacess.jpeg" alt="Kit Banheiro" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Kit Banheiro Acessórios 6 peças</h3>
@@ -350,8 +312,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/roupao casal.jpg" alt="Roupão de Banho (Casal)" loading="lazy">
+                <img src="./assets/images/gifts/roupao casal.jpg" alt="Roupão de Banho" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Roupão de Banho (Casal)</h3>
@@ -359,8 +322,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/toalha rosto.jpg" alt="Toalha de Rosto (Kit 4 peças)" loading="lazy">
+                <img src="./assets/images/gifts/toalha rosto.jpg" alt="Toalha de Rosto" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Toalha de Rosto (Kit 4 peças)</h3>
@@ -368,8 +332,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/toalha piso banheiro.jpg" alt="Toalha de Piso para Banheiro" loading="lazy">
+                <img src="./assets/images/gifts/toalha piso banheiro.jpg" alt="Toalha de Piso" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Toalha de Piso para Banheiro</h3>
@@ -377,8 +342,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/cesto bambu.jpg" alt="Cesto de Roupa de Bambu" loading="lazy">
+                <img src="./assets/images/gifts/cesto bambu.jpg" alt="Cesto de Roupa" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Cesto de Roupa de Bambu</h3>
@@ -386,6 +352,7 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
                 <img src="./assets/images/gifts/suporte banheiro.jpg" alt="Prateleira para Box" loading="lazy">
                 <div class="product-info">
@@ -395,8 +362,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/escova vaso.jpg" alt="Escova Sanitária com Suporte" loading="lazy">
+                <img src="./assets/images/gifts/escova vaso.jpg" alt="Escova Sanitária" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Escova Sanitária com Suporte</h3>
@@ -404,8 +372,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/lixeira.jpg" alt="Lixeira para Banheiro Inox" loading="lazy">
+                <img src="./assets/images/gifts/lixeira.jpg" alt="Lixeira Inox" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Lixeira para Banheiro Inox</h3>
@@ -413,8 +382,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/saboneteliquido.jpg" alt="Dispenser para Sabonete Líquido" loading="lazy">
+                <img src="./assets/images/gifts/saboneteliquido.jpg" alt="Dispenser de Sabonete" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Dispenser para Sabonete Líquido</h3>
@@ -422,8 +392,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/vidro banheiro.jpg" alt="Porta-shampoo de Canto" loading="lazy">
+                <img src="./assets/images/gifts/vidro banheiro.jpg" alt="Porta-shampoo" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Porta-shampoo de Canto</h3>
@@ -431,8 +402,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/espelhomesa.jpg" alt="Espelho com Aumento para Bancada" loading="lazy">
+                <img src="./assets/images/gifts/espelhomesa.jpg" alt="Espelho com Aumento" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Espelho com Aumento para Bancada</h3>
@@ -440,8 +412,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/balanca.jpg" alt="Balança Digital de Banheiro" loading="lazy">
+                <img src="./assets/images/gifts/balanca.jpg" alt="Balança Digital" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Balança Digital de Banheiro</h3>
@@ -449,8 +422,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/pote algodao.jpg" alt="Kit de Potes para Algodão e Cotonetes" loading="lazy">
+                <img src="./assets/images/gifts/pote algodao.jpg" alt="Kit Potes" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Kit de Potes para Algodão e Cotonetes</h3>
@@ -458,8 +432,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/cortina box.jpg" alt="Cortina para Box" loading="lazy">
+                <img src="./assets/images/gifts/cortina box.jpg" alt="Cortina Box" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Cortina para Box</h3>
@@ -467,8 +442,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/antiderrapante.jpg" alt="Tapete de Banheira Antiderrapante" loading="lazy">
+                <img src="./assets/images/gifts/antiderrapante.jpg" alt="Tapete Banheira" loading="lazy">
                 <div class="product-info">
                     <span class="category">Banho</span>
                     <h3>Tapete de Banheira Antiderrapante</h3>
@@ -476,8 +452,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/cafeteira italiana.jpeg" alt="Cafeteira Italiana Alumínio" loading="lazy">
+                <img src="./assets/images/gifts/cafeteira italiana.jpeg" alt="Cafeteira Italiana" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Cafeteira Italiana Alumínio</h3>
@@ -485,8 +462,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/6copos.jpeg" alt="Jogo de Copos Baixos 6 peças" loading="lazy">
+                <img src="./assets/images/gifts/6copos.jpeg" alt="Jogo Copos Baixos" loading="lazy">
                 <div class="product-info">
                     <span class="category">Mesa e Bar</span>
                     <h3>Jogo de Copos Baixos 6 peças</h3>
@@ -494,8 +472,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/organizadores.jpeg" alt="Kit Organizadores de Armário" loading="lazy">
+                <img src="./assets/images/gifts/organizadores.jpeg" alt="Kit Organizadores" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Kit Organizadores de Armário</h3>
@@ -503,8 +482,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/airfryer.jpg" alt="Air Fryer 5L" loading="lazy">
+                <img src="./assets/images/gifts/airfryer.jpg" alt="Air Fryer" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Air Fryer 5L</h3>
@@ -512,8 +492,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/kit vinho.jpg" alt="Kit de Acessórios para Vinho" loading="lazy">
+                <img src="./assets/images/gifts/kit vinho.jpg" alt="Kit Vinho" loading="lazy">
                 <div class="product-info">
                     <span class="category">Mesa e Bar</span>
                     <h3>Kit de Acessórios para Vinho</h3>
@@ -521,8 +502,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/manta sofa.jpg" alt="Manta para Sofá" loading="lazy">
+                <img src="./assets/images/gifts/manta sofa.jpg" alt="Manta Sofá" loading="lazy">
                 <div class="product-info">
                     <span class="category">Móveis</span>
                     <h3>Manta para Sofá</h3>
@@ -530,6 +512,7 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
                 <img src="./assets/images/gifts/aspirador robo.jpg" alt="Robô Aspirador" loading="lazy">
                 <div class="product-info">
@@ -539,8 +522,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="./assets/images/gifts/mop giratorio.jpg" alt="Mop Giratório com Balde" loading="lazy">
+                <img src="./assets/images/gifts/mop giratorio.jpg" alt="Mop Giratório" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Mop Giratório com Balde</h3>
@@ -548,8 +532,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/vassoura ele.jpg" alt="Vassoura Elétrica" loading="lazy">
+                <img src="./assets/images/gifts/vassora eletrica.jpg" alt="Vassoura Elétrica" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Vassoura Elétrica</h3>
@@ -557,8 +542,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/limpador magnetico.jpg" alt="Limpador de Vidros Magnético" loading="lazy">
+                <img src="./assets/images/gifts/limpador magnetico.jpg" alt="Limpador Magnético" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Limpador de Vidros Magnético</h3>
@@ -566,8 +552,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/6 panos microfibra.jpg" alt="Kit de Panos de Microfibra (10 unidades)" loading="lazy">
+                <img src="./assets/images/gifts/Kit panos microfibra.jpg" alt="Kit Panos" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Kit de Panos de Microfibra (10 unidades)</h3>
@@ -575,8 +562,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/rodo mop.jpg" alt="Rodo Mágico" loading="lazy">
+                <img src="./assets/images/gifts/Rodo Mágico.jpg" alt="Rodo Mágico" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Rodo Mágico</h3>
@@ -584,8 +572,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/tabua de passar.jpg" alt="Tábua de Passar Roupa" loading="lazy">
+                <img src="./assets/images/gifts/tabua de passar.jpg" alt="Tábua de Passar" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Tábua de Passar Roupa</h3>
@@ -593,8 +582,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/lixeira pedal.jpg" alt="Cesto de Lixo com Pedal (12L)" loading="lazy">
+                <img src="./assets/images/gifts/Cesto de Lixo com Pedal.jpg" alt="Cesto Lixo Pedal" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Cesto de Lixo com Pedal (12L)</h3>
@@ -602,8 +592,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/pá de lixo.jpg" alt="Pá de Lixo com Cabo Longo" loading="lazy">
+                <img src="./assets/images/gifts/Pá de Lixo com Cabo Longo.jpg" alt="Pá de Lixo" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Pá de Lixo com Cabo Longo</h3>
@@ -611,8 +602,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/escova vaso.jpg" alt="Escova de Limpeza Elétrica" loading="lazy">
+                <img src="./assets/images/gifts/Escova de Limpeza Elétrica.jpg" alt="Escova Elétrica" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Escova de Limpeza Elétrica</h3>
@@ -620,8 +612,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/desumidificador.jpg" alt="Desumidificador de Ar" loading="lazy">
+                <img src="./assets/images/gifts/Desumidificador de Ar.jpg" alt="Desumidificador" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Desumidificador de Ar</h3>
@@ -629,8 +622,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/vaporizador.jpg" alt="Vaporizador Portátil para Roupas" loading="lazy">
+                <img src="./assets/images/gifts/Vaporizador Portátil para Roupas.png" alt="Vaporizador" loading="lazy">
                 <div class="product-info">
                     <span class="category">Limpeza</span>
                     <h3>Vaporizador Portátil para Roupas</h3>
@@ -638,8 +632,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/vaso cristal.jpg" alt="Vaso de Cristal" loading="lazy">
+                <img src="./assets/images/gifts/Vaso de Cristal.jpg" alt="Vaso de Cristal" loading="lazy">
                 <div class="product-info">
                     <span class="category">Móveis</span>
                     <h3>Vaso de Cristal</h3>
@@ -647,8 +642,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/ferramentas.jpg" alt="Kit de Ferramentas Básico" loading="lazy">
+                <img src="./assets/images/gifts/Kit de Ferramentas Básico.jpg" alt="Kit Ferramentas" loading="lazy">
                 <div class="product-info">
                     <span class="category">Outros</span>
                     <h3>Kit de Ferramentas Básico</h3>
@@ -656,8 +652,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/umidificador.jpg" alt="Purificador de Ar" loading="lazy">
+                <img src="./assets/images/gifts/Purificador de Ar.jpg" alt="Purificador" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Purificador de Ar</h3>
@@ -665,8 +662,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/blackout.jpg" alt="Cortina Blackout para Quarto" loading="lazy">
+                <img src="./assets/images/gifts/Cortina Blackout para Quarto.jpg" alt="Cortina Quarto" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Cortina Blackout para Quarto</h3>
@@ -674,8 +672,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/travesseiro nasa.jpg" alt="Kit 2 Travesseiros NASA" loading="lazy">
+                <img src="./assets/images/gifts/Kit 2 Travesseiros NASA.jpg" alt="Travesseiros NASA" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Kit 2 Travesseiros NASA</h3>
@@ -683,8 +682,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/digital.jpg" alt="Porta-Retrato Digital" loading="lazy">
+                <img src="./assets/images/gifts/Porta-Retrato Digital.jpg" alt="Porta-Retrato" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Porta-Retrato Digital</h3>
@@ -692,8 +692,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/abajour.jpg" alt="Abajur Moderno" loading="lazy">
+                <img src="./assets/images/gifts/Abajur Moderno.jpg" alt="Abajur" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Abajur Moderno</h3>
@@ -701,8 +702,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/cortina linho.jpg" alt="Cortina de Linho 2m" loading="lazy">
+                <img src="./assets/images/gifts/cortina linho.jpg" alt="Cortina Linho" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Cortina de Linho 2m</h3>
@@ -710,8 +712,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/cesto de roupa suja bambu dobrável.jpg" alt="Cesto de Roupa Suja" loading="lazy">
+                <img src="./assets/images/gifts/Cesto de Roupa Suja.jpg" alt="Cesto Roupa" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Cesto de Roupa Suja</h3>
@@ -719,8 +722,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/cabide.jpg" alt="Kit 50 Cabides de Veludo" loading="lazy">
+                <img src="./assets/images/gifts/Kit 50 Cabides de Veludo.jpg" alt="Kit Cabides" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Kit 50 Cabides de Veludo</h3>
@@ -728,8 +732,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/tapete quarto.jpg" alt="Tapete Felpudo para Quarto" loading="lazy">
+                <img src="./assets/images/gifts/Tapete Felpudo para Quarto.jpg" alt="Tapete Quarto" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Tapete Felpudo para Quarto</h3>
@@ -737,8 +742,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/vela.jpg" alt="Kit Velas Aromáticas" loading="lazy">
+                <img src="./assets/images/gifts/Kit Velas Aromáticas.jpg" alt="Velas" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Kit Velas Aromáticas</h3>
@@ -746,8 +752,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/manta cama.jpg" alt="Manta Decorativa para Cama" loading="lazy">
+                <img src="./assets/images/gifts/Manta Decorativa para Cama.jpg" alt="Manta Cama" loading="lazy">
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Manta Decorativa para Cama</h3>
@@ -755,8 +762,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/maquina waffle.jpg" alt="Máquina de Waffle" loading="lazy">
+                <img src="./assets/images/gifts/maquina waffle.jpg" alt="Máquina Waffle" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Máquina de Waffle</h3>
@@ -764,8 +772,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/espelho chao.jpg" alt="Espelho Decorativo de Chão" loading="lazy">
+                <img src="./assets/images/gifts/Espelho Decorativo de Chão.jpg" alt="Espelho Chão" loading="lazy">
                 <div class="product-info">
                     <span class="category">Móveis</span>
                     <h3>Espelho Decorativo de Chão</h3>
@@ -773,8 +782,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/luminaria chao.jpg" alt="Luminária de Piso" loading="lazy">
+                <img src="./assets/images/gifts/Luminária de Piso.jpg" alt="Luminária Piso" loading="lazy">
                 <div class="product-info">
                     <span class="category">Móveis</span>
                     <h3>Luminária de Piso</h3>
@@ -782,8 +792,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/sofa.jpg" alt="Sofá Retrátil" loading="lazy">
+                <img src="./assets/images/gifts/Sofá Retrátil.jpg" alt="Sofá Retrátil" loading="lazy">
                 <div class="product-info">
                     <span class="category">Móveis</span>
                     <h3>Sofá Retrátil</h3>
@@ -791,8 +802,9 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/mesa 6 cadeiras.jpg" alt="Mesa de Jantar 6 Lugares" loading="lazy">
+                <img src="./assets/images/gifts/Mesa de Jantar 6 Lugares.jpg" alt="Mesa Jantar" loading="lazy">
                 <div class="product-info">
                     <span class="category">Móveis</span>
                     <h3>Mesa de Jantar 6 Lugares</h3>
@@ -800,89 +812,40 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/cadeiras.jpg" alt="Conjunto 6 Cadeiras" loading="lazy">
+                <img src="./assets/images/gifts/Kit Whisky.jfif" alt="Kit Whisky" loading="lazy">
                 <div class="product-info">
-                    <span class="category">Móveis</span>
-                    <h3>Conjunto 6 Cadeiras</h3>
-                    <p class="price">R$ 899,90</p>
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Kit Whisky Premium</h3>
+                    <p class="price">R$ 249,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/edredom.jpeg" alt="Cama Queen Size" loading="lazy">
+                <img src="./assets/images/gifts/6 panos microfibra.jpg" alt="Panos Microfibra" loading="lazy">
                 <div class="product-info">
-                    <span class="category">Móveis</span>
-                    <h3>Cama Queen Size</h3>
-                    <p class="price">R$ 1.999,90</p>
+                    <span class="category">Limpeza</span>
+                    <h3>Kit 6 Panos de Microfibra</h3>
+                    <p class="price">R$ 39,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/guardarouoa.jpg" alt="Guarda-Roupa Casal" loading="lazy">
+                <img src="./assets/images/gifts/abajour.jpg" alt="Abajur" loading="lazy">
                 <div class="product-info">
-                    <span class="category">Móveis</span>
-                    <h3>Guarda-Roupa Casal</h3>
-                    <p class="price">R$ 2.199,90</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="src/assets/images/gifts/cabeceira.jpg" alt="Mesa de Cabeceira (Par)" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Móveis</span>
-                    <h3>Mesa de Cabeceira (Par)</h3>
-                    <p class="price">R$ 499,90</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="src/assets/images/gifts/racktv.jpg" alt="Rack para TV até 65 polegadas" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Móveis</span>
-                    <h3>Rack para TV até 65"</h3>
-                    <p class="price">R$ 799,90</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="src/assets/images/gifts/caixa som.jpg" alt="Caixa de Som Bluetooth" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Outros</span>
-                    <h3>Caixa de Som Bluetooth</h3>
-                    <p class="price">R$ 199,90</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="src/assets/images/gifts/chaleira ele.jpg" alt="Chaleira Elétrica" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Cozinha</span>
-                    <h3>Chaleira Elétrica</h3>
+                    <span class="category">Quarto</span>
+                    <h3>Abajur Moderno</h3>
                     <p class="price">R$ 129,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/kit churrasco.jpg" alt="Kit para Churrasco" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Mesa e Bar</span>
-                    <h3>Kit para Churrasco</h3>
-                    <p class="price">R$ 229,90</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="src/assets/images/gifts/kit talher.jpg" alt="Jogo de Talheres Inox 24 peças" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Mesa e Bar</span>
-                    <h3>Jogo de Talheres Inox 24 peças</h3>
-                    <p class="price">R$ 149,90</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="src/assets/images/gifts/pratos.jpeg" alt="Aparelho de Jantar 20 peças" loading="lazy">
+                <img src="./assets/images/gifts/Aparelho de Jantar 20 peças.jpg" alt="Aparelho de Jantar"
+                    loading="lazy">
                 <div class="product-info">
                     <span class="category">Mesa e Bar</span>
                     <h3>Aparelho de Jantar 20 peças</h3>
@@ -890,62 +853,270 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/suporte vinho.jpg" alt="Suporte para Vinhos" loading="lazy">
+                <img src="./assets/images/gifts/Assinatura de App de Receitas.jpg" alt="App Receitas" loading="lazy">
                 <div class="product-info">
-                    <span class="category">Mesa e Bar</span>
-                    <h3>Suporte para Vinhos</h3>
+                    <span class="category">Outros</span>
+                    <h3>Assinatura App de Receitas (1 ano)</h3>
                     <p class="price">R$ 89,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/balde gelo.jpg" alt="Balde de Gelo Inox" loading="lazy">
+                <img src="./assets/images/gifts/Balde de Gelo Inox.jpg" alt="Balde de Gelo" loading="lazy">
                 <div class="product-info">
                     <span class="category">Mesa e Bar</span>
                     <h3>Balde de Gelo Inox</h3>
+                    <p class="price">R$ 99,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/balde gelo.jpg" alt="Balde Gelo Alumínio" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Balde Gelo Alumínio</h3>
                     <p class="price">R$ 79,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/coqueteleira.jpg" alt="Coqueteleira Inox 500ml" loading="lazy">
+                <img src="./assets/images/gifts/blackout.jpg" alt="Cortina Blackout" loading="lazy">
                 <div class="product-info">
-                    <span class="category">Mesa e Bar</span>
-                    <h3>Coqueteleira Inox 500ml</h3>
-                    <p class="price">R$ 59,90</p>
+                    <span class="category">Móveis</span>
+                    <h3>Cortina Blackout</h3>
+                    <p class="price">R$ 179,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/decanter vinho.jpg" alt="Decanter de Vinho Cristal" loading="lazy">
+                <img src="./assets/images/gifts/cabeceira.jpg" alt="Cabeceira Estofada" loading="lazy">
                 <div class="product-info">
-                    <span class="category">Mesa e Bar</span>
-                    <h3>Decanter de Vinho Cristal</h3>
-                    <p class="price">R$ 129,90</p>
+                    <span class="category">Quarto</span>
+                    <h3>Cabeceira Estofada</h3>
+                    <p class="price">R$ 599,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/petisqueira.jpg" alt="Petisqueira de Bambu" loading="lazy">
+                <img src="./assets/images/gifts/cabide.jpg" alt="Cabideiro" loading="lazy">
                 <div class="product-info">
-                    <span class="category">Mesa e Bar</span>
-                    <h3>Petisqueira de Bambu</h3>
+                    <span class="category">Quarto</span>
+                    <h3>Cabideiro em Madeira</h3>
                     <p class="price">R$ 49,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/jarra vidro.jpg" alt="Jarra de Suco de Vidro 1.5L" loading="lazy">
+                <img src="./assets/images/gifts/cadeiras.jpg" alt="Conjunto de Cadeiras" loading="lazy">
                 <div class="product-info">
-                    <span class="category">Mesa e Bar</span>
-                    <h3>Jarra de Suco de Vidro 1.5L</h3>
-                    <p class="price">R$ 39,90</p>
+                    <span class="category">Móveis</span>
+                    <h3>Jogo de Cadeiras</h3>
+                    <p class="price">R$ 699,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/galheteiro.jpg" alt="Galheteiro 4 peças" loading="lazy">
+                <img src="./assets/images/gifts/Caixa de Som Bluetooth.jpg" alt="Caixa Som" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Caixa de Som Bluetooth Premium</h3>
+                    <p class="price">R$ 299,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/caixa som.jpg" alt="Caixa Som Compacta" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Caixa Som Compacta</h3>
+                    <p class="price">R$ 149,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Cama Queen Size.jpg" alt="Cama Queen" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Cama Queen Size</h3>
+                    <p class="price">R$ 1.999,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Câmera Instantânea.jpg" alt="Câmera Instantânea" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Câmera Instantânea</h3>
+                    <p class="price">R$ 399,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/chaleira ele.jpg" alt="Chaleira Elétrica" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Chaleira Elétrica Rápida</h3>
+                    <p class="price">R$ 79,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Chaleira Elétrica.jpg" alt="Chaleira Premium" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Chaleira Elétrica Premium</h3>
+                    <p class="price">R$ 129,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Conjunto 6 Cadeiras.jpg" alt="Jogo 6 Cadeiras" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Conjunto 6 Cadeiras</h3>
+                    <p class="price">R$ 1.299,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Coqueteleira Inox 500ml.jpg" alt="Coqueteleira" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Coqueteleira Inox 500ml</h3>
+                    <p class="price">R$ 89,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/coqueteleira.jpg" alt="Coqueteleira Aço" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Coqueteleira Aço</h3>
+                    <p class="price">R$ 59,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/cesto de roupa suja bambu dobrável.jpg" alt="Cesto Bambu Dobrável"
+                    loading="lazy">
+                <div class="product-info">
+                    <span class="category">Banho</span>
+                    <h3>Cesto Bambu Dobrável</h3>
+                    <p class="price">R$ 99,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Decanter de Vinho Cristal.jpg" alt="Decanter Cristal" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Decanter de Vinho Cristal</h3>
+                    <p class="price">R$ 179,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/decanter vinho.jpg" alt="Decanter Vidro" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Decanter Vidro</h3>
+                    <p class="price">R$ 99,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/desumidificador.jpg" alt="Desumidificador Compacto" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Desumidificador Compacto</h3>
+                    <p class="price">R$ 349,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/digital.jpg" alt="Balança Digital" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Banho</span>
+                    <h3>Balança Digital Moderna</h3>
+                    <p class="price">R$ 119,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/esfregao ele.jpg" alt="Esfregão Elétrico" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Esfregão Elétrico</h3>
+                    <p class="price">R$ 199,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/espelho chao.jpg" alt="Espelho Chão Grande" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Espelho Chão Grande</h3>
+                    <p class="price">R$ 299,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/ferramentas.jpg" alt="Jogo Ferramentas" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Jogo Completo Ferramentas</h3>
+                    <p class="price">R$ 249,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/ferro a vapor doméstico.jpg" alt="Ferro a Vapor" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Ferro a Vapor Doméstico</h3>
+                    <p class="price">R$ 189,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/fotos personalizadas.jpg" alt="Fotos Personalizadas" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Álbum de Fotos Personalizado</h3>
+                    <p class="price">R$ 129,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Galheteiro 4 peças.jpg" alt="Galheteiro Completo" loading="lazy">
                 <div class="product-info">
                     <span class="category">Mesa e Bar</span>
                     <h3>Galheteiro 4 peças</h3>
@@ -953,170 +1124,1035 @@
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/tabua carne.jpg" alt="Tábua de Corte de Bambu" loading="lazy">
+                <img src="./assets/images/gifts/galheteiro.jpg" alt="Galheteiro Simples" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Galheteiro Simples</h3>
+                    <p class="price">R$ 39,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Guarda-Roupa Casal.jpg" alt="Guarda-Roupa Casal" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Guarda-Roupa Casal</h3>
+                    <p class="price">R$ 2.999,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/guardarouoa.jpg" alt="Guarda-Roupa Compacto" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Guarda-Roupa Compacto</h3>
+                    <p class="price">R$ 1.299,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Jarra de Suco de Vidro 1.5L.jpg" alt="Jarra Suco" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
-                    <h3>Tábua de Corte de Bambu</h3>
+                    <h3>Jarra de Suco Vidro 1.5L</h3>
+                    <p class="price">R$ 49,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/jarra vidro.jpg" alt="Jarra Vidro Grande" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Jarra Vidro Grande</h3>
+                    <p class="price">R$ 39,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Jogo de Talheres Inox 24 peças.jpg" alt="Talher Inox" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Jogo Talheres Inox 24 peças</h3>
+                    <p class="price">R$ 149,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/kit almoco.jpg" alt="Kit Almoço" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Kit Almoço Completo</h3>
+                    <p class="price">R$ 119,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/kit churrasco.jpg" alt="Kit Churrasco" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Kit Churrasco Premium</h3>
+                    <p class="price">R$ 249,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Kit de Jardinagem para Apartamento.jpg" alt="Kit Jardinagem"
+                    loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Kit Jardinagem Apartamento</h3>
+                    <p class="price">R$ 129,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Kit de Limpeza de Carro.jpg" alt="Kit Limpeza Auto" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Kit Limpeza de Carro</h3>
+                    <p class="price">R$ 99,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/kit jardinagem.jpg" alt="Kit Plantio" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Kit Plantio Completo</h3>
                     <p class="price">R$ 79,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/vale jantar.jpg" alt="Vale Jantar Romântico" loading="lazy">
+                <img src="./assets/images/gifts/kit limpeza carro.jpg" alt="Kit Proteção Auto" loading="lazy">
                 <div class="product-info">
                     <span class="category">Outros</span>
-                    <h3>Vale Jantar Romântico</h3>
-                    <p class="price">R$ 300,00</p>
+                    <h3>Kit Proteção Auto</h3>
+                    <p class="price">R$ 69,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/vale assinatura.jpg" alt="Assinatura de App de Receitas" loading="lazy">
+                <img src="./assets/images/gifts/Kit para Churrasco.jpg" alt="Kit Churrasco Deluxe" loading="lazy">
                 <div class="product-info">
-                    <span class="category">Outros</span>
-                    <h3>Assinatura de App de Receitas</h3>
-                    <p class="price">R$ 150,00</p>
+                    <span class="category">Cozinha</span>
+                    <h3>Kit Churrasco Deluxe</h3>
+                    <p class="price">R$ 199,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/kit limpeza carro.jpg" alt="Kit de Limpeza de Carro" loading="lazy">
+                <img src="./assets/images/gifts/kit talher.jpg" alt="Kit Talher Especial" loading="lazy">
                 <div class="product-info">
-                    <span class="category">Outros</span>
-                    <h3>Kit de Limpeza de Carro</h3>
-                    <p class="price">R$ 250,00</p>
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Kit Talher Especial</h3>
+                    <p class="price">R$ 89,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/parafusadeira.jpg" alt="Parafusadeira Eletrica" loading="lazy">
+                <img src="./assets/images/gifts/kit whisky.jpg" alt="Kit Whisky" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Kit Whisky Completo</h3>
+                    <p class="price">R$ 199,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/kitacessorio.jpeg" alt="Kit Acessório" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Kit Acessório Quarto</h3>
+                    <p class="price">R$ 79,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Limpador de Vidro Magnetico.jpg" alt="Limpador Vidro" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Limpador Vidro Magnético</h3>
+                    <p class="price">R$ 69,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/lixeira pedal.jpg" alt="Lixeira Pedal" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Lixeira Pedal Inox</h3>
+                    <p class="price">R$ 129,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/luminaria chao.jpg" alt="Luminária Chão" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Luminária de Chão</h3>
+                    <p class="price">R$ 249,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/manta cama.jpg" alt="Manta Cama" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Manta Cama</h3>
+                    <p class="price">R$ 109,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/mesa 6 cadeiras.jpg" alt="Mesa com Cadeiras" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Mesa com 6 Cadeiras</h3>
+                    <p class="price">R$ 1.599,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Mesa de Cabeceira (Par).jpg" alt="Mesas Cabeceira" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Mesas de Cabeceira (Par)</h3>
+                    <p class="price">R$ 499,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Parafusadeira Elétrica.jpg" alt="Parafusadeira" loading="lazy">
                 <div class="product-info">
                     <span class="category">Outros</span>
                     <h3>Parafusadeira Elétrica</h3>
-                    <p class="price">R$ 300,00</p>
+                    <p class="price">R$ 199,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/vale passeio balao.jpg" alt="Passeio de Balão" loading="lazy">
+                <img src="./assets/images/gifts/parafusadeira.jpg" alt="Parafusadeira Compacta" loading="lazy">
                 <div class="product-info">
                     <span class="category">Outros</span>
-                    <h3>Passeio de Balão</h3>
-                    <p class="price">R$ 700,00</p>
+                    <h3>Parafusadeira Compacta</h3>
+                    <p class="price">R$ 129,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/vale chalé.jpg" alt="Fim de Semana em um Chalé" loading="lazy">
+                <img src="./assets/images/gifts/Petisqueira de Bambu.jpg" alt="Petisqueira Bambu" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Petisqueira de Bambu</h3>
+                    <p class="price">R$ 89,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/petisqueira.jpg" alt="Petisqueira Vidro" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Petisqueira Vidro</h3>
+                    <p class="price">R$ 59,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/polaroid.jpg" alt="Câmera Polaroid" loading="lazy">
                 <div class="product-info">
                     <span class="category">Outros</span>
-                    <h3>Fim de Semana em um Chalé</h3>
-                    <p class="price">R$ 900,00</p>
+                    <h3>Câmera Polaroid Retro</h3>
+                    <p class="price">R$ 349,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/kit whisky.jpg" alt="Kit Whisky" loading="lazy">
+                <img src="./assets/images/gifts/Projetor Portátil.jpg" alt="Projetor Portátil" loading="lazy">
                 <div class="product-info">
                     <span class="category">Outros</span>
-                    <h3>Kit Whisky</h3>
-                    <p class="price">R$ 1700,00</p>
+                    <h3>Projetor Portátil HD</h3>
+                    <p class="price">R$ 899,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/kit jardinagem.jpg" alt="Kit de Jardinagem para Apartamento" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Outros</span>
-                    <h3>Kit de Jardinagem para Apartamento</h3>
-                    <p class="price">R$ 200,00</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="src/assets/images/gifts/vale assinatura.jpg" alt="Serviço de Streaming de Filmes e Séries" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Outros</span>
-                    <h3>Serviço de Streaming de Filmes e Séries</h3>
-                    <p class="price">R$ 50,00</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="src/assets/images/gifts/Vale viagem.jpg" alt="Vale-Viagem" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Outros</span>
-                    <h3>Vale-Viagem</h3>
-                    <p class="price">R$ 1500,00</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="src/assets/images/gifts/fotos personalizadas.jpg" alt="Álbum de Fotos Personalizado" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Outros</span>
-                    <h3>Álbum de Fotos Personalizado</h3>
-                    <p class="price">R$ 350,00</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="src/assets/images/gifts/polaroid.jpg" alt="Câmera Instantânea" loading="lazy">
-                <div class="product-info">
-                    <span class="category">Outros</span>
-                    <h3>Câmera Instantânea</h3>
-                    <p class="price">R$ 500,00</p>
-                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="src/assets/images/gifts/projetor.jpg" alt="Projetor Portátil" loading="lazy">
+                <img src="./assets/images/gifts/projetor.jpg" alt="Projetor" loading="lazy">
                 <div class="product-info">
                     <span class="category">Outros</span>
                     <h3>Projetor Portátil</h3>
-                    <p class="price">R$ 800,00</p>
+                    <p class="price">R$ 699,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="src/assets/images/gifts/vitrola.jpg" alt="Vitrola com Caixa de Som" loading="lazy">
+                <img src="./assets/images/gifts/pá de lixo.jpg" alt="Pá Lixo Simples" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Pá Lixo Simples</h3>
+                    <p class="price">R$ 29,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Rack para TV até 65.jpg" alt="Rack TV Grande" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Rack TV Grande com Prateleiras</h3>
+                    <p class="price">R$ 799,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/racktv.jpg" alt="Rack TV" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Rack para TV até 65"</h3>
+                    <p class="price">R$ 599,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/rodo mop.jpg" alt="Rodo Mop" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Rodo Mop Prático</h3>
+                    <p class="price">R$ 99,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Serviço de Streaming de Filmes e Séries.jpg" alt="Streaming"
+                    loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Assinatura Streaming (1 ano)</h3>
+                    <p class="price">R$ 79,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/sofa.jpg" alt="Sofá" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Sofá Moderno</h3>
+                    <p class="price">R$ 1.799,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Suporte para Vinhos.jpg" alt="Suporte Vinho" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Suporte para Vinhos</h3>
+                    <p class="price">R$ 69,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/suporte vinho.jpg" alt="Adega Vinho" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Adega para Vinhos</h3>
+                    <p class="price">R$ 249,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/tabua carne.jpg" alt="Tábua Carne" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Tábua de Corte para Carne</h3>
+                    <p class="price">R$ 79,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Tábua de Corte de Bambu.jpg" alt="Tábua Bambu" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Tábua de Corte Bambu</h3>
+                    <p class="price">R$ 59,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/tapete quarto.jpg" alt="Tapete Quarto" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Tapete para Quarto</h3>
+                    <p class="price">R$ 149,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/tapetesala.jpeg" alt="Tapete Sala" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Tapete para Sala</h3>
+                    <p class="price">R$ 199,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/travesseiro nasa.jpg" alt="Travesseiro NASA" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Travesseiro NASA</h3>
+                    <p class="price">R$ 99,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/umidificador.jpg" alt="Umidificador" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Umidificador de Ar</h3>
+                    <p class="price">R$ 249,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vale assinatura.jpg" alt="Vale Assinatura" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Vale Assinatura (Escolha Livre)</h3>
+                    <p class="price">R$ 199,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vale chalé.jpg" alt="Vale Chalé" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Vale Chalé Fim de Semana</h3>
+                    <p class="price">R$ 599,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vale chalé.png" alt="Vale Chalé Premium" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Vale Chalé Premium</h3>
+                    <p class="price">R$ 999,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Vale Jantar Romântico.jpg" alt="Jantar Romântico" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Vale Jantar Romântico</h3>
+                    <p class="price">R$ 399,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vale jantar.jpg" alt="Voucher Jantar" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Voucher Jantar Especial</h3>
+                    <p class="price">R$ 299,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vale passeio balao.jpg" alt="Passeio Balão" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Vale Passeio Balão Aeroestático</h3>
+                    <p class="price">R$ 699,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vale passeio de balao.jpg" alt="Voo Balão" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Voo de Balão Sunrise</h3>
+                    <p class="price">R$ 549,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Vale viagem.jpg" alt="Vale Viagem" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Vale Viagem</h3>
+                    <p class="price">R$ 1.999,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Vale-Viagem.jpg" alt="Vale Viagem Premium" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Vale Viagem Premium</h3>
+                    <p class="price">R$ 3.999,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vaporizador.jpg" alt="Vaporizador Roupa" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Vaporizador de Roupas</h3>
+                    <p class="price">R$ 169,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vaso cristal.jpg" alt="Vaso Cristal" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Vaso Cristal</h3>
+                    <p class="price">R$ 129,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vassoura ele.jpg" alt="Vassoura Elétrica" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Vassoura Elétrica Compacta</h3>
+                    <p class="price">R$ 249,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vela.jpg" alt="Vela Aromática" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Vela Aromática Premium</h3>
+                    <p class="price">R$ 49,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vitrola.jpg" alt="Vitrola" loading="lazy">
                 <div class="product-info">
                     <span class="category">Outros</span>
                     <h3>Vitrola com Caixa de Som</h3>
-                    <p class="price">R$ 600,00</p>
+                    <p class="price">R$ 449,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/voucher.jpg" alt="Voucher" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Voucher (Escolha Livre)</h3>
+                    <p class="price">R$ 99,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Álbum de Fotos Personalizado.jpg" alt="Álbum de Fotos" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Álbum de Fotos Personalizado</h3>
+                    <p class="price">R$ 149,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+            <!-- Novos presentes adicionados (>= R$230) -->
+            <div class="product-card">
+                <img src="./assets/images/gifts/conjunto_panelas_prof.jpg" alt="Conjunto Panelas Profissional"
+                    loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Conjunto de Panelas Profissional</h3>
+                    <p class="price">R$ 349,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/smarttv43.jpg" alt="Smart TV 43" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Smart TV 43" Full HD</h3>
+                    <p class="price">R$ 1.299,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/maquina_lavar.jpg" alt="Máquina de Lavar" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Máquina de Lavar 8kg</h3>
+                    <p class="price">R$ 2.199,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/frigobar.jpg" alt="Frigobar" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Frigobar Inox 120L</h3>
+                    <p class="price">R$ 699,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/microondas_inox.jpg" alt="Micro-ondas Inox" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Micro-ondas Inox 30L</h3>
+                    <p class="price">R$ 399,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/cafeteira_espresso.jpg" alt="Cafeteira Espresso" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Mesa e Bar</span>
+                    <h3>Cafeteira Espresso Automática</h3>
+                    <p class="price">R$ 549,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/conjunto_facasespecial.jpg" alt="Conjunto Facas Especial"
+                    loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Conjunto de Facas Premium</h3>
+                    <p class="price">R$ 249,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+            <!-- Adição em massa: 25 presentes adicionais (todos > R$230) -->
+            <div class="product-card">
+                <img src="./assets/images/gifts/sofisticador_aria.jpg" alt="Purificador de Água Premium" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Purificador de Água Premium</h3>
+                    <p class="price">R$ 349,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/colchao_casal_luxo.jpg" alt="Colchão Casal Luxo" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Colchão Casal Luxo</h3>
+                    <p class="price">R$ 1.249,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/geladeira_frost_free.jpg" alt="Geladeira Frost Free" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Geladeira Frost Free 340L</h3>
+                    <p class="price">R$ 3.199,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/sistema_som_5_1.jpg" alt="Sistema de Som 5.1" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Sistema de Som 5.1 Home Theater</h3>
+                    <p class="price">R$ 699,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/aspirador_pro.jpg" alt="Aspirador Profissional" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Aspirador Profissional</h3>
+                    <p class="price">R$ 429,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/painel_led_sala.jpg" alt="Painel LED Sala" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Painel LED para Sala</h3>
+                    <p class="price">R$ 499,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/roupa_cama_luxo.jpg" alt="Conjunto Cama Luxo" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Conjunto Cama Luxo King</h3>
+                    <p class="price">R$ 399,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/robo_cozinha.jpg" alt="Robô de Cozinha" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Robô de Cozinha Multifuncional</h3>
+                    <p class="price">R$ 2.499,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/airconditioner_split.jpg" alt="Ar Condicionado Split" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Ar Condicionado Split 12.000 BTUs</h3>
+                    <p class="price">R$ 1.199,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/camera_segurança.jpg" alt="Sistema de Câmeras" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Sistema de Câmeras Residenciais</h3>
+                    <p class="price">R$ 799,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/mesa_centro.jpg" alt="Mesa de Centro" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Mesa de Centro em Madeira</h3>
+                    <p class="price">R$ 459,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/kit_cozinha_prof.jpg" alt="Kit Cozinha Profissional" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Kit Cozinha Profissional</h3>
+                    <p class="price">R$ 329,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/estante_luxo.jpg" alt="Estante Luxo" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Estante Decorativa Luxo</h3>
+                    <p class="price">R$ 549,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/som_portatil.jpg" alt="Caixa Som Premium Portátil" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Caixa de Som Premium Portátil</h3>
+                    <p class="price">R$ 299,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vaso_decor.jpg" alt="Vaso Decorativo Grande" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Vaso Decorativo Grande</h3>
+                    <p class="price">R$ 239,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/horno_eletrico.jpg" alt="Forno Elétrico Profissional" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Forno Elétrico Profissional</h3>
+                    <p class="price">R$ 449,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/colcha_queen.jpg" alt="Colcha Queen" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Colcha Queen com Detalhes Bordados</h3>
+                    <p class="price">R$ 279,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/gerador_portatil.jpg" alt="Gerador Portátil" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Gerador Portátil de Energia</h3>
+                    <p class="price">R$ 2.499,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/kit_lareira_eletrica.jpg" alt="Lareira Elétrica" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Lareira Elétrica Decorativa</h3>
+                    <p class="price">R$ 339,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+            <!-- +20 novos presentes >= R$230 -->
+            <div class="product-card">
+                <img src="./assets/images/gifts/airfryer.jpg" alt="Air Fryer 7L" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Air Fryer 7L Digital</h3>
+                    <p class="price">R$ 549,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/aspirador robo.jpg" alt="Robô Aspirador Avançado" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Robô Aspirador Inteligente</h3>
+                    <p class="price">R$ 899,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Sofá Retrátil.jpg" alt="Sofá Retrátil" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Sofá Retrátil 3 Lugares</h3>
+                    <p class="price">R$ 2.499,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Mesa de Jantar 6 Lugares.jpg" alt="Mesa Jantar 6" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Mesa de Jantar 6 Lugares (Madeira)</h3>
+                    <p class="price">R$ 1.599,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Cama Queen Size.jpg" alt="Cama Queen" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Cama Queen Size Estofada</h3>
+                    <p class="price">R$ 1.999,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Guarda-Roupa Casal.jpg" alt="Guarda-Roupa" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Guarda-Roupa Casal 6 Portas</h3>
+                    <p class="price">R$ 2.999,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Rack para TV até 65.jpg" alt="Rack TV" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Rack para TV com Nichos</h3>
+                    <p class="price">R$ 799,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Projetor Portátil.jpg" alt="Projetor Portátil" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Projetor Portátil Full HD</h3>
+                    <p class="price">R$ 899,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Vitrola com Caixa de Som.jpg" alt="Vitrola" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Vitrola com Caixa de Som Bluetooth</h3>
+                    <p class="price">R$ 449,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/polaroid.jpg" alt="Polaroid" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Outros</span>
+                    <h3>Câmera Instantânea Retro</h3>
+                    <p class="price">R$ 349,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/Purificador de Ar.jpg" alt="Purificador de Ar" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Purificador de Ar Residencial</h3>
+                    <p class="price">R$ 399,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/umidificador.jpg" alt="Umidificador" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Quarto</span>
+                    <h3>Umidificador Ultrassônico</h3>
+                    <p class="price">R$ 249,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/vassora ele.jpg" alt="Vassoura Elétrica" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Limpeza</span>
+                    <h3>Vassoura Elétrica Profissional</h3>
+                    <p class="price">R$ 249,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/mesa 6 cadeiras.jpg" alt="Mesa 6 Cadeiras" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Mesa com 6 Cadeiras (Luxo)</h3>
+                    <p class="price">R$ 1.299,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/estante_luxo.jpg" alt="Estante Luxo" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Móveis</span>
+                    <h3>Estante Decorativa Luxo</h3>
+                    <p class="price">R$ 549,90</p>
+                    <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/images/gifts/horno_eletrico.jpg" alt="Forno Elétrico" loading="lazy">
+                <div class="product-info">
+                    <span class="category">Cozinha</span>
+                    <h3>Forno Elétrico Profissional</h3>
+                    <p class="price">R$ 449,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Toast de feedback de presente -->
     <div id="gift-toast" class="gift-toast" style="display:none;">
-        <h4 id="gift-toast-title">Presentes recebidos</h4>
-        <p id="gift-toast-msg">O conjunto de taças de cristal foi removido da sua seleção.</p>
+        <h4 id="gift-toast-title" style="margin:0 0 5px 0; font-size:1rem;">Presentes recebidos</h4>
+        <p id="gift-toast-msg" style="margin:0; font-size:0.9rem;">Mensagem aqui.</p>
     </div>
 
-    <!-- Modal de presentes escolhidos -->
     <div id="chosenGiftsModal" class="chosen-gifts-modal" style="display:none;">
         <div class="chosen-gifts-content">
             <span class="close-modal" id="closeChosenGifts">&times;</span>
-            <h2>Presentes escolhidos</h2>
+            <h2>Seus Escolhidos</h2>
             <div id="chosenGiftsList"></div>
             <p id="noChosenGiftsMsg" style="display:none; color:#888; text-align:center; margin-top:2em;">Nenhum
                 presente escolhido ainda.</p>
-        </div>
-        <!-- Confirmação de pagamento -->
-        <div id="confirmPaymentModal" class="confirm-payment-modal" style="display:none;">
-            <div class="confirm-payment-content">
-                <h3>Confirmar pagamento</h3>
-                <div id="confirmGiftList"></div>
-                <div id="confirmGiftTotal"></div>
-                <div id="confirmGiftMsg"></div>
-                <div id="confirmGiftCustom"></div>
-                <button id="confirmPayBtn" class="button primary-button">Confirmar e Pagar</button>
-                <button id="cancelPayBtn" class="button secondary-button">Cancelar</button>
-            </div>
         </div>
     </div>
 
@@ -1126,1157 +2162,243 @@
             <h2>Finalizar Presentes</h2>
             <div id="sideCheckoutSummary"></div>
             <div id="sideCheckoutTotal"></div>
-            <h3 style="margin-top:1.5em;">Forma de Pagamento</h3>
+
+            <h3 style="margin-top:1.5em; font-size:1rem; text-align:left;">Forma de Pagamento</h3>
             <div class="payment-methods">
-                <label><input type="radio" name="paymentMethod" value="cartao" checked> Cartão de Crédito</label><br>
-                <label><input type="radio" name="paymentMethod" value="pix"> Pix</label><br>
+                <label><input type="radio" name="paymentMethod" value="cartao" checked> Cartão de Crédito</label>
+                <label><input type="radio" name="paymentMethod" value="pix"> Pix</label>
                 <label><input type="radio" name="paymentMethod" value="boleto"> Boleto Bancário</label>
             </div>
-            <button class="button primary-button" id="sideCheckoutPayBtn" style="margin-top:1.5em;width:100%;">Pagar
-                Agora</button>
+
+            <div style="margin-top:20px;">
+                <label style="font-size:0.9rem; display:block; margin-bottom:5px;">Deixe uma mensagem:</label>
+                <textarea id="giftMessage"
+                    style="width:100%; padding:10px; border:1px solid #ccc; font-family:var(--font-main);"
+                    rows="3"></textarea>
+            </div>
+
+            <button class="button primary-button" id="sideCheckoutPayBtn"
+                style="margin-top:1.5em; width:100%;">Confirmar e Pagar</button>
         </div>
     </div>
 
     <script>
-        // Tratamento de carregamento de imagens
+        // Script de aumento de preço de 5%
+        (function () {
+            const prices = document.querySelectorAll('.price');
+            prices.forEach(el => {
+                const text = el.textContent || '';
+                let numStr = text.replace(/[^0-9\.,]/g, '').trim();
+                numStr = numStr.replace(/\./g, '').replace(/,/g, '.');
+                let v = parseFloat(numStr);
+                if (isNaN(v)) return;
+                v = Math.round(v * 1.05 * 100) / 100; // +5%
+                const formatted = v.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                el.textContent = 'R$ ' + formatted;
+            });
+        })();
+
         document.addEventListener('DOMContentLoaded', function () {
-            const images = document.querySelectorAll('.product-card img');
-            images.forEach(img => {
-                img.addEventListener('load', function () {
-                    this.classList.add('loaded');
-                });
-            });
-        });
+            // Toast
+            function showGiftToast(msg, title = 'Atualização') {
+                const toast = document.getElementById('gift-toast');
+                const toastMsg = document.getElementById('gift-toast-msg');
+                const toastTitle = document.getElementById('gift-toast-title');
+                toastMsg.textContent = msg;
+                toastTitle.textContent = title;
+                toast.style.display = 'block';
+                setTimeout(() => { toast.style.display = 'none'; }, 3000);
+            }
 
-        // Toast de feedback para presentes
-        function showGiftToast(msg, title = 'Presentes recebidos') {
-            const toast = document.getElementById('gift-toast');
-            const toastMsg = document.getElementById('gift-toast-msg');
-            const toastTitle = document.getElementById('gift-toast-title');
-            toastMsg.textContent = msg;
-            toastTitle.textContent = title;
-            toast.style.display = 'block';
-            setTimeout(() => { toast.classList.add('show'); }, 10);
-            setTimeout(() => {
-                toast.classList.remove('show');
-                setTimeout(() => { toast.style.display = 'none'; }, 400);
-            }, 3200);
-        }
-
-        // Alternância do botão de presente: escolher <-> escolhido
-        const giftButtons = document.querySelectorAll('.product-card .button, .product-card .disabled-button');
-        giftButtons.forEach(btn => {
-            btn.addEventListener('click', function (e) {
-                e.preventDefault();
-                const isChosen = btn.classList.contains('disabled-button');
-                if (isChosen) {
-                    // Volta ao normal
-                    btn.classList.remove('disabled-button');
-                    btn.classList.add('secondary-button');
-                    btn.disabled = false;
-                    btn.innerHTML = '<i class="fas fa-gift"></i>Escolher Presente';
-                    showGiftToast('O presente foi removido da sua seleção.', 'Removido');
-                } else {
-                    // Escolher presente
-                    btn.classList.remove('secondary-button');
-                    btn.classList.add('disabled-button');
-                    btn.disabled = false;
-                    btn.innerHTML = '<i class="fas fa-gift"></i>Presente Escolhido!';
-                    showGiftToast('O presente foi adicionado à sua seleção!');
-                }
-            });
-        });
-
-        // Filtro dinâmico por categoria
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const productCards = document.querySelectorAll('.gift-list .product-card');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const categoria = btn.textContent.trim();
-                productCards.forEach(card => {
-                    const cat = card.querySelector('.category').textContent.trim();
-                    if (categoria === 'Todos' || cat === categoria) {
-                        card.style.display = '';
+            // Botões de Presente
+            const giftButtons = document.querySelectorAll('.product-card .button');
+            giftButtons.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const isChosen = btn.classList.contains('disabled-button');
+                    if (isChosen) {
+                        btn.classList.remove('disabled-button');
+                        btn.classList.add('secondary-button');
+                        btn.disabled = false;
+                        btn.innerHTML = '<i class="fas fa-gift"></i> Escolher Presente';
+                        showGiftToast('Removido da seleção.', 'Atualizado');
                     } else {
-                        card.style.display = 'none';
+                        btn.classList.remove('secondary-button');
+                        btn.classList.add('disabled-button');
+                        btn.innerHTML = '<i class="fas fa-check"></i> Escolhido!';
+                        showGiftToast('Adicionado à seleção!', 'Sucesso');
                     }
+                    updateGiftCount();
                 });
-                updateGiftCount();
             });
-        });
 
-        // Filtro por nome (busca) e ordenação por preço
-        const searchInput = document.getElementById('searchInput');
-        const sortPrice = document.getElementById('sortPrice');
-        let currentCategory = 'Todos';
-        let currentSearch = '';
-        let currentSort = 'default';
-
-        function normalize(str) {
-            return str.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
-        }
-
-        function filterAndSortGifts() {
-            let cards = Array.from(document.querySelectorAll('.gift-list .product-card'));
-            // Filtro por categoria
-            cards.forEach(card => {
-                const cat = card.querySelector('.category').textContent.trim();
-                card.style.display = (currentCategory === 'Todos' || cat === currentCategory) ? '' : 'none';
-            });
-            // Filtro por nome
-            if (currentSearch) {
-                cards.forEach(card => {
-                    const name = card.querySelector('h3').textContent;
-                    if (!normalize(name).includes(normalize(currentSearch))) {
-                        card.style.display = 'none';
-                    }
-                });
-            }
-            // Ordenação por preço
-            if (currentSort !== 'default') {
-                let visibleCards = cards.filter(card => card.style.display !== 'none');
-                visibleCards.sort((a, b) => {
-                    const priceA = parseFloat(a.querySelector('.price').textContent.replace(/[^0-9,]/g, '').replace(',', '.'));
-                    const priceB = parseFloat(b.querySelector('.price').textContent.replace(/[^0-9,]/g, '').replace(',', '.'));
-                    return currentSort === 'asc' ? priceA - priceB : priceB - priceA;
-                });
-                const giftList = document.querySelector('.gift-list');
-                visibleCards.forEach(card => giftList.appendChild(card));
-            }
-            updateGiftCount();
-        }
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentCategory = btn.textContent.trim();
-                filterAndSortGifts();
-            });
-        });
-        if (searchInput) {
-            searchInput.addEventListener('input', function () {
-                currentSearch = searchInput.value;
-                filterAndSortGifts();
-            });
-        }
-        if (sortPrice) {
-            sortPrice.addEventListener('change', function () {
-                currentSort = sortPrice.value;
-                filterAndSortGifts();
-            });
-        }
-        // Alternância de visualização (grade/lista)
-        const viewToggle = document.getElementById('viewToggle');
-        const iconGrid = document.getElementById('iconGrid');
-        const iconList = document.getElementById('iconList');
-        const giftListSection = document.querySelector('.gift-list');
-        let isGrid = true;
-        if (viewToggle && giftListSection) {
-            viewToggle.addEventListener('click', function () {
-                isGrid = !isGrid;
-                if (isGrid) {
-                    giftListSection.classList.remove('list-view');
-                    iconGrid.style.display = '';
-                    iconList.style.display = 'none';
-                } else {
-                    giftListSection.classList.add('list-view');
-                    iconGrid.style.display = 'none';
-                    iconList.style.display = '';
-                }
-            });
-        }
-        // Atualiza a contagem de presentes encontrados
-        function updateGiftCount() {
-            const count = Array.from(document.querySelectorAll('.gift-list .product-card'))
-                .filter(card => card.style.display !== 'none').length;
-            const info = document.querySelector('.results-info p');
-            if (info) {
-                info.textContent = `${count} presente${count === 1 ? '' : 's'} encontrado${count === 1 ? '' : 's'}`;
-            }
-        }
-        // Atualiza ao carregar e sempre que filtrar/buscar/ordenar
-        document.addEventListener('DOMContentLoaded', updateGiftCount);
-        // Garante atualização após cada ação
-        [searchInput, sortPrice, ...filterBtns].forEach(el => {
-            if (el) el.addEventListener('input' in el ? 'input' : 'click', updateGiftCount);
-        });
-        // Inicializa filtro ao carregar
-        document.addEventListener('DOMContentLoaded', filterAndSortGifts);
-        // Sempre inicia todos os botões como 'Escolher Presente'
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.product-card .button, .product-card .disabled-button').forEach(btn => {
-                btn.classList.remove('disabled-button');
-                btn.classList.add('secondary-button');
-                btn.disabled = false;
-                btn.innerHTML = '<i class="fas fa-gift"></i>Escolher Presente';
-            });
-        });
-
-        // Modal de presentes escolhidos
-        const viewChosenGifts = document.getElementById('viewChosenGifts');
-        const chosenGiftsModal = document.getElementById('chosenGiftsModal');
-        const closeChosenGifts = document.getElementById('closeChosenGifts');
-        const chosenGiftsList = document.getElementById('chosenGiftsList');
-        const noChosenGiftsMsg = document.getElementById('noChosenGiftsMsg');
-
-        function updateChosenGiftsModal() {
-            const chosen = Array.from(document.querySelectorAll('.product-card .button.disabled-button'));
-            chosenGiftsList.innerHTML = '';
-            let total = 0;
-            if (chosen.length === 0) {
-                noChosenGiftsMsg.style.display = '';
-                // Remove total se não houver presentes
-                const totalDiv = document.getElementById('chosenGiftsTotal');
-                if (totalDiv) totalDiv.remove();
-                return;
-            }
-            noChosenGiftsMsg.style.display = 'none';
-            chosen.forEach((btn, idx) => {
-                const card = btn.closest('.product-card');
-                const info = card.querySelector('.product-info');
-                const name = info.querySelector('h3').textContent;
-                const priceText = info.querySelector('.price').textContent;
-                const price = parseFloat(priceText.replace(/[^0-9,]/g, '').replace(',', '.'));
-                total += price;
-                const img = card.querySelector('img');
-                const imgSrc = img ? img.src : '';
-                // Cria linha do produto com miniatura
-                const prodDiv = document.createElement('div');
-                prodDiv.className = 'chosen-product-row';
-                const cardId = 'chosen-prod-' + idx + '-' + name.replace(/\s+/g, '-').toLowerCase();
-                card.setAttribute('data-chosen-id', cardId);
-                prodDiv.innerHTML = `
-                    <img src="${imgSrc}" alt="${name}" class="chosen-prod-thumb">
-                    <a href="#" class="chosen-prod-name" data-goto="${cardId}">${name}</a>
-                    <span class="chosen-prod-price">${priceText}</span>
-                    <button class="chosen-remove-btn" title="Remover do carrinho"><i class="fas fa-trash"></i></button>
-                `;
-                // Clique na descrição: scroll até o produto
-                prodDiv.querySelector('.chosen-prod-name').onclick = function (e) {
-                    e.preventDefault();
-                    chosenGiftsModal.style.display = 'none';
-                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    card.classList.add('highlight-cart-jump');
-                    setTimeout(() => card.classList.remove('highlight-cart-jump'), 1200);
-                };
-                // Clique na lixeira: remove do carrinho
-                prodDiv.querySelector('.chosen-remove-btn').onclick = function (e) {
-                    e.preventDefault();
-                    // Simula clique no botão do card para remover
-                    btn.click();
-                    // Atualiza modal
-                    updateChosenGiftsModal();
-                };
-                chosenGiftsList.appendChild(prodDiv);
-            });
-            // Exibe total no final da lista
-            let totalDiv = document.getElementById('chosenGiftsTotal');
-            if (!totalDiv) {
-                totalDiv = document.createElement('div');
-                totalDiv.id = 'chosenGiftsTotal';
-                totalDiv.className = 'chosen-gifts-total';
-                chosenGiftsList.parentNode.appendChild(totalDiv);
-            }
-            totalDiv.innerHTML = `<span>Total:</span><span class='chosen-total-value'>R$ ${total.toFixed(2).replace('.', ',')}</span>`;
-        }
-        // Confirmação de pagamento
-        function showConfirmPaymentModal() {
-            const confirmModal = document.getElementById('confirmPaymentModal');
-            const confirmGiftList = document.getElementById('confirmGiftList');
-            const confirmGiftTotal = document.getElementById('confirmGiftTotal');
-            const confirmGiftMsg = document.getElementById('confirmGiftMsg');
-            const confirmGiftCustom = document.getElementById('confirmGiftCustom');
-            const chosen = Array.from(document.querySelectorAll('.product-card .button.disabled-button'));
-            let total = 0;
-            confirmGiftList.innerHTML = '';
-            chosen.forEach(btn => {
-                const card = btn.closest('.product-card');
-                const info = card.querySelector('.product-info');
-                const name = info.querySelector('h3').textContent;
-                const priceText = info.querySelector('.price').textContent;
-                const price = parseFloat(priceText.replace(/[^0-9,]/g, '').replace(',', '.'));
-                total += price;
-                const div = document.createElement('div');
-                div.className = 'confirm-gift-row';
-                div.innerHTML = `<span>${name}</span><span>${priceText}</span>`;
-                confirmGiftList.appendChild(div);
-            });
-            // Valor personalizado
-            const customValue = parseFloat(document.getElementById('customValue').value.replace(',', '.')) || 0;
-            if (customValue > 0) {
-                total += customValue;
-                confirmGiftCustom.innerHTML = `<span>Valor personalizado:</span><span>R$ ${customValue.toFixed(2).replace('.', ',')}</span>`;
-            } else {
-                confirmGiftCustom.innerHTML = '';
-            }
-            confirmGiftTotal.innerHTML = `<strong>Total:</strong> <span style='color:#388e3c;'>R$ ${total.toFixed(2).replace('.', ',')}</span>`;
-            // Mensagem
-            const msg = document.getElementById('giftMessage').value.trim();
-            confirmGiftMsg.innerHTML = msg ? `<strong>Mensagem:</strong> <span>"${msg}"</span>` : '';
-            confirmModal.style.display = 'flex';
-            // Botões
-            document.getElementById('confirmPayBtn').onclick = function (e) {
-                // Garante user gesture: abre a nova aba imediatamente
-                const chosen = Array.from(document.querySelectorAll('.product-card .button.disabled-button'));
-                let total = 0;
-                const items = chosen.map(btn => {
-                    const card = btn.closest('.product-card');
-                    const info = card.querySelector('.product-info');
-                    const name = info.querySelector('h3').textContent;
-                    const priceText = info.querySelector('.price').textContent;
-                    const price = parseFloat(priceText.replace(/[^0-9,]/g, '').replace(',', '.'));
-                    total += price;
-                    return name + ' (' + priceText + ')';
-                });
-                // Valor personalizado
-                const customValue = parseFloat(document.getElementById('customValue').value.replace(',', '.')) || 0;
-                if (customValue > 0) {
-                    total += customValue;
-                }
-                // Mensagem
-                const msg = document.getElementById('giftMessage').value.trim();
-                const itemsParam = encodeURIComponent(items.join(', '));
-                const url = 'https://pagamento.exemplo.com/checkout?valor=' + encodeURIComponent(total.toFixed(2)) + (msg ? ('&msg=' + encodeURIComponent(msg)) : '') + '&itens=' + itemsParam;
-                // Abre a nova aba imediatamente
-                window.open(url, '_blank', 'noopener');
-                // Fecha modais e mostra toast
-                document.getElementById('confirmPaymentModal').style.display = 'none';
-                document.getElementById('chosenGiftsModal').style.display = 'none';
-                showGiftToast('Você será redirecionado para o pagamento. Obrigado pelo carinho!', 'Pagamento');
-            };
-            document.getElementById('cancelPayBtn').onclick = function (e) {
-                e.preventDefault();
-                confirmModal.style.display = 'none';
-            };
-        }
-        viewChosenGifts.addEventListener('click', function (e) {
-            e.preventDefault();
-            updateChosenGiftsModal();
-            chosenGiftsModal.style.display = 'flex';
-        });
-        closeChosenGifts.addEventListener('click', function () {
-            chosenGiftsModal.style.display = 'none';
-        });
-        window.addEventListener('click', function (e) {
-            if (e.target === chosenGiftsModal) {
-                chosenGiftsModal.style.display = 'none';
-            }
-        });
-
-        // Side checkout (lateral)
-        const finishGiftsBtn = document.getElementById('finishGiftsBtn');
-        const sideCheckout = document.getElementById('sideCheckout');
-        const closeSideCheckout = document.getElementById('closeSideCheckout');
-        const sideCheckoutSummary = document.getElementById('sideCheckoutSummary');
-        const sideCheckoutTotal = document.getElementById('sideCheckoutTotal');
-
-        if (finishGiftsBtn) {
-            finishGiftsBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                // Monta resumo dos presentes escolhidos
-                const chosen = Array.from(document.querySelectorAll('.product-card .button.disabled-button'));
-                if (chosen.length === 0) {
-                    showGiftToast('Selecione ao menos um presente para finalizar.', 'Carrinho vazio');
-                    return;
-                }
-                let total = 0;
-                sideCheckoutSummary.innerHTML = '';
-                chosen.forEach(btn => {
-                    const card = btn.closest('.product-card');
-                    const info = card.querySelector('.product-info');
-                    const name = info.querySelector('h3').textContent;
-                    const priceText = info.querySelector('.price').textContent;
-                    const price = parseFloat(priceText.replace(/[^0-9,]/g, '').replace(',', '.'));
-                    total += price;
-                    const div = document.createElement('div');
-                    div.className = 'side-checkout-row';
-                    div.innerHTML = `<span>${name}</span><span>${priceText}</span>`;
-                    sideCheckoutSummary.appendChild(div);
-                });
-                sideCheckoutTotal.innerHTML = `<strong>Total:</strong> <span style='color:#388e3c;'>R$ ${total.toFixed(2).replace('.', ',')}</span>`;
-                sideCheckout.style.display = 'flex';
-            });
-        }
-        if (closeSideCheckout) {
-            closeSideCheckout.onclick = function () {
-                sideCheckout.style.display = 'none';
-            };
-        }
-    </script>
-    <style>
-        /* Estilos para debug de imagens */
-        img {
-            min-height: 50px;
-            background: #f0f0f0;
-        }
-
-        img:not([src]),
-        img[src=""] {
-            border: 2px dashed red;
-            position: relative;
-        }
-
-        img:not([src])::after,
-        img[src=""]::after {
-            content: 'Imagem não carregada';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: red;
-            font-size: 12px;
-        }
-
-        /* Estilos para as imagens dos produtos */
-        .product-card img {
-            transition: opacity 0.3s ease;
-            opacity: 0;
-            background: #f5f5f5 url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ccc"><path d="M2 6H0v5h.01L0 20c0 1.1.9 2 2 2h18v-2H2V6zm20-2h-8l-2-2H6c-1.1 0-1.99.9-1.99 2L4 16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7 15l4.5-6 3.5 4.51 2.5-3.01L21 15H7z"/></svg>') center/50% no-repeat;
-        }
-
-        .product-card img.loaded {
-            opacity: 1;
-        }
-
-        .chosen-gifts-modal {
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.55);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.3s;
-        }
-
-        .chosen-gifts-content {
-            background: linear-gradient(135deg, #fff8f5 0%, #f7e6e1 100%);
-            border-radius: 22px;
-            max-width: 95vw;
-            width: 430px;
-            max-height: 82vh;
-            overflow-y: auto;
-            padding: 2.2em 1.2em 1.2em 1.2em;
-            box-shadow: 0 10px 36px 0 rgba(180, 138, 120, 0.18), 0 1.5px 8px 0 #e7cfc2;
-            position: relative;
-            animation: fadeInModal 0.3s;
-            border: 2.5px solid #e7cfc2;
-            transition: box-shadow 0.2s, border 0.2s;
-        }
-
-        @keyframes fadeInModal {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: none;
-            }
-        }
-
-        .close-modal {
-            position: absolute;
-            right: 18px;
-            top: 12px;
-            font-size: 2em;
-            color: #b48a78;
-            cursor: pointer;
-            transition: color 0.2s;
-            background: none;
-            border: none;
-            outline: none;
-        }
-
-        .close-modal:hover {
-            color: #c00;
-        }
-
-        .chosen-gifts-content h2 {
-            text-align: center;
-            margin-bottom: 1.2em;
-            font-size: 1.7em;
-            color: #b48a78;
-            letter-spacing: 0.5px;
-            font-weight: 800;
-            text-shadow: 0 2px 8px #f7e6e1;
-        }
-
-        #chosenGiftsList {
-            display: flex;
-            flex-direction: column;
-            gap: 0.9em;
-            margin-bottom: 1.2em;
-        }
-
-        .chosen-product-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.85em 0.5em 0.85em 0.7em;
-            border-bottom: 1.5px solid #f2e2d7;
-            font-size: 1.09em;
-            color: #b48a78;
-            font-weight: 500;
-            gap: 0.7em;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px #e7cfc22a;
-            transition: box-shadow 0.2s, background 0.2s;
-            position: relative;
-        }
-
-        .chosen-product-row:last-child {
-            border-bottom: none;
-        }
-
-        .chosen-product-row:hover {
-            background: #f7e6e1;
-            box-shadow: 0 4px 18px #e7cfc244;
-        }
-
-        .chosen-prod-name {
-            flex: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin-right: 1em;
-            color: #b48a78;
-            text-decoration: none;
-            cursor: pointer;
-            transition: color 0.2s, background 0.2s;
-            font-weight: 600;
-            border-radius: 6px;
-            padding: 0.18em 0.4em;
-            background: #faf8f7;
-            box-shadow: 0 1px 4px #e7cfc222;
-        }
-
-        .chosen-prod-name:hover {
-            color: #fff;
-            background: #b48a78;
-            text-decoration: none;
-            box-shadow: 0 2px 8px #b48a7822;
-        }
-
-        .chosen-prod-price {
-            min-width: 90px;
-            text-align: right;
-            color: #4caf50;
-            font-weight: 700;
-            font-size: 1.08em;
-            background: #eafbe7;
-            border-radius: 6px;
-            padding: 0.18em 0.7em;
-            box-shadow: 0 1px 4px #e7cfc222;
-        }
-
-        .chosen-remove-btn {
-            background: none;
-            border: none;
-            color: #b48a78;
-            font-size: 1.18em;
-            margin-left: 0.2em;
-            cursor: pointer;
-            padding: 0.2em 0.5em;
-            border-radius: 6px;
-            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-            box-shadow: 0 1px 4px #e7cfc222;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .chosen-remove-btn:hover {
-            background: #ffeaea;
-            color: #c00;
-            box-shadow: 0 2px 8px #c002;
-        }
-
-        .chosen-gifts-total {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.22em;
-            color: #b48a78;
-            font-weight: 800;
-            margin: 1.2em 0 0.7em 0;
-            border-top: 2px solid #e7cfc2;
-            padding-top: 0.7em;
-            background: #faf8f7;
-            border-radius: 8px;
-            box-shadow: 0 1px 4px #e7cfc222;
-        }
-
-        .chosen-total-value {
-            color: #388e3c;
-            font-size: 1.18em;
-            font-weight: 800;
-        }
-
-        .chosen-finish-btn {
-            width: 100%;
-            margin-top: 0.7em;
-            font-size: 1.13em;
-            padding: 0.9em 0;
-            border-radius: 10px;
-            background: linear-gradient(90deg, #b48a78 0%, #e7cfc2 100%);
-            color: #fff;
-            border: none;
-            box-shadow: 0 2px 8px #b48a7822;
-            transition: background 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-shadow: 0 2px 8px #b48a7822;
-        }
-
-        .chosen-finish-btn:hover {
-            background: linear-gradient(90deg, #a06c5a 0%, #d6b8a6 100%);
-            box-shadow: 0 4px 18px #b48a7822;
-        }
-
-        .highlight-cart-jump {
-            animation: highlightCartJump 1.1s;
-            box-shadow: 0 0 0 4px #ffeaea, 0 2px 12px #b48a7822;
-            border-radius: 12px;
-        }
-
-        /* Scrollbar customizada para o modal */
-        .chosen-gifts-content::-webkit-scrollbar {
-            width: 8px;
-            background: #f7e6e1;
-            border-radius: 8px;
-        }
-
-        .chosen-gifts-content::-webkit-scrollbar-thumb {
-            background: #e7cfc2;
-            border-radius: 8px;
-        }
-
-        @media (max-width: 600px) {
-            .chosen-gifts-content {
-                width: 98vw;
-                padding: 1.2em 0.2em 1.2em 0.2em;
-            }
-
-            #chosenGiftsList .product-card img {
-                width: 54px;
-                height: 54px;
-            }
-
-            #chosenGiftsList .product-info h3 {
-                font-size: 1em;
-            }
-        }
-
-        .chosen-extra-fields {
-            margin: 1.2em 0 0.5em 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.7em;
-            background: #faf8f7;
-            border-radius: 12px;
-            padding: 1em 0.7em 0.7em 0.7em;
-            box-shadow: 0 1px 6px #e7cfc222;
-        }
-
-        .chosen-label-field {
-            font-size: 1em;
-            color: #b48a78;
-            font-weight: 600;
-            margin-bottom: 0.2em;
-        }
-
-        #giftMessage {
-            border-radius: 8px;
-            border: 1.5px solid #e7cfc2;
-            padding: 0.6em;
-            font-size: 1em;
-            resize: vertical;
-            background: #fff;
-            color: #b48a78;
-            box-shadow: 0 1px 4px #e7cfc222;
-        }
-
-        .custom-value-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 0.4em;
-            background: #fff;
-            border-radius: 8px;
-            border: 1.5px solid #e7cfc2;
-            padding: 0.3em 0.7em;
-            width: fit-content;
-            box-shadow: 0 1px 4px #e7cfc222;
-        }
-
-        #customValue {
-            border: none;
-            outline: none;
-            font-size: 1em;
-            color: #b48a78;
-            background: transparent;
-            width: 90px;
-            padding: 0.2em 0.1em;
-        }
-
-        #customValue::-webkit-input-placeholder {
-            color: #b48a78;
-        }
-
-        #customValue:-ms-input-placeholder {
-            color: #b48a78;
-        }
-
-        #customValue::placeholder {
-            color: #b48a78;
-        }
-
-        .chosen-prod-thumb {
-            width: 38px;
-            height: 38px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-right: 0.7em;
-            box-shadow: 0 1px 4px #e7cfc222;
-            border: 1.5px solid #f2e2d7;
-            background: #fff;
-        }
-
-        .confirm-payment-modal {
-            position: fixed;
-            z-index: 10000;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.55);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.3s;
-        }
-
-        .confirm-payment-content {
-            background: #fff;
-            border-radius: 18px;
-            max-width: 95vw;
-            width: 370px;
-            padding: 2em 1.2em 1.2em 1.2em;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-            position: relative;
-            animation: fadeInModal 0.3s;
-            border: 2px solid #e7cfc2;
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-        }
-
-        .confirm-payment-content h3 {
-            text-align: center;
-            color: #b48a78;
-            font-size: 1.3em;
-            margin-bottom: 0.7em;
-        }
-
-        .confirm-gift-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1em;
-            color: #b48a78;
-            margin-bottom: 0.3em;
-        }
-
-        #confirmGiftTotal,
-        #confirmGiftMsg,
-        #confirmGiftCustom {
-            font-size: 1.08em;
-            margin-top: 0.5em;
-            color: #b48a78;
-        }
-
-        #confirmGiftTotal strong {
-            color: #b48a78;
-        }
-
-        #confirmGiftTotal span {
-            color: #388e3c;
-            font-weight: 700;
-        }
-
-        #confirmPayBtn,
-        #cancelPayBtn {
-            margin-top: 0.7em;
-        }
-
-        #cancelPayBtn {
-            background: #faf8f7;
-            color: #b48a78;
-            border: 1.5px solid #e7cfc2;
-        }
-
-        #cancelPayBtn:hover {
-            background: #f7e6e1;
-        }
-
-        .side-checkout {
-            position: fixed;
-            top: 0;
-            right: 0;
-            height: 100vh;
-            width: 410px;
-            background: rgba(0, 0, 0, 0.18);
-            z-index: 10001;
-            display: flex;
-            align-items: stretch;
-            justify-content: flex-end;
-            transition: background 0.3s;
-        }
-
-        .side-checkout-content {
-            background: #fff;
-            width: 410px;
-            max-width: 98vw;
-            height: 100vh;
-            box-shadow: -8px 0 32px #b48a7822;
-            padding: 2.2em 1.5em 1.5em 1.5em;
-            border-radius: 18px 0 0 18px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            animation: slideInSideCheckout 0.3s;
-        }
-
-        @keyframes slideInSideCheckout {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-
-            to {
-                transform: none;
-                opacity: 1;
-            }
-        }
-
-        .close-side-checkout {
-            position: absolute;
-            right: 18px;
-            top: 12px;
-            font-size: 2em;
-            color: #b48a78;
-            cursor: pointer;
-            background: none;
-            border: none;
-            outline: none;
-            transition: color 0.2s;
-        }
-
-        .close-side-checkout:hover {
-            color: #c00;
-        }
-
-        .side-checkout-content h2 {
-            text-align: center;
-            margin-bottom: 1.2em;
-            font-size: 1.5em;
-            color: #b48a78;
-            font-weight: 800;
-        }
-
-        .side-checkout-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.08em;
-            color: #b48a78;
-            margin-bottom: 0.5em;
-            padding-bottom: 0.3em;
-            border-bottom: 1px solid #f2e2d7;
-        }
-
-        .side-checkout-row:last-child {
-            border-bottom: none;
-        }
-
-        #sideCheckoutTotal {
-            font-size: 1.15em;
-            color: #b48a78;
-            font-weight: 700;
-            margin-top: 1.2em;
-            margin-bottom: 1.2em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #sideCheckoutTotal strong {
-            color: #b48a78;
-        }
-
-        #sideCheckoutTotal span {
-            color: #388e3c;
-            font-weight: 700;
-        }
-
-        .payment-methods {
-            margin-top: 0.7em;
-            font-size: 1.08em;
-            color: #b48a78;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5em;
-        }
-
-        @media (max-width: 600px) {
-            .chosen-gifts-content {
-                width: 99vw;
-                padding: 1.1em 0.1em 1.1em 0.1em;
-                border-radius: 0;
-                max-height: 100vh;
-            }
-
-            .chosen-product-row {
-                font-size: 0.98em;
-                padding: 0.7em 0.2em 0.7em 0.2em;
-                border-radius: 0;
-            }
-
-            .chosen-prod-thumb {
-                width: 32px;
-                height: 32px;
-                margin-right: 0.4em;
-            }
-
-            .chosen-finish-btn {
-                position: fixed;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: 100vw;
-                border-radius: 0;
-                margin: 0;
-                z-index: 10001;
-                box-shadow: 0 -2px 12px #b48a7822;
-                font-size: 1.1em;
-                padding: 1.1em 0;
-            }
-
-            .chosen-gifts-total {
-                margin-bottom: 3.2em;
-            }
-
-            .side-checkout {
-                width: 100vw;
-            }
-
-            .side-checkout-content {
-                width: 100vw;
-                border-radius: 0;
-            }
-        }
-    </style>
-        <section id="cannon-game" class="container" style="text-align: center; margin-top: 50px; padding: 20px; background-color: #fff8f5; border-radius: 15px;">
-    <h2 style="color: #b48a78; font-size: 2em;">Não sabe o que dar de presente?</h2>
-    <p style="color: #b48a78; margin-bottom: 20px;">Ajuste a força e atire nosso amor o mais longe que puder!</p>
-    <canvas id="cannonCanvas" width="800" height="300" style="background-color: #f0f8ff; border: 2px solid #e7cfc2; border-radius: 10px;"></canvas>
-    <div class="controls" style="margin-top: 20px; display: flex; justify-content: center; align-items: center; gap: 15px;">
-        <label for="power" style="color: #b48a78; font-size: 1.2em;">Força:</label>
-        <input type="range" id="power" name="power" min="10" max="100" value="100" style="width: 300px;">
-        <label for="angle" style="color: #b48a78; font-size: 1.2em;">Ângulo:</label>
-        <input type="range" id="angle" name="angle" min="-90" max="0" value="-45" style="width: 300px;">
-        <button id="fireButton" class="button primary-button">Atirar!</button>
-        <button id="resetButton" class="button secondary-button">Zerar</button>
-    </div>
-    <div class="game-info" style="margin-top: 20px; font-size: 1.2em; color: #b48a78;">
-        <p>Distância: <span id="distance" style="font-weight: bold;">0</span>m</p>
-        <p>Valor do Presente: R$ <span id="giftValue" style="font-weight: bold; color: #4caf50;">0,00</span></p>
-        <button id="giftButton" class="button button-disabled-gray" style="margin-top: 10px;" disabled>Presentear este valor</button>
-    </div>
-</section>
-
-<style>
-    .button-disabled-gray, .button-disabled-gray:hover {
-        background: #E0E0E0 !important;
-        color: #828282 !important;
-        cursor: not-allowed !important;
-        background-image: none !important;
-        box-shadow: none !important;
+    // Busca
+    document.getElementById('searchInput').addEventListener('input', function (e) {
+    const term = e.target.value.toLowerCase();
+    let count = 0;
+    productCards.forEach(card => {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    if (title.includes(term)) {
+    card.style.display = '';
+    count++;
+    } else {
+    card.style.display = 'none';
     }
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const canvas = document.getElementById('cannonCanvas');
-        const ctx = canvas.getContext('2d');
-        const powerSlider = document.getElementById('power');
-        const fireButton = document.getElementById('fireButton');
-        const distanceDisplay = document.getElementById('distance');
-        const giftValueDisplay = document.getElementById('giftValue');
-        const giftButton = document.getElementById('giftButton');
-        const angleSlider = document.getElementById('angle');
-        const resetButton = document.getElementById('resetButton');
-
-        const coupleImg = new Image();
-        coupleImg.src = 'src/assets/images/couple/1.jpg'; 
-
-        let cannonball = {
-            x: 60,
-            y: canvas.height - 40,
-            radius: 20,
-            dx: 0,
-            dy: 0,
-            gravity: 0.15,
-            isFlying: false,
-            angle: (angleSlider.value) * Math.PI / 180
-        };
-
-        let cameraX = 0;
-        let cameraY = 0;
-
-        angleSlider.addEventListener('input', function() {
-            if (!cannonball.isFlying) {
-                cannonball.angle = this.value * Math.PI / 180;
-            }
-        });
-
-        function drawCannon() {
-            ctx.save();
-            ctx.translate(60, canvas.height - 40);
-            ctx.rotate(cannonball.angle);
-            ctx.fillStyle = '#5a3a31';
-            ctx.beginPath();
-            ctx.rect(0, -10, 60, 20);
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(0, 0, 25, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.restore();
-        }
-
-        function drawCannonball() {
-            if (!coupleImg.complete) {
-                ctx.fillStyle = 'red';
-                ctx.beginPath();
-                ctx.arc(cannonball.x, cannonball.y, cannonball.radius, 0, Math.PI * 2);
-                ctx.fill();
-                return;
-            }
-            ctx.save();
-            ctx.beginPath();
-            ctx.arc(cannonball.x, cannonball.y, cannonball.radius, 0, Math.PI * 2);
-            ctx.clip();
-            ctx.drawImage(coupleImg, cannonball.x - cannonball.radius, cannonball.y - cannonball.radius, cannonball.radius * 2, cannonball.radius * 2);
-            ctx.restore();
-        }
-        
-        function drawGround() {
-            ctx.fillStyle = '#8c6d5e';
-            ctx.fillRect(-5000, canvas.height - 20, 10000, 20);
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.save();
-
-            if (cannonball.isFlying) {
-                if (cannonball.x > canvas.width / 2) {
-                    cameraX = canvas.width / 2 - cannonball.x;
-                }
-                // Follow ball vertically, but don't pan down past the ground
-                cameraY = Math.min(0, canvas.height / 2 - cannonball.y);
-            } else {
-                // When not flying, reset vertical camera to ground level
-                cameraY = 0;
-            }
-            ctx.translate(cameraX, cameraY);
-
-            drawGround();
-            drawCannon();
-
-            if (cannonball.isFlying) {
-                cannonball.dy += cannonball.gravity;
-                cannonball.x += cannonball.dx;
-                cannonball.y += cannonball.dy;
-
-                const distance = Math.max(0, Math.round((cannonball.x - 60) / 10));
-                const giftValue = (distance * 5);
-                distanceDisplay.textContent = distance;
-                giftValueDisplay.textContent = giftValue.toFixed(2).replace('.', ',');
-
-                if (cannonball.y + cannonball.radius > canvas.height - 20) {
-                    cannonball.isFlying = false;
-                    if (giftValue > 0) {
-                        giftButton.disabled = false;
-                        giftButton.classList.remove('button-disabled-gray');
-                        giftButton.classList.add('secondary-button');
-                    }
-                }
-            }
-            
-            drawCannonball();
-            ctx.restore();
-            requestAnimationFrame(animate);
-        }
-
-        fireButton.addEventListener('click', function () {
-            if (!cannonball.isFlying) {
-                cameraX = 0;
-                cameraY = 0;
-                const power = powerSlider.value / 5;
-                cannonball.x = 60;
-                cannonball.y = canvas.height - 40;
-                cannonball.dx = power * Math.cos(cannonball.angle);
-                cannonball.dy = power * Math.sin(cannonball.angle);
-                cannonball.isFlying = true;
-                giftButton.disabled = true;
-                giftButton.classList.add('button-disabled-gray');
-                giftButton.classList.remove('secondary-button');
-            }
-        });
-
-        giftButton.addEventListener('click', function() {
-            const giftValue = giftValueDisplay.textContent;
-            const sideCheckout = document.getElementById('sideCheckout');
-            const sideCheckoutSummary = document.getElementById('sideCheckoutSummary');
-            const sideCheckoutTotal = document.getElementById('sideCheckoutTotal');
-            sideCheckoutSummary.innerHTML = '';
-            const div = document.createElement('div');
-            div.className = 'side-checkout-row';
-            div.innerHTML = `<span>Presente do Canhão</span><span>R$ ${giftValue}</span>`;
-            sideCheckoutSummary.appendChild(div);
-            sideCheckoutTotal.innerHTML = `<strong>Total:</strong> <span style='color:#388e3c;'>R$ ${giftValue}</span>`;
-            sideCheckout.style.display = 'flex';
-        });
-
-        resetButton.addEventListener('click', function() {
-            cameraX = 0;
-            cameraY = 0;
-            distanceDisplay.textContent = '0';
-            giftValueDisplay.textContent = '0,00';
-            giftButton.disabled = true;
-            giftButton.classList.add('button-disabled-gray');
-            giftButton.classList.remove('secondary-button');
-            powerSlider.value = 100;
-            angleSlider.value = -45;
-            cannonball.isFlying = false;
-            cannonball.x = 60;
-            cannonball.y = canvas.height - 40;
-            cannonball.angle = -45 * Math.PI / 180;
-        });
-
-        animate();
     });
-</script>
+    document.querySelector('.results-info p').textContent = `${count} presentes encontrados`;
+    });
+
+    // Ordenação por Preço
+    document.getElementById('sortPrice').addEventListener('change', function (e) {
+    const sortType = e.target.value;
+    const giftList = document.querySelector('.gift-list');
+    const cardsArray = Array.from(productCards);
+
+    if (sortType === 'asc') {
+    cardsArray.sort((a, b) => {
+    const priceA = parseFloat(a.querySelector('.price').textContent.replace('R$', '').replace('.', '').replace(',',
+    '.').trim());
+    const priceB = parseFloat(b.querySelector('.price').textContent.replace('R$', '').replace('.', '').replace(',',
+    '.').trim());
+    return priceA - priceB;
+    });
+    } else if (sortType === 'desc') {
+    cardsArray.sort((a, b) => {
+    const priceA = parseFloat(a.querySelector('.price').textContent.replace('R$', '').replace('.', '').replace(',',
+    '.').trim());
+    const priceB = parseFloat(b.querySelector('.price').textContent.replace('R$', '').replace('.', '').replace(',',
+    '.').trim());
+    return priceB - priceA;
+    });
+    }
+
+    giftList.innerHTML = '';
+    cardsArray.forEach(card => {
+    giftList.appendChild(card);
+    });
+    });
+
+    // View Toggle
+    const viewToggle = document.getElementById('viewToggle');
+    const giftList = document.querySelector('.gift-list');
+    let isGrid = true;
+    viewToggle.addEventListener('click', () => {
+    isGrid = !isGrid;
+    if (isGrid) {
+    giftList.classList.remove('list-view');
+    document.getElementById('iconGrid').style.display = '';
+    document.getElementById('iconList').style.display = 'none';
+    } else {
+    giftList.classList.add('list-view');
+    document.getElementById('iconGrid').style.display = 'none';
+    document.getElementById('iconList').style.display = '';
+    }
+    });
+
+    function updateGiftCount() { }
+
+    // MODAIS
+    const chosenModal = document.getElementById('chosenGiftsModal');
+    const sideCheckout = document.getElementById('sideCheckout');
+
+    document.getElementById('viewChosenGifts').addEventListener('click', (e) => {
+    e.preventDefault();
+    populateModal('chosenGiftsList', false);
+    chosenModal.style.display = 'flex';
+    });
+
+    document.getElementById('closeChosenGifts').addEventListener('click', () => {
+    chosenModal.style.display = 'none';
+    });
+
+    document.getElementById('finishGiftsBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    populateModal('sideCheckoutSummary', true);
+    sideCheckout.style.display = 'flex';
+    });
+
+    document.getElementById('closeSideCheckout').addEventListener('click', () => {
+    sideCheckout.style.display = 'none';
+    });
+
+    function populateModal(targetId, isCheckout) {
+    const container = document.getElementById(targetId);
+    container.innerHTML = '';
+    const chosen = document.querySelectorAll('.product-card .disabled-button');
+    let total = 0;
+
+    if (chosen.length === 0) {
+    container.innerHTML = '<p style="text-align:center; color:#999;">Nenhum item selecionado.</p>';
+    if (isCheckout) document.getElementById('sideCheckoutTotal').innerHTML = '';
+    return;
+    }
+
+    chosen.forEach(btn => {
+    const card = btn.closest('.product-card');
+    const name = card.querySelector('h3').textContent;
+    const priceTxt = card.querySelector('.price').textContent;
+    const price = parseFloat(priceTxt.replace('R$', '').replace('.', '').replace(',', '.').trim());
+    const imgSrc = card.querySelector('img').src;
+
+    total += price;
+
+    const row = document.createElement('div');
+    row.className = isCheckout ? 'side-checkout-row' : 'chosen-product-row';
+    row.innerHTML = `
+    <div style="display:flex; align-items:center; gap:10px;">
+        ${!isCheckout ? `<img src="${imgSrc}" class="chosen-prod-thumb">` : ''}
+        <span>${name}</span>
+    </div>
+    <span style="font-weight:600; color:var(--accent-color);">${priceTxt}</span>
+    `;
+    container.appendChild(row);
+    });
+
+    const totalHTML = `Total: <span>R$ ${total.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>`;
+
+    if (isCheckout) {
+    document.getElementById('sideCheckoutTotal').innerHTML = totalHTML;
+    } else {
+    const totalDiv = document.createElement('div');
+    totalDiv.className = 'chosen-gifts-total';
+    totalDiv.innerHTML = totalHTML;
+    container.appendChild(totalDiv);
+    }
+    }
+
+    document.getElementById('sideCheckoutPayBtn').addEventListener('click', () => {
+    alert('Redirecionando para pagamento... (Demo)');
+    });
+
+    window.onclick = function (event) {
+    if (event.target == chosenModal) chosenModal.style.display = "none";
+    if (event.target == sideCheckout) sideCheckout.style.display = "none";
+    }
+    });
+    </script>
+    <script>
+                // Remove todos os presentes com preço abaixo de R$230 (executa após scripts existentes)
+                (function removeLowPriceItems() {
+            const threshold = 230;
+                const cards = Array.from(document.querySelectorAll('.product-card'));
+                let removed = 0;
+            cards.forEach(card => {
+                const priceEl = card.querySelector('.price');
+                if (!priceEl) return;
+                const raw = priceEl.textContent || '';
+                const num = parseFloat(raw.replace('R$', '').replace(/\./g, '').replace(',', '.').trim());
+                if (!isNaN(num) && num < threshold) {
+                    card.remove();
+                removed++;
+                }
+            });
+                const count = document.querySelectorAll('.product-card').length;
+                const info = document.querySelector('.results-info p');
+                if (info) info.textContent = `${count} presentes encontrados`;
+                // If filters/search rely on a cached NodeList, they may need re-querying; log for debugging
+                console.log(`Removed ${removed} items below R$${threshold}. ${count} remain.`);
+        })();
+    </script>
 </body>
 
 </html>

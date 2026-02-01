@@ -20,7 +20,7 @@
 }
 
 .subtitle {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     color: #666;
     font-style: italic;
@@ -75,7 +75,7 @@
     line-height: 1.8;
     color: #444;
     margin-top: 20px;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .style-image img {
@@ -106,7 +106,7 @@
 }
 
 .palette-group h3 {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 10px;
@@ -118,7 +118,7 @@
     color: #777;
     margin-bottom: 40px; /* Aumentei para dar espaço antes das bolinhas */
     font-style: italic;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* --- GRID DAS BOLINHAS (Correção de Sobreposição) --- */
@@ -173,6 +173,7 @@
     color: #444;      /* Cor escura para contraste */
     letter-spacing: 1px;
     pointer-events: none;
+    font-family: 'Montserrat', sans-serif;
     
     /* REMOVIDO: background, padding, border-radius */
     text-shadow: 0 0 5px rgba(255,255,255,1); /* Sombra branca leve para garantir leitura se tiver fundo */
@@ -200,7 +201,7 @@
     font-size: 0.9rem;
     opacity: 0;
     transition: opacity 0.5s, bottom 0.5s;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
 }
 
@@ -256,7 +257,7 @@
     letter-spacing: 1px;
     margin-bottom: 5px;
     color: #a00;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .restrictions-list p {

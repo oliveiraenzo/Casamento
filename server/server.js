@@ -5,44 +5,41 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
-// Middlewares
+// --- MIDDLEWARES ---
 app.use(cors());
 app.use(express.json());
 
-// Conectar ao MongoDB Atlas
+// --- CONEXÃO MONGODB ---
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('Conectado ao MongoDB'))
-  .catch((err) => console.error('Erro ao conectar:', err));
+  .then(() => console.log('✅ Conectado ao MongoDB'))
+  .catch((err) => console.error('❌ Erro ao conectar no MongoDB:', err));
 
-// Rotas da API (devem vir ANTES das rotas estáticas)
-app.use('/api', require('./routes/api'));
+// --- ROTAS DA API ---
+try {
+    app.use('/api', require('./routes/api'));
+} catch (error) {
+    console.warn('⚠️ Aviso: Arquivo de rotas ./routes/api não encontrado ou com erro.');
+}
 
-// --- CONFIGURAÇÃO CORRIGIDA DOS ARQUIVOS ---
+// --- CONFIGURAÇÃO DE ARQUIVOS ESTÁTICOS (FRONTEND) ---
 
-// 1. Define a pasta 'screens' como a raiz do site
-// Isso faz com que 'index.html', 'dresscode.html', etc. fiquem acessíveis
-app.use(express.static(path.join(__dirname, '../client/src/screens')));
+// 1. Define a pasta 'client/public' como a raiz do site
+// Isso fará o servidor achar index.html, dresscode.css, etc.
+app.use(express.static(path.join(__dirname, '../client/public')));
 
-// 2. Configura a rota para as imagens (Assets)
-const assetsPath = path.join(__dirname, '../client/src/assets');
-app.use('/assets', express.static(assetsPath));
+// 2. Rota específica para Assets
+// Como sua pasta 'assets' está dentro de 'public', isso garante o acesso correto
+app.use('/assets', express.static(path.join(__dirname, '../client/public/assets')));
 
-// Middleware para logar requisições de imagens (útil para ver se está carregando)
-app.use((req, res, next) => {
-    if (req.url.includes('/assets/images')) {
-        console.log('Tentando carregar imagem:', req.url);
-    }
-    next();
+// 3. Rota "Catch-All"
+// Qualquer rota que não for API manda o index.html da pasta public
+app.get(/.*/, (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/public/index.html'));
 });
 
-// 3. Rota catch-all (Onde estava o erro ENOENT)
-// Se o usuário entrar e não especificar arquivo, manda o index.html que agora está na raiz de screens
-app.use((req, res) => {
-  res.sendFile(path.join(__dirname, '../client/src/screens/index.html'));
-});
-
+// --- INICIALIZAÇÃO ---
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
