@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Aplica Montserrat como fonte principal da página */
+        html,
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="logo" onclick="window.location.href='index.html'">
+        <img src="./assets/images/logo/Monograma Ana Scagnolato V2_Prancheta 1.png" alt="Logo Ana e Everson">
+    </div>
+
+    <div class="menu-hamburguer" id="menu-trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-close" id="menu-close">&times;</div>
+        <nav class="menu-links">
+            <a href="index.html">Home</a>
+            <a href="#about-us">Nossa História</a>
+            <a href="dresscode.html">Dresscode</a>
+            <a href="manualconvidados.html">Manual dos Convidados</a>
+            <a href="programacao.html">Programação</a>
+            <a href="quizz.html">Quiz do Casal</a>
+            <a href="rsvp.html">Confirmar Presença</a>
+            <a href="lista-presentes.html">Presentes</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Ana e Everson</h1>
+            <img src="./assets/images/couple/1.jpg" alt="Ana e Everson">
+        </header>
+        <nav>
+            <ul>
+                <li><span>01 DE MAIO DE 2026</span></li>
+                <li><span>ISAÍAS 41:20</span></li>
+                <li><span>SÃO BERNARDO DO CAMPO - SP</span></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="main-image full-width">
+        <img src="./assets/images/couple/2.jpg" alt="Casal se olhando">
+    </section>
+
+    <div class="container">
+
+        <section id="about-us" class="about-us about-grid">
+
+            <div class="about-column">
+                <h2 class="script-title" id="historia-title">Nossa História</h2>
+                <p>Depois de anos frequentando a mesma igreja — pequena, onde todo mundo se conhecia — a gente nunca se
+                    cruzou.
+                    Nunca.
+                    Até que, sentando à mesma mesa, nossos caminhos finalmente se encontraram. No tempo certo. No tempo
+                    que Deus havia reservado. Quando era pra ser.
+                    Teve uma conversa simples, um caderno esquecido e uma amizade que cresceu sem pressa...
+                    <br /><br />
+                    Cada um com seu discurso de “não quero namorar agora”.
+                    E, curiosamente, com apenas um mês de conversa — e nenhum beijo — em tom de brincadeira, o assunto
+                    casamento já aparecia.
+                    E, sem perceber, a brincadeira virou plano. E o plano virou realidade.
+                </p>
+            </div>
+
+            <div class="about-img-tall">
+                <img src="./assets/images/couple/3.jpg" alt="Foto Vertical do Casal">
+                <p class="caption">Nossa primeira viagem juntos</p>
+            </div>
+
+            <div class="about-column">
+                <p>Quando o amor chegou, ele encontrou tudo no lugar: parceria, risadas internas, planos em comum e
+                    propósito. Nada atropelado. Nada forçado.
+                    Com o tempo, a vida foi acontecendo. Vieram as responsabilidades, o lar, os sonhos compartilhados —
+                    e a certeza de que construir juntos sempre fez mais sentido.Quando o amor chegou, ele encontrou tudo
+                    no lugar: parceria, risadas internas, planos em comum e propósito. Nada atropelado. Nada forçado.
+                    Com o tempo, a vida foi acontecendo. Vieram as responsabilidades, o lar, os sonhos compartilhados —
+                    e a certeza de que construir juntos sempre fez mais sentido.</p>
+                <br />
+                <p>Hoje seguimos certos de que nada foi acaso.
+                    Foi encontro.
+                    Foi propósito.
+                    Depois de nove anos, seguimos ainda mais convictos das nossas escolhas. Rumo ao altar, rumo à
+                    construção da nossa família, com amor, leveza e a vontade diária de fazer dar certo.</p>
+            </div>
+
+        </section>
+
+        <section class="where-when">
+            <div class="timeline-wrapper">
+                <div class="event-item">
+                    <p class="event-date">01 JANEIRO 2017</p>
+                    <h2 class="script-title" id="inicio-title">O início</h2>
+                </div>
+
+                <div class="event-item">
+                    <p class="event-date">01 MAIO 2025</p>
+                    <h2 class="script-title" id="pedido-title">O pedido</h2>
+                </div>
+
+                <div class="event-item">
+                    <p class="event-date">01 MAIO 2026</p>
+                    <h2 class="script-title" id="grande-dia-title">O grande dia</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="full-width-image relative-container">
+            <img src="./assets/images/couple/5.jpg" alt="Casal se olhando">
+
+            <div class="overlay-content">
+                <h2 class="save-date-title">Save Our Date</h2>
+
+                <div id="countdown" class="countdown-grid">
+                    <div class="time-box">
+                        <span class="number" id="c-months">0</span>
+                        <span class="label">Meses</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="number" id="c-days">0</span>
+                        <span class="label">Dias</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="number" id="c-hours">0</span>
+                        <span class="label">Horas</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="number" id="c-minutes">0</span>
+                        <span class="label">Minutos</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="number" id="c-seconds">0</span>
+                        <span class="label">Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-grid">
+
+                    <div class="gallery-item">
+                        <div class="gallery-image-wrapper">
+                            <img src="./assets/images/couple/6.jpg">
+                            <a href="dresscode.html" class="gallery-btn">Confira o Dresscode</a>
+                        </div>
+                        <p class="gallery-caption">Código de Vestimenta</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image-wrapper">
+                            <img src="./assets/images/couple/6.jpg">
+                            <a href="manualconvidados.html" class="gallery-btn">Confira as Dicas</a>
+                        </div>
+                        <p class="gallery-caption">Manual Convidados</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image-wrapper">
+                            <img src="./assets/images/couple/6.jpg">
+                            <a href="rsvp.html" class="gallery-btn">Confirme sua Presença</a>
+                        </div>
+                        <p class="gallery-caption">Responda Por Favor</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image-wrapper">
+                            <img src="./assets/images/couple/6.jpg">
+                            <a href="lista-presentes.html" class="gallery-btn">Presentes</a>
+                        </div>
+                        <p class="gallery-caption">Lista de Presentes</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image-wrapper">
+                            <img src="./assets/images/couple/6.jpg">
+                            <a href="quizz.html" class="gallery-btn">Você nos conhece?</a>
+                        </div>
+                        <p class="gallery-caption">Quiz do Casal</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image-wrapper">
+                            <img src="./assets/images/couple/6.jpg">
+                            <a href="programacao.html" class="gallery-btn">Confira a Programação</a>
+                        </div>
+                        <p class="gallery-caption">Programação do Dia</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        </section>
+    </div>
+    <section class="full-width-image footer-image">
+        <img src="./assets/images/couple/5.jpg" alt="Casal se abraçando">
+    </section>
+
+    <script src="hamburger.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz do Casal | Ana e Everson</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="quizz.css">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <div class="logo" onclick="window.location.href='index.html'">
+        <img src="./assets/images/logo/Monograma Ana Scagnolato V2_Prancheta 1.png" alt="Logo Ana e Everson">
+    </div>
+
+    <div class="menu-hamburguer" id="menu-trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-close" id="menu-close">&times;</div>
+        <nav class="menu-links">
+            <a href="index.html">Home</a>
+            <a href="#about-us">Nossa História</a>
+            <a href="dresscode.html">Dresscode</a>
+            <a href="manualconvidados.html">Manual dos Convidados</a>
+            <a href="programacao.html">Programação</a>
+            <a href="quizz.html">Quiz do Casal</a>
+            <a href="rsvp.html">Confirmar Presença</a>
+            <a href="lista-presentes.html">Presentes</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header class="quiz-header">
+            <h1>Quiz do Casal</h1>
+            <p class="subtitle">Quanto você conhece Ana & Everson?</p>
+        </header>
+
+        <main class="quiz-container">
+            <div id="quiz-box">
+                <div class="progress-indicator">
+                    Pergunta <span id="current-q">1</span> de <span id="total-q">10</span>
+                </div>
+
+                <h2 id="question-text" class="question-title">Carregando pergunta...</h2>
+
+                <div id="options-container" class="options-grid">
+                </div>
+
+                <div id="feedback-area" class="hidden">
+                    <p id="feedback-msg"></p>
+                    <button id="next-btn" onclick="nextQuestion()">Próxima Pergunta →</button>
+                </div>
+            </div>
+
+            <div id="result-box" class="hidden">
+                <h2 class="script-title result-title">Resultado Final</h2>
+                <div class="score-display">
+                    Você acertou <span id="score-count">0</span> de 10
+                </div>
+                <p id="final-message" class="final-msg-text">Mensagem de resultado</p>
+
+                <button class="restart-btn" onclick="restartQuiz()">Jogar Novamente</button>
+                <a href="index.html" class="home-btn">Voltar ao Site</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="hamburger.js"></script>
+    <script src="quizz.js"></script>
+</body>
+
+</html>

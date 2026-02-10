@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Ajuste do container para o quiz ficar centralizado e focado */
+.quiz-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabeçalho do Quiz */
+.quiz-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: -10px;
+    font-style: italic;
+}
+
+/* --- Caixa Principal do Quiz --- */
+.quiz-container {
+    background: #fff;
+    padding: 50px;
+    border-radius: 4px;
+    /* Cantos suaves igual as imagens */
+    border: 1px solid #e0e0e0;
+    /* Mesma borda usada na timeline */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    /* Sombra muito suave */
+}
+
+/* Indicador de Progresso (1 de 10) */
+.progress-indicator {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* Pergunta */
+.question-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    line-height: 1.3;
+}
+
+/* --- Botões de Opção (Estilo "Pill" igual galeria) --- */
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option-btn {
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 15px 30px;
+
+    /* Tipografia */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #444;
+    text-align: left;
+
+    cursor: pointer;
+    border-radius: 50px;
+    /* Borda redonda estilo "Pill" */
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Hover suave */
+.option-btn:hover:not(:disabled) {
+    border-color: #333;
+    background-color: #fbfaf5;
+    /* Mesma cor do fundo do site */
+    transform: translateX(5px);
+    /* Pequeno movimento elegante */
+}
+
+/* --- Estados de Feedback (Acerto/Erro) --- */
+.option-btn.correct {
+    background-color: #e3f0e6;
+    /* Verde pastel suave */
+    border-color: #8dbf9e;
+    color: #2e5c3e;
+}
+
+.option-btn.wrong {
+    background-color: #fae3e3;
+    /* Vermelho pastel suave */
+    border-color: #d69fa1;
+    color: #8a3c3c;
+    opacity: 0.8;
+}
+
+.option-btn:disabled {
+    cursor: default;
+}
+
+/* --- Área de Feedback e Botões de Ação --- */
+#feedback-area {
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    /* Separador sutil */
+    animation: fadeIn 0.5s ease;
+}
+
+#feedback-msg {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Botão "Próxima" e "Reiniciar" */
+#next-btn,
+.restart-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 50px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#next-btn:hover,
+.restart-btn:hover {
+    background: #555;
+}
+
+/* --- Tela de Resultado Final --- */
+#result-box {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.score-display {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.final-msg-text {
+    font-size: 1.4rem;
+    margin-bottom: 50px;
+    color: #333;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-btn {
+    display: inline-block;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 2px;
+    text-transform: uppercase;
+}
+
+/* Utilitários */
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

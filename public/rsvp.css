@@ -1,0 +1,174 @@
+/* Importação das fontes */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&display=swap');
+
+/* Reset e Estilos Base */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FAF8F2;
+    /* Tom creme/off-white */
+    font-family: 'Montserrat', sans-serif;
+    color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    -webkit-user-select: none;
+    /* Para Safari e Chrome */
+    -moz-user-select: none;
+    /* Para Firefox */
+    -ms-user-select: none;
+    /* Para IE/Edge antigo */
+    user-select: none;
+    /* Padrão moderno */
+    cursor: default;
+    /* Força a seta padrão do mouse */
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.logo span {
+    display: block;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+}
+
+/* Input (Ajustado) */
+input[type="text"] {
+    background: transparent;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.5rem;
+    /* Aumentei um pouco a fonte */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    outline: none;
+    margin-bottom: 10px;
+    /* Reduzi a margem inferior pois não tem botão */
+}
+
+input[type="text"]::placeholder {
+    color: #999;
+    font-weight: 300;
+}
+
+/* Botões */
+button {
+    background-color: #1a1a1a;
+    color: #FAF8F2;
+    border: 1px solid #1a1a1a;
+    padding: 12px 30px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+    font-size: 0.9rem;
+}
+
+button:hover {
+    background-color: transparent;
+    color: #1a1a1a;
+}
+
+button.secondary {
+    background-color: transparent;
+    color: #555;
+    border: 1px solid #aaa;
+}
+
+button.secondary:hover {
+    border-color: #1a1a1a;
+    color: #1a1a1a;
+}
+
+/* Utilitários de Visibilidade */
+.hidden {
+    display: none;
+}
+
+/* Mensagens de Texto */
+.error-msg {
+    color: #a00;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.welcome-text {
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.confirm-text {
+    margin-bottom: 20px;
+}
+
+.final-text {
+    font-weight: 400;
+}
+
+/* Rodapé */
+.footer-note {
+    position: absolute;
+    bottom: 40px;
+    font-size: 0.75rem;
+    width: 80%;
+    opacity: 0.8;
+    text-transform: uppercase;
+}
+
+/* Espaçamento para o botão final */
+.btn-home {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    /* Um pouco menor para ficar elegante */
+}
+
+/* Container dos botões finais */
+.final-buttons {
+    display: flex;
+    justify-content: center; /* Centraliza no meio da tela */
+    gap: 15px; /* Espaço entre os dois botões */
+    margin-top: 40px;
+    flex-wrap: wrap; /* Garante que em celulares muito pequenos eles não quebrem o layout */
+}
+
+/* Ajuste opcional para garantir que tenham o mesmo tamanho mínimo */
+.final-buttons button {
+    min-width: 160px;
+    margin: 5px; /* Margem pequena caso eles quebrem de linha no celular */
+}

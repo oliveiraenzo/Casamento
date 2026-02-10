@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Presença - Casamento</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="rsvp.css">
+</head>
+
+<body>
+
+    <div class="logo" onclick="window.location.href='index.html'">
+        <img src="./assets/images/logo/Monograma Ana Scagnolato V2_Prancheta 1.png" alt="Logo Ana e Everson">
+    </div>
+
+    <div class="menu-hamburguer" id="menu-trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-close" id="menu-close">&times;</div>
+        <nav class="menu-links">
+            <a href="index.html">Home</a>
+            <a href="#about-us">Nossa História</a>
+            <a href="dresscode.html">Dresscode</a>
+            <a href="manualconvidados.html">Manual dos Convidados</a>
+            <a href="programacao.html">Programação</a>
+            <a href="quizz.html">Quiz do Casal</a>
+            <a href="rsvp.html">Confirmar Presença</a>
+            <a href="lista-presentes.html">Presentes</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div id="step-input">
+            <h1>Digite seu nome...</h1>
+            <input type="text" id="guestName" placeholder="Ex: João da Silva" autocomplete="off">
+
+            <p id="feedback-text" class="error-msg hidden"></p>
+        </div>
+
+        <div id="step-confirm" class="hidden">
+            <h2 id="welcome-msg" class="welcome-text"></h2>
+            <p class="confirm-text">Você está na lista de convidados.</p>
+
+            <div class="button-group">
+                <button onclick="reply(true)">Confirmar Presença</button>
+                <button class="secondary" onclick="reply(false)">Não poderei ir</button>
+            </div>
+        </div>
+
+        <div id="step-final" class="hidden">
+            <h2 id="final-msg" class="final-text"></h2>
+
+            <div class="final-buttons">
+                <button onclick="confirmAgain()">Confirmar Outro</button>
+
+                <button class="secondary" onclick="window.location.href='index.html'">Voltar ao Início</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        Pedimos que confirme o mais rápido possível...
+    </div>
+
+    <script src="hamburger.js"></script>
+    <script src="rsvp.js"></script>
+</body>
+
+</html>

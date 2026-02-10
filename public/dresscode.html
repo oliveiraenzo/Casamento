@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dress Code | Ana e Everson</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="dresscode.css">
+</head>
+
+<body>
+
+
+    <div class="logo" onclick="window.location.href='index.html'">
+        <img src="./assets/images/logo/Monograma Ana Scagnolato V2_Prancheta 1.png" alt="Logo Ana e Everson">
+    </div>
+
+    <div class="menu-hamburguer" id="menu-trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-close" id="menu-close">&times;</div>
+        <nav class="menu-links">
+            <a href="index.html">Home</a>
+            <a href="#about-us">Nossa História</a>
+            <a href="dresscode.html">Dresscode</a>
+            <a href="manualconvidados.html">Manual dos Convidados</a>
+            <a href="programacao.html">Programação</a>
+            <a href="quizz.html">Quiz do Casal</a>
+            <a href="rsvp.html">Confirmar Presença</a>
+            <a href="lista-presentes.html">Presentes</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header class="dresscode-header reveal">
+            <h1>Dress Code</h1>
+            <p class="subtitle">Guia de Vestimenta para o Grande Dia</p>
+        </header>
+
+        <section class="style-guide reveal">
+            <div class="style-content">
+                <h2 class="script-title">Esporte Fino</h2>
+                <p>
+                    Para o nosso dia especial, escolhemos o traje <strong>Esporte Fino</strong>.
+                    Queremos que vocês se sintam elegantes, confortáveis e prontos para aproveitar
+                    a festa ao nosso lado. O ambiente será no campo, então considere isso ao escolher o calçado.
+                </p>
+            </div>
+
+            <div class="style-image">
+                <img src="./assets/images/couple/dresscode-insp.jpg" alt="Inspiração de Traje - Esporte Fino"
+                    onerror="this.style.display='none'">
+            </div>
+        </section>
+
+        <section class="palette-section">
+            <div class="palette-group reveal">
+                <h3>Para Elas</h3>
+                <p class="palette-desc">Tons pastéis, florais e tecidos fluidos são muito bem-vindos.</p>
+
+                <div class="colors-grid">
+                    <div class="color-swatch" style="background-color: #E6B8B8;" data-name="Rosa Chá"><span>Rosa
+                            Chá</span></div>
+                    <div class="color-swatch" style="background-color: #D4AF37;" data-name="Dourado">
+                        <span>Dourado</span></div>
+                    <div class="color-swatch" style="background-color: #A8C6A0;" data-name="Verde Oliva"><span>Verde
+                            Oliva</span></div>
+                    <div class="color-swatch" style="background-color: #B0C4DE;" data-name="Azul Serenity"><span>Azul
+                            Serenity</span></div>
+                    <div class="color-swatch" style="background-color: #E0C09E;" data-name="Terracota">
+                        <span>Terracota</span></div>
+                </div>
+            </div>
+
+            <div class="palette-group reveal">
+                <h3>Para Eles</h3>
+                <p class="palette-desc">Ternos claros (bege, cinza claro) ou azul marinho. Gravata é opcional.</p>
+
+                <div class="colors-grid">
+                    <div class="color-swatch" style="background-color: #F5F5DC;" data-name="Bege"><span>Bege</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #808080;" data-name="Cinza"><span>Cinza</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #191970;" data-name="Azul Marinho"><span>Azul
+                            Marinho</span></div>
+                    <div class="color-swatch" style="background-color: #A0522D;" data-name="Marrom"><span>Marrom</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="restrictions-section reveal">
+            <h2 class="script-title small">Pedimos gentilmente evitar</h2>
+            <ul class="restrictions-list">
+                <li>
+                    <span class="icon">⚪</span>
+                    <strong>Branco ou Off-White</strong><br>
+                    (Exclusivo da Noiva)
+                </li>
+                <li>
+                    <span class="icon">👖</span>
+                    <strong>Jeans e Camiseta</strong><br>
+                    (Vamos manter a elegância)
+                </li>
+                <li>
+                    <span class="icon">⚫</span>
+                    <strong>Preto Total</strong><br>
+                    (Preferimos cores alegres)
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <div id="toast" class="toast">Cor copiada!</div>
+
+    <script src="hamburger.js"></script>
+    <script src="dresscode.js"></script>
+</body>
+
+</html>

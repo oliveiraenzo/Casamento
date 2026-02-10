@@ -1,0 +1,331 @@
+/* =========================================
+   DRESS CODE - ESTILOS ESPECÍFICOS
+   ========================================= */
+
+/* --- Container de Segurança --- */
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* --- Header Específico --- */
+.dresscode-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-top: 40px;
+    position: relative;
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+    font-style: italic;
+    margin-top: -15px;
+}
+
+/* --- Animação --- */
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* --- Seção de Estilo (Texto + Foto) --- */
+.style-guide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 80px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.style-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.style-image img {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 4px;
+    filter: grayscale(100%);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: filter 0.5s ease;
+}
+
+.style-image img:hover {
+    filter: grayscale(0%);
+}
+
+/* --- Paleta de Cores --- */
+.palette-section {
+    margin-bottom: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.palette-group {
+    text-align: center;
+}
+
+.palette-group h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.palette-desc {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 40px; /* Aumentei para dar espaço antes das bolinhas */
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- GRID DAS BOLINHAS (Correção de Sobreposição) --- */
+.colors-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo para evitar desalinhos */
+    flex-wrap: wrap;
+    
+    /* Espaçamento Inteligente:
+       - row-gap: 60px (Espaço vertical grande para caber o texto embaixo)
+       - column-gap: 30px (Espaço lateral para textos longos não baterem) */
+    gap: 60px 30px; 
+    
+    padding-bottom: 20px;
+}
+
+/* A Bolinha Colorida */
+.color-swatch {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    outline: 1px solid rgba(0,0,0,0.1);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.05);
+}
+
+.color-swatch:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+/* TEXTO DA COR (Ajuste "Sem Fundo") */
+.color-swatch span {
+    position: absolute;
+    bottom: -35px; /* Empurra o texto para baixo da bolinha */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza perfeitamente */
+    
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    white-space: nowrap; /* Garante que o nome da cor não quebre linha */
+    
+    opacity: 0; /* Invisível no desktop (aparece no hover) */
+    transition: opacity 0.3s, bottom 0.3s;
+    
+    font-weight: 700; /* Negrito para ler melhor sem o fundo */
+    color: #444;      /* Cor escura para contraste */
+    letter-spacing: 1px;
+    pointer-events: none;
+    font-family: 'Montserrat', sans-serif;
+    
+    /* REMOVIDO: background, padding, border-radius */
+    text-shadow: 0 0 5px rgba(255,255,255,1); /* Sombra branca leve para garantir leitura se tiver fundo */
+}
+
+.color-swatch:hover span {
+    opacity: 1;
+    bottom: -40px; /* Pequeno movimento ao aparecer */
+}
+
+/* --- Toast Notification --- */
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 50px;
+    padding: 16px;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
+
+/* --- Seção Restrições --- */
+.restrictions-section {
+    background-color: #f4f1ea;
+    padding: 60px 40px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 60px;
+    border: 1px dashed #d4af37;
+}
+
+.script-title.small {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.restrictions-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.restrictions-list li {
+    max-width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.restrictions-list li:hover {
+    transform: translateY(-5px);
+}
+
+.restrictions-list .icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.restrictions-list strong {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #a00;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.restrictions-list p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* =========================================
+   RESPONSIVIDADE (Mobile)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .palette-section {
+        grid-template-columns: 1fr; /* Uma coluna só */
+        gap: 50px;
+    }
+
+    .colors-grid {
+        /* AUMENTO EXTRA DO ESPAÇO NO CELULAR */
+        row-gap: 70px;    /* Espaço vertical maior para os textos não baterem na linha de baixo */
+        column-gap: 20px; 
+    }
+    
+    .color-swatch {
+        width: 55px;
+        height: 55px;
+    }
+    
+    /* No celular, o texto aparece SEMPRE, não só no hover */
+    .color-swatch span {
+        opacity: 1; 
+        bottom: -35px;
+        font-size: 0.65rem; /* Fonte um pouco menor para nomes longos */
+    }
+
+    .restrictions-list {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+    
+    .restrictions-section {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .palette-group h3 {
+        font-size: 2rem;
+    }
+    
+    .script-title.small {
+        font-size: 2rem;
+    }
+    
+    /* Garante que nomes longos como "Azul Serenity" não vazem a tela */
+    .colors-grid {
+        justify-content: space-evenly; /* Distribui melhor */
+    }
+}
+
+/* --- EFEITO SCROLL: Ficar colorido ao aparecer --- */
+.colorida {
+    filter: grayscale(0%) !important; /* Força a cor a aparecer */
+    transition: filter 1.5s ease;     /* A cor surge suavemente em 1.5 segundos */
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.logo span {
+    display: block;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}

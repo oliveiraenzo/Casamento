@@ -1,0 +1,292 @@
+/* --- Configurações Globais --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fbfaf5;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/* --- Fontes Especiais --- */
+.script-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* --- Estrutura Principal (CORRIGIDA) --- */
+.container {
+    max-width: 1100px; /* MUDANÇA: Era width fixa, agora é máximo */
+    width: 100%;       /* MUDANÇA: Ocupa 100% da tela em celulares */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* --- Header (CORRIGIDO) --- */
+header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+header img {
+    width: 100%;
+    height: auto;           /* Altura automática para não achatar */
+    max-height: 600px;      /* Limite para desktop */
+    border-radius: 8px;
+    filter: grayscale(100%);
+    object-fit: cover;
+    transition: filter 0.5s ease;
+}
+
+header h1 {
+    font-weight: 300;
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* --- Navegação (CORRIGIDA - Responsiva) --- */
+nav {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: nowrap; /* Desktop: linha única */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+/* Responsividade do Menu */
+@media (max-width: 1024px) {
+    nav ul {
+        flex-direction: column; /* Empilha no celular */
+        gap: 15px;
+    }
+    nav a {
+        white-space: normal;
+        display: block;
+        font-size: 0.9rem;
+    }
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+}
+
+/* --- Imagens Full Width --- */
+.main-image.full-width, .full-width-image {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-bottom: 60px;
+}
+
+.main-image.full-width img, .full-width-image img {
+    filter: grayscale(100%);
+    max-height: 600px; /* Limite de altura */
+}
+
+/* --- Estilos do Manual do Convidado --- */
+
+/* Animação Reveal */
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Área do Manual */
+.manual {
+    background-color: #fbfaf5;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.manual h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 7rem;
+    font-weight: 400;
+    margin-bottom: 80px;
+    color: #1a1a1a;
+}
+
+/* Autumn Melody para Manual do Convidado */
+#manual-title {
+    font-family: 'Autumn Melody', cursive !important;
+}
+
+/* Grid do Manual */
+.manual-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no Desktop */
+    gap: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    counter-reset: manual-steps;
+}
+
+.manual-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 25px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.manual-item:hover {
+    border-top-color: #666;
+    transform: translateY(-5px);
+}
+
+/* Numeração Automática */
+.manual-item::before {
+    counter-increment: manual-steps;
+    content: counter(manual-steps, decimal-leading-zero);
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #e0dcd5;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 10px;
+    opacity: 0.6;
+}
+
+.manual-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #111;
+}
+
+.manual-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    font-style: italic;
+    text-align: justify;
+}
+
+/* --- RESPONSIVIDADE DO MANUAL (Correção Vital) --- */
+@media (max-width: 1024px) {
+    .manual-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet: 2 colunas */
+    }
+}
+
+@media (max-width: 768px) {
+    .manual-grid {
+        grid-template-columns: 1fr; /* Celular: 1 coluna (empilhado) */
+        gap: 40px;
+    }
+    
+    .manual-item {
+        text-align: center; /* Centraliza texto no celular */
+    }
+    
+    .manual-item p {
+        text-align: center;
+    }
+
+    .manual h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+}
+
+/* --- EFEITO DE COR NAS IMAGENS --- */
+header img,
+.main-image.full-width img,
+.full-width-image img {
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);
+}
+
+header img:hover,
+.main-image.full-width img:hover,
+.full-width-image img:hover {
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+/* Correção Footer */
+.footer-image {
+    margin-bottom: 0 !important;
+    display: block;
+    line-height: 0;
+}
+
+/* --- EFEITO SCROLL: Ficar colorido ao aparecer --- */
+.colorida {
+    filter: grayscale(0%) !important; /* Força a cor a aparecer */
+    transition: filter 1.5s ease;     /* A cor surge suavemente em 1.5 segundos */
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.logo span {
+    display: block;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}

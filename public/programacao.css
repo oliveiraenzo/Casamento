@@ -1,0 +1,382 @@
+/* --- Configurações Globais --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fbfaf5;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita rolagem lateral acidental */
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/* --- Fontes Especiais --- */
+.script-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* --- Estrutura Principal (Centralização Garantida) --- */
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto; /* Isso é o que centraliza o bloco na tela */
+    padding: 0 20px;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* --- Header --- */
+header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    border-radius: 8px;
+    filter: grayscale(100%);
+    object-fit: cover;
+    transition: filter 0.5s ease;
+}
+
+header h1 {
+    font-weight: 300;
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center; /* Garante centralização do texto */
+}
+
+/* --- Navegação (Menu) --- */
+nav {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centraliza os itens na linha */
+    align-items: center;
+    gap: 40px;
+    flex-wrap: nowrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+/* --- Imagens Full Width (CORREÇÃO DE CENTRALIZAÇÃO) --- */
+/* Como a section já está fora do container no HTML, usamos 100% simples */
+.main-image.full-width, .full-width-image {
+    width: 100%;        /* Ocupa toda a largura disponível */
+    margin: 0 0 60px 0; /* Remove margens laterais negativas que causavam o erro */
+}
+
+.main-image.full-width img, .full-width-image img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    filter: grayscale(100%);
+    object-position: center;
+}
+
+/* --- Programação (Schedule) --- */
+.schedule {
+    background: #fbfaf5;
+    padding: 60px 20px;
+    text-align: center; /* Centraliza tudo dentro da seção */
+    width: 100%;
+}
+
+.schedule h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.schedule-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto 80px; /* margin: 0 auto centraliza o bloco de texto */
+    line-height: 1.8;
+    color: #555;
+}
+
+/* --- TIMELINE (Linha do Tempo) --- */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto; /* Centraliza a timeline na tela */
+    padding: 20px 0;
+}
+
+/* A Linha Central */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+/* Itens Ímpares (Esquerda) */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: 60px;
+}
+
+/* Itens Pares (Direita) */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+    padding-left: 60px;
+}
+
+/* A Bolinha (Marcador) */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    width: 12px;
+    height: 12px;
+    background: #fbfaf5;
+    border: 1px solid #ffc3a7;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -6px;
+    left: auto;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -6px;
+}
+
+/* --- ÍCONES E TEXTOS --- */
+.icon-schedule {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: #ffc3a7;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.timeline-item:hover .icon-schedule {
+    transform: scale(1.1) rotate(-5deg);
+    color: #ffc3a7;
+}
+
+.timeline-item:hover::before {
+    background-color: #ffc3a7;
+    transition: background-color 0.3s ease;
+}
+
+.time {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.timeline-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- Thank You Section --- */
+.thank-section {
+    background: #fbfaf5;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.thank-section::before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #ffc3a7;
+    margin: 0 auto 40px;
+}
+
+.thank-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+/* Autumn Melody para Thank You */
+#thank-you-title {
+    font-family: 'Autumn Melody', cursive !important;
+}
+
+.thank-section p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #444;
+}
+
+.thank-section span {
+    display: block;
+    margin-top: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffc3a7;
+}
+
+.thank-section .senhor {
+    display: inline;
+    margin-top: 0;
+}
+
+/* --- Footer --- */
+.footer-image {
+    margin-bottom: 0 !important;
+    display: block;
+    line-height: 0;
+}
+
+/* --- EFEITO MOUSE (Interatividade) --- */
+header img:hover, .main-image.full-width img:hover {
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+/* --- RESPONSIVIDADE (Mobile) --- */
+@media (max-width: 1024px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav a {
+        white-space: normal;
+        display: block;
+    }
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajuste da Timeline no Mobile */
+    .timeline::before {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 10px;
+        text-align: left !important;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    
+    .timeline-item:nth-child(odd) {
+        padding-right: 10px;
+    }
+
+    .timeline-item:nth-child(odd)::before,
+    .timeline-item:nth-child(even)::before {
+        left: 14px;
+        right: auto;
+    }
+    
+    .schedule h1 {
+        font-size: 2.5rem;
+    }
+    
+    .schedule-desc {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.logo span {
+    display: block;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}

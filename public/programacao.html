@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação | Ana e Everson</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="programacao.css">
+</head>
+
+<body>
+
+    <div class="logo" onclick="window.location.href='index.html'">
+        <img src="./assets/images/logo/Monograma Ana Scagnolato V2_Prancheta 1.png" alt="Logo Ana e Everson">
+    </div>
+
+    <div class="menu-hamburguer" id="menu-trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-close" id="menu-close">&times;</div>
+        <nav class="menu-links">
+            <a href="index.html">Home</a>
+            <a href="#about-us">Nossa História</a>
+            <a href="dresscode.html">Dresscode</a>
+            <a href="manualconvidados.html">Manual dos Convidados</a>
+            <a href="programacao.html">Programação</a>
+            <a href="quizz.html">Quiz do Casal</a>
+            <a href="rsvp.html">Confirmar Presença</a>
+            <a href="lista-presentes.html">Presentes</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header class="reveal">
+            <h1>Ana e Everson</h1>
+            <img src="./assets/images/couple/1.jpg" alt="Ana e Everson">
+        </header>
+
+        <nav class="reveal">
+            <ul>
+                <li><a href="#inicio">01 DE MAIO DE 2026</a></li>
+                <li><a href="#local">ISAÍAS 41:20</a></li>
+                <li><a href="#local">SÃO BERNARDO DO CAMPO - SP</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="main-image full-width reveal">
+        <img src="./assets/images/couple/2.jpg" alt="Casal se olhando">
+    </section>
+
+    <section class="schedule">
+
+        <h1 class="reveal" style="font-size: 200%;">Programação</h1>
+
+        <p class="schedule-desc reveal">
+            Após a cerimônia, celebraremos no salão localizado no próprio bosque.
+            Um espaço acolhedor e elegante, cercado pela natureza, onde teremos um jantar especial
+            e música para dançar até o fim da noite.
+        </p>
+
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+                <i class="fa-solid fa-martini-glass-citrus icon-schedule"></i>
+                <span class="time">14:30</span>
+                <p>Coquetel de Boas Vindas</p>
+            </div>
+
+            <div class="timeline-item reveal">
+                <i class="fa-solid fa-church icon-schedule"></i>
+                <span class="time">15:00</span>
+                <p>Cerimônia</p>
+            </div>
+
+            <div class="timeline-item reveal">
+                <i class="fa-solid fa-camera icon-schedule"></i>
+                <span class="time">16:00</span>
+                <p>Sessão de Fotos</p>
+            </div>
+
+            <div class="timeline-item reveal">
+                <i class="fa-solid fa-utensils icon-schedule"></i>
+                <span class="time">17:00</span>
+                <p>Jantar em Buffet</p>
+            </div>
+
+            <div class="timeline-item reveal">
+                <i class="fa-solid fa-music icon-schedule"></i>
+                <span class="time">19:00</span>
+                <p>Primeira Dança</p>
+            </div>
+
+            <div class="timeline-item reveal">
+                <i class="fa-solid fa-cake-candles icon-schedule"></i>
+                <span class="time">20:00</span>
+                <p>Bolo</p>
+            </div>
+
+            <div class="timeline-item reveal">
+                <i class="fa-solid fa-champagne-glasses icon-schedule"></i>
+                <span class="time">21:00</span>
+                <p>Festa</p>
+            </div>
+
+            <div class="timeline-item reveal">
+                <i class="fa-solid fa-moon icon-schedule"></i>
+                <span class="time">22:00</span>
+                <p>Fim de Festa</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="thank-section reveal">
+        <h2 id="thank-you-title">Thank You</h2>
+        <p>
+            Para que todos vejam, e saibam, e considerem, e juntamente entendam
+            que a mão do <span class="senhor">Senhor</span> fez isso.<br>
+            <span>ISAÍAS 41:20</span>
+        </p>
+    </section>
+
+    <section class="full-width-image footer-image reveal">
+        <img src="./assets/images/couple/5.jpg" alt="Casal se abraçando">
+    </section>
+
+    <script src="hamburger.js"></script>
+    <script src="programacao.js"></script>
+</body>
+
+</html>
