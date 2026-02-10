@@ -153,8 +153,7 @@
             </div>
 
             <div class="product-card">
-                <img src="./assets/images/gifts/aparelho_jantar_30pecas.jpg" alt="Aparelho de Jantar"
-                    loading="lazy">
+                <img src="./assets/images/gifts/aparelho_jantar_30pecas.jpg" alt="Aparelho de Jantar" loading="lazy">
                 <div class="product-info">
                     <span class="category">Mesa e Bar</span>
                     <h3>Aparelho de Jantar 30 Peças Porcelana</h3>
@@ -184,8 +183,7 @@
             </div>
 
             <div class="product-card">
-                <img src="./assets/images/gifts/climatizador_ar.jpg"
-                    alt="Climatizador" loading="lazy">
+                <img src="./assets/images/gifts/climatizador_ar.jpg" alt="Climatizador" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Climatizador de Ar Frio Portátil</h3>
@@ -225,8 +223,7 @@
             </div>
 
             <div class="product-card">
-                <img src="./assets/images/gifts/cooktop_4bocas.jpg"
-                    alt="Cooktop" loading="lazy">
+                <img src="./assets/images/gifts/cooktop_4bocas.jpg" alt="Cooktop" loading="lazy">
                 <div class="product-info">
                     <span class="category">Cozinha</span>
                     <h3>Cooktop 4 Bocas Vidro Temperado</h3>
@@ -1198,8 +1195,7 @@
             </div>
 
             <div class="product-card">
-                <img src="./assets/images/gifts/caixa_som_inteligente.jpg" alt="Caixa Som"
-                    loading="lazy">
+                <img src="./assets/images/gifts/caixa_som_inteligente.jpg" alt="Caixa Som" loading="lazy">
                 <div class="product-info">
                     <span class="category">Outros</span>
                     <h3>Caixa de Som Inteligente com Assistente</h3>
@@ -1449,8 +1445,7 @@
             </div>
 
             <div class="product-card">
-                <img src="./assets/images/gifts/speaker_bluetooth_grande.jpg" alt="Speaker"
-                    loading="lazy">
+                <img src="./assets/images/gifts/speaker_bluetooth_grande.jpg" alt="Speaker" loading="lazy">
                 <div class="product-info">
                     <span class="category">Outros</span>
                     <h3>Speaker Bluetooth Resistente à Água</h3>
@@ -1794,7 +1789,7 @@
                 <div class="product-info">
                     <span class="category">Quarto</span>
                     <h3>Colchão Casal Luxo</h3>
-                    <p class="price" >R$ 1.249,90</p>
+                    <p class="price">R$ 1.249,90</p>
                     <button class="button secondary-button"><i class="fas fa-gift"></i>Escolher Presente</button>
                 </div>
             </div>
@@ -2140,7 +2135,8 @@
             <span class="close-modal" id="closeChosenGifts">&times;</span>
             <h2>Seus Escolhidos</h2>
             <div id="chosenGiftsList"></div>
-            <p id="noChosenGiftsMsg" style="display:none; color:#888; text-align:center; margin-top:2em;">Nenhum presente escolhido ainda.</p>
+            <p id="noChosenGiftsMsg" style="display:none; color:#888; text-align:center; margin-top:2em;">Nenhum
+                presente escolhido ainda.</p>
         </div>
     </div>
 
@@ -2391,7 +2387,7 @@
                     payBtn.disabled = true;
 
                     // Chamada para o seu servidor Node.js
-                    const response = await fetch('/api/create_preference', {
+                    const response = await fetch('https://casamento-backend-2vwt.onrender.com/api/create_preference', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
