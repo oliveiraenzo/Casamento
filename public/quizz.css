@@ -20,6 +20,7 @@ html, body {
     text-align: center;
     margin-bottom: 50px;
     position: relative;
+    margin-top: 100px;
 }
 
 .subtitle {
@@ -207,5 +208,137 @@ html, body {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* --- Integração Quiz com Layout Global --- */
+
+/* Logo (Fixa no topo para não interferir na área do quiz) */
+.logo {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+/* Menu Hamburguer */
+.menu-hamburguer {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.menu-hamburguer span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+/* Overlay de Navegação */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(251, 250, 245, 0.98);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+}
+
+.menu-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: color 0.3s;
+}
+
+.menu-links a:hover {
+    color: #999;
+}
+
+/* Ajuste do Wrapper do Quiz para não ficar embaixo da logo fixa */
+.quiz-wrapper {
+    padding-top: 120px; /* Dá espaço para a logo e menu fixos no desktop */
+}
+
+/* Responsividade do Quiz */
+@media (max-width: 768px) {
+    .logo {
+        top: 20px;
+        left: 20px;
+    }
+    
+    .logo img {
+        width: 60px;
+    }
+
+    .menu-hamburguer {
+        top: 25px;
+        right: 20px;
+    }
+
+    .quiz-wrapper {
+        padding-top: 100px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .quiz-container {
+        padding: 30px 20px; /* Reduz o padding interno no mobile */
+    }
+
+    .question-title {
+        font-size: 1.5rem;
+    }
+
+    .option-btn {
+        font-size: 1rem;
+        padding: 12px 20px;
     }
 }

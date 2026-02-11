@@ -2147,20 +2147,6 @@
             <div id="sideCheckoutSummary"></div>
             <div id="sideCheckoutTotal"></div>
 
-            <h3 style="margin-top:1.5em; font-size:1rem; text-align:left;">Forma de Pagamento</h3>
-            <div class="payment-methods">
-                <label><input type="radio" name="paymentMethod" value="cartao" checked> Cartão de Crédito</label>
-                <label><input type="radio" name="paymentMethod" value="pix"> Pix</label>
-                <label><input type="radio" name="paymentMethod" value="boleto"> Boleto Bancário</label>
-            </div>
-
-            <div style="margin-top:20px;">
-                <label style="font-size:0.9rem; display:block; margin-bottom:5px;">Deixe uma mensagem:</label>
-                <textarea id="giftMessage"
-                    style="width:100%; padding:10px; border:1px solid #ccc; font-family:var(--font-main);"
-                    rows="3"></textarea>
-            </div>
-
             <button class="button primary-button" id="sideCheckoutPayBtn"
                 style="margin-top:1.5em; width:100%;">Confirmar e Pagar</button>
         </div>
@@ -2172,18 +2158,27 @@
             locale: 'pt-BR'
         });
 
-        // Script de aumento de preço de 5%
+        // Script para garantir preços exatos (inteiros) e únicos
         (function () {
-            const prices = document.querySelectorAll('.price');
+            const prices = document.querySelectorAll('.product-card .price');
+            const usedValues = new Set();
+
             prices.forEach(el => {
-                const text = el.textContent || '';
-                let numStr = text.replace(/[^0-9\.,]/g, '').trim();
-                numStr = numStr.replace(/\./g, '').replace(/,/g, '.');
-                let v = parseFloat(numStr);
-                if (isNaN(v)) return;
-                v = Math.round(v * 1.05 * 100) / 100; // +5%
-                const formatted = v.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-                el.textContent = 'R$ ' + formatted;
+                let text = el.textContent.replace('R$', '').trim();
+                // Converte para número (remove pontos de milhar, troca vírgula por ponto)
+                let val = parseFloat(text.replace(/\./g, '').replace(',', '.'));
+                
+                if (isNaN(val)) return;
+
+                // Arredonda para inteiro e garante unicidade
+                val = Math.round(val);
+                while (usedValues.has(val)) {
+                    val += 5; // Aumenta o espaçamento entre valores repetidos
+                }
+                usedValues.add(val);
+
+                // Atualiza o texto com centavos zerados (,00)
+                el.textContent = 'R$ ' + val.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
             });
         })();
 
@@ -2227,7 +2222,7 @@
             filterButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const category = btn.innerText.trim();
+                    const category = btn.textContent.trim();
                     filterButtons.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
 
@@ -2337,13 +2332,39 @@
 
                     const row = document.createElement('div');
                     row.className = isCheckout ? 'side-checkout-row' : 'chosen-product-row';
-                    row.innerHTML = `
-                        <div style="display:flex; align-items:center; gap:10px;">
-                            ${!isCheckout ? `<img src="${imgSrc}" class="chosen-prod-thumb" style="width:50px; height:50px; object-fit:cover;">` : ''}
-                            <span>${name}</span>
-                        </div>
-                        <span style="font-weight:600; color:var(--accent-color);">${priceTxt}</span>
-                    `;
+                    
+                    // --- Lado Esquerdo: Imagem + Nome ---
+                    const infoDiv = document.createElement('div');
+                    infoDiv.style.display = 'flex';
+                    infoDiv.style.alignItems = 'center';
+                    infoDiv.style.gap = '10px';
+
+                    if (!isCheckout) {
+                        infoDiv.innerHTML += `<img src="${imgSrc}" class="chosen-prod-thumb" style="width:50px; height:50px; object-fit:cover;">`;
+                    }
+                    const nameSpan = document.createElement('span');
+                    nameSpan.textContent = name;
+                    infoDiv.appendChild(nameSpan);
+
+                    // --- Lado Direito: Preço + Lixeira ---
+                    const actionDiv = document.createElement('div');
+                    actionDiv.style.display = 'flex';
+                    actionDiv.style.alignItems = 'center';
+                    actionDiv.style.gap = '15px';
+
+                    actionDiv.innerHTML = `<span style="font-weight:600; color:var(--accent-color);">${priceTxt}</span>`;
+
+                    const trashIcon = document.createElement('i');
+                    trashIcon.className = 'fas fa-trash-alt';
+                    trashIcon.style.cursor = 'pointer';
+                    trashIcon.style.color = '#d9534f'; // Vermelho para indicar exclusão
+                    trashIcon.title = 'Remover item';
+                    trashIcon.onclick = () => { btn.click(); populateModal(targetId, isCheckout); };
+                    
+                    actionDiv.appendChild(trashIcon);
+
+                    row.appendChild(infoDiv);
+                    row.appendChild(actionDiv);
                     container.appendChild(row);
                 });
 
@@ -2362,6 +2383,10 @@
             document.getElementById('sideCheckoutPayBtn').addEventListener('click', async () => {
                 const payBtn = document.getElementById('sideCheckoutPayBtn');
                 const originalText = payBtn.innerText;
+
+                // Define a URL base dinamicamente (Localhost ou Produção)
+                const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                const API_URL = isLocal ? 'http://localhost:3000' : 'https://casamento-backend-2vwt.onrender.com';
 
                 const chosenCards = document.querySelectorAll('.product-card .disabled-button');
 
@@ -2387,7 +2412,7 @@
                     payBtn.disabled = true;
 
                     // Chamada para o seu servidor Node.js
-                    const response = await fetch('https://casamento-backend-2vwt.onrender.com/api/create_preference', {
+                    const response = await fetch(`${API_URL}/api/create_preference`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({

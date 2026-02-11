@@ -62,7 +62,7 @@ img {
 /* --- Header --- */
 header {
     text-align: center;
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
 header img {
@@ -479,99 +479,156 @@ header img:hover,
     transition-delay: 1.5s;
 }
 
-/* Botão Hamburguer - FIXO NO CANTO */
+/* --- Ajustes Complementares (Sem alterar o anterior) --- */
+
+/* Header e Logo */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    cursor: pointer;
+    width: 80px; /* Ajuste o tamanho da sua logo aqui */
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo img {
+    filter: none !important; /* Mantém a logo colorida se desejar */
+}
+
+/* Menu Hambúrguer */
 .menu-hamburguer {
-    position: fixed;
-    top: 25px;
-    right: 25px;
-    width: 35px;
-    height: 25px;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    z-index: 9999; /* Valor bem alto para garantir visibilidade */
-    padding: 5px;
+    gap: 6px;
+    z-index: 1001;
 }
 
 .menu-hamburguer span {
     display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #333; /* Cor das linhas */
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    transition: 0.3s;
 }
 
-/* Overlay (Fundo que abre) */
+/* Título Principal (Abaixo do Header) */
+.titulo-principal {
+    text-align: center;
+    padding: 60px 0 20px;
+}
+
+.titulo-principal h1 {
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 4rem);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+/* Menu Overlay (Aberto) */
 .menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(251, 250, 245, 0.98);
-    z-index: 9998;
+    background: rgba(251, 250, 245, 0.98); /* Cor do fundo do body com opacidade */
+    z-index: 1000;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s ease;
+    transition: all 0.4s ease-in-out;
 }
 
+/* Classe que será adicionada via JS para abrir o menu */
 .menu-overlay.active {
     opacity: 1;
     visibility: visible;
 }
 
-/* Animação das Linhas virando X */
-.menu-hamburguer.open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-.menu-hamburguer.open span:nth-child(2) {
-    opacity: 0;
-}
-.menu-hamburguer.open span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+.menu-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #333;
 }
 
-/* Links do Menu */
 .menu-links {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
     text-align: center;
 }
 
 .menu-links a {
-    font-size: 1.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
     text-decoration: none;
     color: #333;
     text-transform: uppercase;
-    letter-spacing: 5px;
-    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    transition: color 0.3s;
 }
 
-/* Logo */
-.logo {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
+.menu-links a:hover {
+    color: #999;
 }
 
-.logo img {
-    width: 80px;
-    height: auto;
+/* Ajuste das listas de informações (Data, Local) */
+.container-ul {
+    margin-top: 30px;
 }
 
-.logo span {
-    display: block;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 2px;
-    margin-top: 5px;
+.container-ul ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 50px;
+}
+
+.container-ul span {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Correção de espaçamento da seção About */
+#about-us {
+    padding-top: 100px;
+    margin-top: 0;
+}
+
+/* Ajuste fino para o Script Title no mobile */
+@media (max-width: 768px) {
+    #historia-title {
+        font-size: 4rem; /* Diminui para não quebrar no celular */
+    }
+    
+    .event-item .script-title {
+        font-size: 3.5rem;
+    }
+
+    .header-container {
+        padding: 15px;
+    }
 }

@@ -172,3 +172,132 @@ button.secondary:hover {
     min-width: 160px;
     margin: 5px; /* Margem pequena caso eles quebrem de linha no celular */
 }
+
+/* --- Integração RSVP com Layout Global --- */
+
+/* Logo (Fixada no topo para manter a identidade) */
+.logo {
+    position: fixed; /* Alterado para fixed para garantir visibilidade */
+    top: 40px;
+    left: 40px;
+    z-index: 1000;
+}
+
+/* Menu Hamburguer (Garante navegação em todas as etapas do RSVP) */
+.menu-hamburguer {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.menu-hamburguer span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #1a1a1a; /* Cor sólida para combinar com os botões */
+    transition: 0.3s;
+}
+
+/* Overlay de Menu (Navegação Global) */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(250, 248, 242, 0.98); /* Fundo creme do RSVP */
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+}
+
+.menu-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: opacity 0.3s;
+}
+
+.menu-links a:hover {
+    opacity: 0.5;
+}
+
+/* Ajustes de Linha de Input (Visual minimalista) */
+input[type="text"] {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Adiciona uma linha sutil para guiar o olhar */
+    transition: border-bottom 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-bottom: 1px solid #1a1a1a;
+}
+
+/* Responsividade do RSVP */
+@media (max-width: 768px) {
+    .logo {
+        top: 20px;
+        left: 20px;
+    }
+    
+    .logo img {
+        width: 50px; /* Reduzido no mobile para focar no input */
+    }
+
+    .menu-hamburguer {
+        top: 25px;
+        right: 20px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-top: 60px; /* Evita que o h1 fique sob a logo no mobile */
+    }
+
+    input[type="text"] {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        width: 85%;
+    }
+    
+    .footer-note {
+        bottom: 20px;
+        font-size: 0.65rem;
+    }
+}
