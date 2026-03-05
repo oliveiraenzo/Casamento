@@ -75,6 +75,36 @@
     filter: grayscale(0%);
 }
 
+/* --- GRID DE INSPIRAÇÃO (Galeria de Fotos) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas como na imagem */
+    gap: 15px;
+    margin: 40px auto 80px;
+    max-width: 1000px;
+}
+
+.grid-item {
+    aspect-ratio: 2 / 3; /* Proporção vertical elegante */
+    overflow: hidden;
+    background-color: #eee;
+    border-radius: 2px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(30%); /* Leve estilo editorial */
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
 /* --- Paleta de Cores --- */
 .palette-section {
     margin-bottom: 80px;
@@ -98,7 +128,7 @@
 .palette-desc {
     font-size: 0.95rem;
     color: #777;
-    margin-bottom: 40px; /* Aumentei para dar espaço antes das bolinhas */
+    margin-bottom: 40px; 
     font-style: italic;
     font-family: 'Montserrat', sans-serif;
 }
@@ -107,18 +137,12 @@
 .colors-grid {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinha no topo para evitar desalinhos */
+    align-items: flex-start;
     flex-wrap: wrap;
-    
-    /* Espaçamento Inteligente:
-       - row-gap: 60px (Espaço vertical grande para caber o texto embaixo)
-       - column-gap: 30px (Espaço lateral para textos longos não baterem) */
     gap: 60px 30px; 
-    
     padding-bottom: 20px;
 }
 
-/* A Bolinha Colorida */
 .color-swatch {
     width: 60px;
     height: 60px;
@@ -137,33 +161,27 @@
     z-index: 10;
 }
 
-/* TEXTO DA COR (Ajuste "Sem Fundo") */
 .color-swatch span {
     position: absolute;
-    bottom: -35px; /* Empurra o texto para baixo da bolinha */
+    bottom: -35px;
     left: 50%;
-    transform: translateX(-50%); /* Centraliza perfeitamente */
-    
+    transform: translateX(-50%);
     font-size: 0.75rem;
     text-transform: uppercase;
-    white-space: nowrap; /* Garante que o nome da cor não quebre linha */
-    
-    opacity: 0; /* Invisível no desktop (aparece no hover) */
+    white-space: nowrap;
+    opacity: 0;
     transition: opacity 0.3s, bottom 0.3s;
-    
-    font-weight: 700; /* Negrito para ler melhor sem o fundo */
-    color: #444;      /* Cor escura para contraste */
+    font-weight: 700;
+    color: #444;
     letter-spacing: 1px;
     pointer-events: none;
     font-family: 'Montserrat', sans-serif;
-    
-    /* REMOVIDO: background, padding, border-radius */
-    text-shadow: 0 0 5px rgba(255,255,255,1); /* Sombra branca leve para garantir leitura se tiver fundo */
+    text-shadow: 0 0 5px rgba(255,255,255,1);
 }
 
 .color-swatch:hover span {
     opacity: 1;
-    bottom: -40px; /* Pequeno movimento ao aparecer */
+    bottom: -40px;
 }
 
 /* --- Toast Notification --- */
@@ -176,7 +194,7 @@
     border-radius: 50px;
     padding: 16px;
     position: fixed;
-    z-index: 100;
+    z-index: 3000;
     left: 50%;
     bottom: 30px;
     transform: translateX(-50%);
@@ -193,18 +211,213 @@
     bottom: 50px;
 }
 
+/* =========================================
+   RESPONSIVIDADE (Mobile)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* Reduz colunas no tablet/mobile */
+        gap: 10px;
+    }
+
+    .palette-section {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .colors-grid {
+        row-gap: 70px;
+        column-gap: 20px; 
+    }
+    
+    .color-swatch {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .color-swatch span {
+        opacity: 1; 
+        bottom: -35px;
+        font-size: 0.65rem;
+    }
+
+    .restrictions-list {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+    
+    .restrictions-section {
+        padding: 40px 20px;
+    }
+
+    .logo {
+        top: 20px;
+        left: 20px;
+    }
+    
+    .logo img {
+        width: 60px;
+    }
+
+    .menu-hamburguer {
+        top: 25px;
+        right: 20px;
+    }
+    
+    .dresscode-header h1 {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas no celular pequeno */
+    }
+
+    .palette-group h3 {
+        font-size: 2rem;
+    }
+    
+    .script-title.small {
+        font-size: 2rem;
+    }
+    
+    .colors-grid {
+        justify-content: space-evenly;
+    }
+}
+
+/* --- EFEITO SCROLL --- */
+.colorida {
+    filter: grayscale(0%) !important;
+    transition: filter 1.5s ease;
+}
+
+/* Logo & Menu */
+.logo {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.logo span {
+    display: block;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.menu-hamburguer {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.menu-hamburguer span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(251, 250, 245, 0.98);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+}
+
+.menu-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: color 0.3s;
+}
+
+.menu-links a:hover {
+    color: #999;
+}
+
+/* Tipografia */
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.script-title {
+    font-family: 'Autumn Melody', cursive;
+    font-size: 4rem;
+    color: #222;
+    margin-bottom: 20px;
+}
+
 /* --- Seção Restrições --- */
 .restrictions-section {
-    background-color: #f4f1ea;
     padding: 60px 40px;
     border-radius: 8px;
     text-align: center;
     margin-bottom: 60px;
-    border: 1px dashed #d4af37;
 }
 
 .script-title.small {
-    font-size: 2.5rem;
+    font-size: 5rem;
     margin-bottom: 40px;
 }
 
@@ -245,213 +458,4 @@
 .restrictions-list p {
     font-size: 0.9rem;
     color: #666;
-}
-
-/* =========================================
-   RESPONSIVIDADE (Mobile)
-   ========================================= */
-
-@media (max-width: 768px) {
-    .palette-section {
-        grid-template-columns: 1fr; /* Uma coluna só */
-        gap: 50px;
-    }
-
-    .colors-grid {
-        /* AUMENTO EXTRA DO ESPAÇO NO CELULAR */
-        row-gap: 70px;    /* Espaço vertical maior para os textos não baterem na linha de baixo */
-        column-gap: 20px; 
-    }
-    
-    .color-swatch {
-        width: 55px;
-        height: 55px;
-    }
-    
-    /* No celular, o texto aparece SEMPRE, não só no hover */
-    .color-swatch span {
-        opacity: 1; 
-        bottom: -35px;
-        font-size: 0.65rem; /* Fonte um pouco menor para nomes longos */
-    }
-
-    .restrictions-list {
-        flex-direction: column;
-        gap: 40px;
-        align-items: center;
-    }
-    
-    .restrictions-section {
-        padding: 40px 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .palette-group h3 {
-        font-size: 2rem;
-    }
-    
-    .script-title.small {
-        font-size: 2rem;
-    }
-    
-    /* Garante que nomes longos como "Azul Serenity" não vazem a tela */
-    .colors-grid {
-        justify-content: space-evenly; /* Distribui melhor */
-    }
-}
-
-/* --- EFEITO SCROLL: Ficar colorido ao aparecer --- */
-.colorida {
-    filter: grayscale(0%) !important; /* Força a cor a aparecer */
-    transition: filter 1.5s ease;     /* A cor surge suavemente em 1.5 segundos */
-}
-
-/* Logo */
-.logo {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
-}
-
-.logo img {
-    width: 80px;
-    height: auto;
-}
-
-.logo span {
-    display: block;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 2px;
-    margin-top: 5px;
-}
-
-/* --- Integração com o Layout Global --- */
-
-/* Ajuste do Menu Hamburguer para a página Dress Code */
-.menu-hamburguer {
-    position: fixed;
-    top: 40px;
-    right: 40px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    z-index: 1001; /* Fica acima da logo se necessário */
-}
-
-.menu-hamburguer span {
-    display: block;
-    width: 30px;
-    height: 2px;
-    background-color: #333;
-    transition: 0.3s;
-}
-
-/* Estilização do Overlay de Menu (Navegação) */
-.menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(251, 250, 245, 0.98);
-    z-index: 2000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease-in-out;
-}
-
-/* Classe de ativação para o JavaScript */
-.menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu-close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    font-size: 3rem;
-    cursor: pointer;
-    color: #333;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.menu-links {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    text-align: center;
-}
-
-.menu-links a {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    transition: color 0.3s;
-}
-
-.menu-links a:hover {
-    color: #999;
-}
-
-/* Tipografia e Títulos */
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    font-size: 3rem;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    color: #333;
-}
-
-.script-title {
-    font-family: 'Autumn Melody', cursive; /* Caso a fonte esteja carregada */
-    font-size: 4rem;
-    color: #222;
-    margin-bottom: 20px;
-}
-
-/* Ajuste de profundidade para a Logo não sumir no scroll */
-.logo {
-    position: fixed; /* Alterado de absolute para fixed para acompanhar a navegação */
-}
-
-/* Correção para o Toast Notification ficar por cima de tudo */
-.toast {
-    z-index: 3000;
-}
-
-/* Responsividade Extra para Elementos de Navegação */
-@media (max-width: 768px) {
-    .logo {
-        top: 20px;
-        left: 20px;
-    }
-    
-    .logo img {
-        width: 60px;
-    }
-
-    .menu-hamburguer {
-        top: 25px;
-        right: 20px;
-    }
-    
-    .dresscode-header h1 {
-        font-size: 2rem;
-        letter-spacing: 4px;
-    }
 }
