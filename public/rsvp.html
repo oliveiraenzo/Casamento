@@ -36,9 +36,11 @@
     </div>
 
     <div class="container">
-        <div id="step-input">
+        <div id="step-input" style="position:relative;">
             <h1>Digite seu nome...</h1>
+            <!-- input com caixa personalizada de sugestões -->
             <input type="text" id="guestName" placeholder="Ex: João da Silva" autocomplete="off">
+            <ul id="suggestions" class="suggestions hidden"></ul>
 
             <p id="feedback-text" class="error-msg hidden"></p>
         </div>

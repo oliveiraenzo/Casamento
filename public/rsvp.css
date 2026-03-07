@@ -263,6 +263,41 @@ input[type="text"] {
     transition: border-bottom 0.3s ease;
 }
 
+/* Sugestões personalizadas abaixo do input */
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FAF8F2;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1002;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    color: #1a1a1a;
+}
+
+.suggestion-item:hover {
+    background-color: #1a1a1a;
+    color: #FAF8F2;
+}
+
+/* garante que a lista fique do tamanho do campo */
+#step-input {
+    position: relative;
+}
+
 input[type="text"]:focus {
     border-bottom: 1px solid #1a1a1a;
 }

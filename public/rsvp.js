@@ -185,6 +185,10 @@ const guestList = [
 let typingTimer;
 const doneTypingInterval = 1500; // Tempo em ms (1.5 segundos) para mostrar o erro
 
+// debounce para as sugestões aparecerem
+let suggestionsTimer;
+const suggestionsDelay = 300; // ms antes de exibir/atualizar a lista
+
 // --- FUNÇÕES UTILITÁRIAS ---
 function normalizeString(str) {
     return str
@@ -202,9 +206,55 @@ document.addEventListener('DOMContentLoaded', () => {
     input.addEventListener('input', () => {
         checkGuestRealTime();
     });
+    // ao perder foco, esconde as sugestões (espero um pequeno delay para permitir clique)
+    input.addEventListener('blur', () => {
+        setTimeout(() => updateSuggestions(''), 100);
+    });
 });
 
 // --- FUNÇÕES PRINCIPAIS ---
+
+/**
+ * Atualiza a lista de sugestões (dropdown customizado) com todas as opções que
+ * começam com o valor digitado. Também trata cliques nos itens.
+ *
+ * @param {string} nameTyped Normalizado, em minúsculas, sem acentos.
+ * @returns {Array<string>} Lista de nomes completos que batem com o prefixo.
+ */
+function updateSuggestions(nameTyped) {
+    const list = document.getElementById('suggestions');
+    list.innerHTML = '';
+    if (nameTyped === '') {
+        list.classList.add('hidden');
+        return [];
+    }
+
+    const matches = guestList.filter(name =>
+        normalizeString(name).startsWith(nameTyped)
+    );
+
+    matches.forEach(name => {
+        const li = document.createElement('li');
+        li.textContent = name;
+        li.className = 'suggestion-item';
+        li.addEventListener('mousedown', () => {
+            // usar mousedown em vez de click para evitar que o blur do input
+            // esconda a lista antes de processar a seleção
+            document.getElementById('guestName').value = name;
+            // forçar validação imediata
+            checkGuestRealTime();
+        });
+        list.appendChild(li);
+    });
+
+    if (matches.length > 0) {
+        list.classList.remove('hidden');
+    } else {
+        list.classList.add('hidden');
+    }
+
+    return matches;
+}
 
 function checkGuestRealTime() {
     const input = document.getElementById('guestName');
@@ -218,7 +268,14 @@ function checkGuestRealTime() {
     // 1. Limpa qualquer erro anterior ou timer pendente enquanto digita
     feedback.classList.add('hidden');
     clearTimeout(typingTimer);
+    clearTimeout(suggestionsTimer);
 
+    // atualiza as sugestões com atraso para permitir digitação contínua
+    suggestionsTimer = setTimeout(() => {
+        updateSuggestions(nameTyped);
+    }, suggestionsDelay);
+
+    // (matches não é usado mais assim diretamente)</n
     // Se estiver vazio, não faz nada
     if (nameTyped === "") return;
 
@@ -232,10 +289,18 @@ function checkGuestRealTime() {
         stepConfirm.classList.remove('hidden');
         welcomeMsg.textContent = `Olá, ${found}!`;
     } else {
-        // ERRO COM DELAY: Se não achou, espera o usuário parar de digitar
+        // Se não encontrou nada, espera o debounce antes de mostrar o erro.
+        // No callback revalida se ainda não existem sugestões para o texto atual.
         typingTimer = setTimeout(() => {
-            feedback.textContent = "Esse nome não está na nossa lista de convidados.";
-            feedback.classList.remove('hidden');
+            const current = normalizeString(input.value);
+            if (current === "") return;
+            const matchesNow = guestList.filter(name =>
+                normalizeString(name).startsWith(current)
+            );
+            if (matchesNow.length === 0) {
+                feedback.textContent = "Esse nome não está na nossa lista de convidados.";
+                feedback.classList.remove('hidden');
+            }
         }, doneTypingInterval);
     }
 }
@@ -280,7 +345,8 @@ function goHome() {
     // 3. Esconde as telas de sucesso/confirmação
     stepConfirm.classList.add('hidden');
     stepFinal.classList.add('hidden');
-
+    // limpar sugestões
+    updateSuggestions("");
     // 4. Mostra a tela inicial
     stepInput.classList.remove('hidden');
 
@@ -305,7 +371,8 @@ function confirmAgain() {
     // 3. Esconde a tela final e mostra a inicial
     stepFinal.classList.add('hidden');
     stepInput.classList.remove('hidden');
-
+    // limpar sugestões
+    updateSuggestions("");
     // 4. Foca no input para digitar imediatamente
     setTimeout(() => {
         input.focus();
