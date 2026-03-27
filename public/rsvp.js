@@ -186,6 +186,7 @@ const guestList = [
     "Bernardo",
     "Pierre",
     "Allan Jhones",
+    "Pietra Cândido",
 ];
 
 // Variável para controlar o tempo de espera (Debounce)
