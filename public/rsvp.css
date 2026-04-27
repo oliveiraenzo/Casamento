@@ -56,7 +56,16 @@ body {
     max-width: 600px;
 }
 
+/* h1 {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+} */
+
 h1 {
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 2px;
