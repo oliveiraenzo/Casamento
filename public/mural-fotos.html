@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural de Fotos - Ana & Everson</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fbfaf5;
+        }
+
+        /* Estilos específicos para esta página que complementam o index.css */
+        .mural-header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .mural-grid-instrucoes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .polaroid-card {
+            background: #fff;
+            padding: 15px 15px 40px 15px;
+            box-shadow: 10px 10px 0px #f4f1ea;
+            border-radius: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        .polaroid-card:hover {
+            transform: rotate(-2deg);
+        }
+
+        .polaroid-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: #999;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .step-title {
+            font-family: 'Autumn Melody', cursive;
+            font-size: 2.5rem;
+            color: #333;
+            line-height: 1;
+        }
+    </style>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="./assets/images/logo/Monograma Ana Scagnolato V2_Prancheta 1.png" alt="Logo Ana e Everson">
+            </div>
+
+            <div class="menu-hamburguer" id="menu-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-close" id="menu-close">&times;</div>
+        <nav class="menu-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about-us">Nossa História</a>
+            <a href="dresscode.html">Dresscode</a>
+            <a href="manualconvidados.html">Manual dos Convidados</a>
+            <a href="programacao.html">Programação</a>
+            <a href="quizz.html">Quiz do Casal</a>
+            <a href="rsvp.html">Confirmar Presença</a>
+            <a href="lista-presentes.html">Presentes</a>
+            <a href="mural-fotos.html">Mural de Fotos</a>
+        </nav>
+    </div>
+
+    <main class="container">
+        <section class="mural-header reveal">
+            <h2 class="script-title" id="historia-title" style="font-size: clamp(4rem, 10vw, 8rem); transform: rotate(-1deg);">
+                Mural de Fotos
+            </h2>
+            <p class="caption" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">
+                Nós queremos ver o nosso dia através dos seus olhos. 
+                Cada clique, cada risada e cada detalhe importa para nós.
+            </p>
+        </section>
+
+        <section class="gallery-section reveal" style="padding: 20px 0;">
+            <div style="max-width: 500px; margin: 0 auto;">
+                <div class="gallery-item">
+                    <div class="gallery-image-wrapper">
+                        <img src="./assets/images/couple/aee-8.jpg" alt="Upload de Fotos">
+                        <a href="https://photos.app.goo.gl/SEU_ID_AQUI" target="_blank" class="gallery-btn">
+                            Acessar Álbum Coletivo
+                        </a>
+                    </div>
+                    <p class="gallery-caption">Clique para abrir o Google Photos</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mural-grid-instrucoes">
+            
+            <div class="polaroid-card reveal">
+                <img src="./assets/images/couple/aee-16.jpg" class="polaroid-img" alt="Passo 1">
+                <span class="step-number">Passo 01</span>
+                <h3 class="step-title">Capture</h3>
+                <p style="font-size: 0.9rem; margin-top: 10px;">Use seu celular para registrar os momentos mais espontâneos da festa.</p>
+            </div>
+
+            <div class="polaroid-card reveal">
+                <img src="./assets/images/couple/aee-7.jpg" class="polaroid-img" alt="Passo 2">
+                <span class="step-number">Passo 02</span>
+                <h3 class="step-title">Envie</h3>
+                <p style="font-size: 0.9rem; margin-top: 10px;">Acesse o link acima e adicione suas fotos diretamente no nosso álbum.</p>
+            </div>
+
+            <div class="polaroid-card reveal">
+                <img src="./assets/images/couple/aee-4.jpg" class="polaroid-img" alt="Passo 3">
+                <span class="step-number">Passo 03</span>
+                <h3 class="step-title">Eternize</h3>
+                <p style="font-size: 0.9rem; margin-top: 10px;">Suas fotos farão parte das nossas lembranças para sempre!</p>
+            </div>
+
+        </section>
+    </main>
+
+    <div style="margin-bottom: 100px;"></div>
+
+    <section class="full-width-image footer-image">
+        <img src="./assets/images/couple/aee-19.jpg" alt="Ana e Everson">
+    </section>
+
+    <script src="hamburger.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

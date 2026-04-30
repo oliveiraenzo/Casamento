@@ -1,0 +1,28 @@
+/* Garante que o efeito de scroll (revelar) funcione */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para as instruções não ficarem coladas no mobile */
+@media (max-width: 768px) {
+    .event-item .script-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .about-column h2 {
+        font-size: 4rem !important;
+    }
+}
+
+/* Otimização do botão para seguir o padrão da Home */
+.gallery-btn {
+    /* Já definido no index.css, mas garantindo aqui */
+    cursor: pointer;
+}
